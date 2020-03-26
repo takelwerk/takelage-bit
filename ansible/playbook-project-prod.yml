@@ -1,0 +1,10 @@
+---
+- name: (playbook-project-prod) create project prod
+  hosts: all
+  roles:
+    - takel-base
+    - takel-users
+    - takel-ssh
+    - takel-bit-client
+    - takel-bit-server
+    - takel-cleanup

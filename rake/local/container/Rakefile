@@ -1,0 +1,35 @@
+require 'rake'
+
+cmd_local_container_id = "docker exec #{$project['project']} hostname"
+
+cmd_local_container_start = 'docker run ' +
+    '--detach ' +
+    "--name #{$project['project']} " +
+    "--network #{ENV['HOSTNAME']} " +
+    "--privileged " +
+    '--rm ' +
+    "#{$project['repo_local']}/#{$project['project']}:prod"
+
+cmd_local_container_stop = 'docker stop ' +
+    "#{$project['project']}"
+
+namespace :local do
+  namespace :container do
+
+    desc 'Get the local container id'
+    task :id do
+      $commands << cmd_local_container_id
+    end
+
+    desc 'Start local container'
+    task :start => [:'local:network:start'] do
+      $commands << cmd_local_container_start
+    end
+
+    desc 'Stop local container'
+    task :stop do
+      $commands << cmd_local_container_stop
+    end
+
+  end
+end

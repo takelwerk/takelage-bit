@@ -1,0 +1,10 @@
+---
+- name: "(ssh) add user {{ user }} to custom user/sshpubkeys dict"
+  set_fact:
+    takel_users_sshpubkeys: "{{ takel_users_sshpubkeys | default({}) | combine( {user: ssh_custom} ) }}"
+  when: ssh_custom | length
+
+- name: "(ssh) add user {{ user }} to default user/sshpubkeys dict"
+  set_fact:
+    takel_users_sshpubkeys: "{{ takel_users_sshpubkeys | default({}) | combine( {user: ssh_default} ) }}"
+  when: not ssh_custom | length

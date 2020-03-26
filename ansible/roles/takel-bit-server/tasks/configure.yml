@@ -1,0 +1,7 @@
+---
+- name: (configure) create bit server repository directory
+  file:
+    path: "{{ takel_bit_server_repo_dir }}"
+    owner: "{{ takel_bit_server_bit_user }}"
+    group: "{{ takel_bit_server_bit_group }}"
+    state: directory

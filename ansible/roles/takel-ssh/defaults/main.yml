@@ -1,0 +1,49 @@
+---
+takel_ssh_deb_install_packages:
+  - openssh-server
+  - iputils-ping
+
+takel_ssh_Protocol: 2
+
+takel_ssh_Port: 22
+takel_ssh_ListenAddress: '0.0.0.0'
+
+takel_ssh_PermitRootLogin: 'no'
+takel_ssh_PubkeyAuthentication: 'yes'
+takel_ssh_PasswordAuthentication: 'no'
+
+takel_ssh_AllowAgentForwarding: 'yes'
+takel_ssh_AllowTcpForwarding: 'yes'
+takel_ssh_X11Forwarding: 'no'
+
+takel_ssh_ClientAliveCountMax: 2
+takel_ssh_ClientAliveInterval: 300
+
+takel_ssh_AllowUsers: ''
+takel_ssh_AllowGroups: ''
+
+takel_ssh_GSSAPIAuthentication: 'no'
+takel_ssh_GSSAPICleanupCredentials: 'no'
+
+takel_ssh_StrictModes: 'yes'
+takel_ssh_TCPKeepAlive: 'yes'
+
+takel_ssh_Ciphers:
+  - chacha20-poly1305@openssh.com
+  - aes256-gcm@openssh.com
+  - aes128-gcm@openssh.com
+  - aes256-ctr
+  - aes128-ctr
+
+takel_ssh_MACs:
+  - hmac-sha2-512-etm@openssh.com
+  - hmac-sha2-256-etm@openssh.com
+  - umac-128-etm@openssh.com
+  - hmac-sha2-512
+  - hmac-sha2-256
+
+takel_ssh_KexAlgorithms:
+  - curve25519-sha256@libssh.org
+  - diffie-hellman-group-exchange-sha256
+  - diffie-hellman-group14-sha1
+  - diffie-hellman-group-exchange-sha1

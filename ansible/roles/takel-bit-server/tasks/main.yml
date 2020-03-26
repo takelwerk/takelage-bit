@@ -1,0 +1,14 @@
+---
+- name: (main) include user
+  import_tasks: user.yml
+  tags:
+    - takel
+    - takel_bit_server
+    - takel_bit_server_user
+
+- name: (main) include configure
+  import_tasks: configure.yml
+  tags:
+    - takel
+    - takel_bit_server
+    - takel_bit_server_configure

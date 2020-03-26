@@ -1,0 +1,17 @@
+ansible/group_vars/users
+ansible-devel.log
+.DS_Store
+*.iml
+*.iso
+packer/images
+packer/packer_cache
+private
+__pycache__/
+*.pyc
+.pytest_cache
+pytestdebug.log
+*.retry
+.vagrant
+vault-password-file
+*.vdi
+.idea

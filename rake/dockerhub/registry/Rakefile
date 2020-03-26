@@ -1,0 +1,23 @@
+require 'rake'
+
+cmd_dockerhub_registry_push = "docker push " +
+    "#{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:#{$project['version']}"
+
+cmd_dockerhub_registry_tag = "docker tag " +
+    "#{$project['repo_local']}/#{$project['project']}:prod #{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:#{$project['version']}"
+
+namespace :dockerhub do
+  namespace :registry do
+
+    desc 'Push production image to hub.docker.com'
+    task :push do
+      $commands << cmd_dockerhub_registry_push
+    end
+
+    desc 'Tag production image for hub.docker.com'
+    task :tag do
+      $commands << cmd_dockerhub_registry_tag
+    end
+
+  end
+end

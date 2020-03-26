@@ -1,0 +1,25 @@
+require 'rake'
+
+cmd_google_login_host = "gcloud beta compute ssh #{$project['project']} " +
+    "--zone=#{$project['zone']} " +
+    "--project=#{$project['project_id']} "
+
+cmd_google_login_container = 'ssh ' +
+    "-p #{$project['ssh_port']} " +
+    "#{$project['url']}"
+
+namespace :google do
+  namespace :login do
+    
+    desc 'Log in to host in GCE'
+    task :host do
+      $commands << cmd_google_login_host
+    end
+
+    desc 'Log in to guest in GCE'
+    task :container do
+      $commands << cmd_google_login_container
+    end
+    
+  end
+end

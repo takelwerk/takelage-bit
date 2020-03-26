@@ -1,0 +1,6 @@
+---
+- name: default
+  hosts: all
+  roles:
+    - takel-users
+    - takel-ssh

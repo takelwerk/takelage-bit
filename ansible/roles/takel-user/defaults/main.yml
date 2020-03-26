@@ -1,0 +1,9 @@
+---
+takel_user:
+  name: ansible
+  full_name: Ansible
+  gecos: Ansible default user
+  group: ansible
+  groups: ~
+  home: /home/ansible
+  shell: /bin/bash

@@ -1,0 +1,30 @@
+require 'rake'
+
+cmd_local_container_login_host = 'docker exec ' +
+    '--interactive ' +
+    '--tty ' +
+    "#{$project['project']} " +
+    'bash'
+
+cmd_local_container_login_ssh = 'ssh ' +
+    '-i ansible/files/id_rsa.myuser ' +
+    '-l bit ' +
+    '-oStrictHostKeyChecking=no ' +
+    '-p 222 ' +
+    "#{$project['project']}"
+
+namespace :local do
+  namespace :login do
+
+    desc 'Login to local container'
+    task :host do
+      $commands << cmd_local_container_login_host
+    end
+
+    desc 'Login to local container'
+    task :ssh do
+      $commands << cmd_local_container_login_ssh
+    end
+
+  end
+end

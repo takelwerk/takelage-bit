@@ -1,0 +1,67 @@
+require 'rake'
+
+rule_allow_ssh_port = "allow-ssh-#{$project['ssh_port']}-#{$project['project']}"
+
+cmd_google_firewall_delete = 'gcloud compute firewall-rules delete ' +
+    "#{rule_allow_ssh_port} " +
+    "--project=#{$project['project_id']}"
+
+cmd_google_firewall_describe = 'gcloud compute firewall-rules describe ' +
+    "#{rule_allow_ssh_port} " +
+    "--project=#{$project['project_id']}"
+
+cmd_google_firewall_disable = 'gcloud compute firewall-rules update ' +
+    "#{rule_allow_ssh_port} " +
+    "--disabled " +
+    "--project=#{$project['project_id']}"
+
+cmd_google_firewall_enable = 'gcloud compute firewall-rules update ' +
+    "#{rule_allow_ssh_port} " +
+    '--no-disabled ' +
+    "--project=#{$project['project_id']}"
+
+cmd_google_firewall_list = 'gcloud compute firewall-rules list ' +
+    "--project=#{$project['project_id']}"
+
+cmd_google_firewall_create = 'gcloud compute firewall-rules create ' +
+    "#{rule_allow_ssh_port} " +
+    '--action=allow ' +
+    "--rules tcp:#{$project['ssh_port']} " +
+    "--target-tags=#{$project['project']} " +
+    "--project=#{$project['project_id']}"
+
+namespace :google do
+  namespace :firewall do
+    
+    desc 'Create firewall rule'
+    task :create do
+      $commands << cmd_google_firewall_create
+    end
+
+    desc 'Delete firewall rule'
+    task :delete do
+      $commands << cmd_google_firewall_delete
+    end
+
+    desc 'Describe firewall rule'
+    task :describe do
+      $commands << cmd_google_firewall_describe
+    end
+
+    desc 'Disable firewall rule'
+    task :disable do
+      $commands << cmd_google_firewall_disable
+    end
+
+    desc 'Enable firewall rule'
+    task :enable do
+      $commands << cmd_google_firewall_enable
+    end
+
+    desc 'List firewall rules'
+    task :list do
+      $commands << cmd_google_firewall_list
+    end
+    
+  end
+end

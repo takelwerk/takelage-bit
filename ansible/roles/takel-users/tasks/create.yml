@@ -1,0 +1,70 @@
+---
+- name: (create) try to get public ssh keys from gitlab
+  block:
+    - name: (create) get public ssh keys from gitlab
+      uri:
+        url: "{{ takel_users_gitlab_url }}{{ gitlab_user }}.keys"
+        status_code:
+          - 200
+          - 401  # in case a key is not found 401 instead of 404 is returned.
+        return_content: true
+      register: takel_users_gitlab_query
+      vars:
+        ansible_become: false
+      connection: local
+      check_mode: false
+      loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
+      loop_control:
+        loop_var: gitlab_user
+
+    - name: (create) try to create user/sshpubkey dict from gitlab query
+      set_fact:
+        takel_users_sshpubkeys_default: "{{ takel_users_sshpubkeys_default | default({}) | combine( {item.user: item.content.split('\n') | default([]) } ) }}"  # noqa 204
+      loop: "{{ takel_users_gitlab_query.results }}"
+
+  rescue:
+    - name: (create) rescue by creating custom user/sshpubkey dict
+      set_fact:
+        takel_users_sshpubkeys_custom: "{{ takel_users_sshpubkeys_custom | default({}) | combine( {custom_user: takel_users_userdata[custom_user].ssh | default('') } ) }}"  # noqa 204
+      loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
+      loop_control:
+        loop_var: custom_user
+
+- name: (create) create user/sshpubkey dict (default wins over custom)
+  include: ssh.yml
+  vars:
+    user: "{{ ssh_user }}"
+    ssh_default: "{{ takel_users_sshpubkeys_default[ssh_user] | default('') }}"
+    ssh_custom: "{{ takel_users_sshpubkeys_custom[ssh_user] | default('') }}"
+  loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
+  loop_control:
+    loop_var: ssh_user
+
+- name: (create) create user/passwords dict
+  include: passwords.yml
+  vars:
+    user: "{{ password_user }}"
+    password_hash: "{{ takel_users_userdata[password_user].password_hash | default('*') }}"
+  loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
+  loop_control:
+    loop_var: password_user
+
+- name: (create) create user accounts
+  include_role:
+    name: takel-user
+  vars:
+    takel_user_name: "{{ user }}"
+    takel_user_uid: "{{ takel_users_userdata[user].id | default(omit) }}"
+    takel_user_comment: "{{ takel_users_userdata[user].comment | default(omit) }}"
+    takel_user_full_name: "{{ takel_users_userdata[user].full_name | default(omit) }}"
+    takel_user_gid: "{{ takel_users_userdata[user].id | default(omit) }}"
+    takel_user_group: "{{ user }}"
+    takel_user_groups: "{{ takel_users_userdata[user].groups | default([]) }}"
+    takel_user_home: "{{ takel_users_userdata[user].home | default('/home/' + user) }}"
+    takel_user_shell: "{{ takel_users_userdata[user].shell | default(takel_users_default_shell) }}"
+    takel_user_password: "{{ takel_users_passwords[user] }}"
+    takel_user_sshpubkeys: "{{ takel_users_sshpubkeys[user] | default(omit) }}"
+  loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
+  loop_control:
+    loop_var: user
+

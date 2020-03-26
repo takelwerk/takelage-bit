@@ -1,0 +1,8 @@
+require 'rake'
+
+cmd_test = 'cd ansible && molecule test'
+
+desc 'Run molecule test'
+task :test do
+  $commands << cmd_test
+end

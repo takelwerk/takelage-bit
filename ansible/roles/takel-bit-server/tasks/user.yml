@@ -1,0 +1,62 @@
+---
+- name: (user) create bit group
+  group:
+    name: "{{ takel_bit_server_bit_group }}"
+    gid: "{{ takel_bit_server_bit_gid }}"
+
+- name: (user) create bit user
+  user:
+    name: "{{ takel_bit_server_bit_user }}"
+    uid: "{{ takel_bit_server_bit_uid }}"
+    group: "{{ takel_bit_server_bit_group }}"
+    shell: "{{ takel_bit_server_bit_shell }}"
+    home: "{{ takel_bit_server_bit_home }}"
+    password_lock: yes
+
+- name: (user) create bit config dir
+  file:
+    path: "{{ takel_bit_server_bit_config_dir }}"
+    owner: "{{ takel_bit_server_bit_user }}"
+    group: "{{ takel_bit_server_bit_group }}"
+    mode: 0755
+    state: directory
+
+- name: (user) create bit config json file
+  template:
+    src: config.json.j2
+    dest: "{{ takel_bit_server_bit_config_path }}"
+    owner: "{{ takel_bit_server_bit_user }}"
+    group: "{{ takel_bit_server_bit_group }}"
+    mode: 0644
+
+- name: (create) try to get public ssh keys from gitlab
+  block:
+    - name: (create) get public ssh keys from gitlab
+      uri:
+        url: "{{ takel_admin_gitlab_url }}{{ takel_bit_user }}.keys"
+        status_code:
+          - 200
+          - 401  # in case a key is not found 401 instead of 404 is returned.
+        return_content: true
+      register: takel_bit_server_gitlab_query
+      vars:
+        ansible_become: false
+      connection: local
+      check_mode: false
+      loop: "{{ takel_bit_server_users }}"
+      loop_control:
+        loop_var: takel_bit_user
+
+    - name: (user) add gitlab ssh keys to the authorized_keys file of the bit user
+      authorized_key:
+        key: "{{ item.content | default(omit) }}"
+        user: "{{ takel_bit_server_bit_user }}"
+      loop: "{{ takel_bit_server_gitlab_query.results }}"
+
+  rescue:
+    - name: (user) add custom ssh keys to the authorized_keys file of the bit user
+      authorized_key:
+        key: "{{ item | default(omit) }}"
+        user: "{{ takel_bit_server_bit_user }}"
+      loop: "{{ takel_bit_server_sshpubkeys_custom }}"
+

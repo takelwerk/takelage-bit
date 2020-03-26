@@ -1,0 +1,10 @@
+require 'rake'
+
+desc 'Create and deploy app to production'
+task :prod => %w(image:base:debian_10_systemd
+                 test
+                 image:prod:build
+                 image:prod:test
+                 git:tag
+                 dockerhub:registry:tag
+                 dockerhub:registry:push)
