@@ -1,13 +1,21 @@
 require 'rake'
 
-cmd_dockerhub_registry_push = "docker push " +
+cmd_dockerhub_registry_login = 'docker login'
+
+cmd_dockerhub_registry_push = 'docker push ' +
     "#{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:#{$project['version']}"
 
-cmd_dockerhub_registry_tag = "docker tag " +
-    "#{$project['repo_local']}/#{$project['project']}:prod #{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:#{$project['version']}"
+cmd_dockerhub_registry_tag = 'docker tag ' +
+    "#{$project['repo_local']}/#{$project['project']}:prod #{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:#{$project['version']} && " +
+    "#{$project['repo_local']}/#{$project['project']}:prod #{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:latest"
 
 namespace :dockerhub do
   namespace :registry do
+
+    desc 'Log in to hub.docker.com'
+    task :login do
+      $commands << cmd_dockerhub_registry_login
+    end
 
     desc 'Push production image to hub.docker.com'
     task :push do

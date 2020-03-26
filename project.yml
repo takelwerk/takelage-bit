@@ -5,4 +5,4 @@ repo_dockerhub: bitboard
 repo_local: packer_local
 ssh_port: 222
 username_dockerhub: takelage
-version: 0.1.0
+version: 0.1.1

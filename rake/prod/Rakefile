@@ -8,4 +8,5 @@ task :prod => %w(image:base:debian_10_systemd
                  image:prod:test
                  git:tag
                  dockerhub:registry:tag
+                 dockerhub:registry:login
                  dockerhub:registry:push)
