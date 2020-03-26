@@ -1,17 +1,26 @@
 require 'rake'
 
-cmd_local_container_id = "docker exec #{$project['project']} hostname"
+cmd_local_container_id = 'tau docker container check existing ' +
+    "#{$project['project']} && " +
+    "docker exec #{$project['project']} hostname" +
+    '; true'
 
-cmd_local_container_start = 'docker run ' +
+cmd_local_container_start = 'tau docker container check existing ' +
+    "#{$project['project']} || " +
+    'docker run ' +
     '--detach ' +
     "--name #{$project['project']} " +
     "--network #{ENV['HOSTNAME']} " +
     "--privileged " +
     '--rm ' +
-    "#{$project['repo_local']}/#{$project['project']}:prod"
+    "#{$project['repo_local']}/#{$project['project']}:prod" +
+    '; true'
 
-cmd_local_container_stop = 'docker stop ' +
-    "#{$project['project']}"
+cmd_local_container_stop = 'tau docker container check existing ' +
+    "#{$project['project']} && " +
+    'docker stop ' +
+    "#{$project['project']}" +
+    '; true'
 
 namespace :local do
   namespace :container do
