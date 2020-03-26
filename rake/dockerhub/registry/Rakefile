@@ -3,10 +3,13 @@ require 'rake'
 cmd_dockerhub_registry_login = 'docker login'
 
 cmd_dockerhub_registry_push = 'docker push ' +
-    "#{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:#{$project['version']}"
+    "#{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:#{$project['version']} && " +
+    'docker push ' +
+    "#{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:latest"
 
 cmd_dockerhub_registry_tag = 'docker tag ' +
     "#{$project['repo_local']}/#{$project['project']}:prod #{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:#{$project['version']} && " +
+    'docker tag ' +
     "#{$project['repo_local']}/#{$project['project']}:prod #{$project['username_dockerhub']}/#{$project['repo_dockerhub']}:latest"
 
 namespace :dockerhub do
