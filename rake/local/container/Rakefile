@@ -31,7 +31,7 @@ namespace :local do
     end
 
     desc 'Start local container'
-    task :start => [:'local:network:start'] do
+    task :start do
       $commands << cmd_local_container_start
     end
 
