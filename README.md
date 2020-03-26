@@ -30,7 +30,7 @@ You may think of bit as a git powered clipboard manager
 with versioning and central storage.
 For open source projects you may use [bit.dev](https://bit.dev)
 as your central bit storage.
-A software testing or private use you may use a *bitboard* server
+For software testing or private use you may use a *bitboard* server
 created with this project.
 
 Both bit and git are in their core free and open source tools.
