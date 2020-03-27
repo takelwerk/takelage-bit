@@ -17,7 +17,7 @@
   [
     {
       "type": "shell",
-      "script": "bin/install-debian.bash"
+      "script": "templates/base/debian_10_systemd/bin/install-debian.bash"
     }
   ],
   "post-processors": [
