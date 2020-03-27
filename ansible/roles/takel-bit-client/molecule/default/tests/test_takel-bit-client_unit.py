@@ -8,9 +8,9 @@ def test_takel_bit_client_install_packages_installed(host, testvars):
         testvars['takel_bit_client_deb_install_packages']
 
     for package in takel_gpg_install_packages:
-        rpm = host.package(package)
+        deb = host.package(package)
 
-        assert rpm.is_installed
+        assert deb.is_installed
 
 
 def test_takel_bit_client_install_bit_installed(host, testvars):
