@@ -37,7 +37,8 @@ Both bit and git are in their core free and open source tools.
 Around these tools both free and non-free infrastructure has emerged.
 git sparked projects like [GitHub](https://github.com) and 
 [GitLab](https://gitlab.com) while bit has been
-developed by Cocycles, the company behind .
+developed by Cocycles, the company behind 
+[bit.dev](https://bit.dev).
 
 bit.dev's intended audience is the javascript community and
 they also host the best resources for bit: 
