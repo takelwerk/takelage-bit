@@ -4,4 +4,5 @@
     path: "{{ takel_bit_server_repo_dir }}"
     owner: "{{ takel_bit_server_bit_user }}"
     group: "{{ takel_bit_server_bit_group }}"
+    mode: 0755
     state: directory
