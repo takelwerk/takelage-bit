@@ -1,7 +1,7 @@
 import pytest
-import testaid
+import takeltest
 
-testinfra_hosts = [testaid.hosts()[0]]
+testinfra_hosts = [takeltest.hosts()[0]]
 
 
 @pytest.mark.parametrize('env, value', [(0, 'DEBIAN_FRONTEND=noninteractive'),

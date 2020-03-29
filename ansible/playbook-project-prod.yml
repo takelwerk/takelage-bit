@@ -7,4 +7,7 @@
     - takel-ssh
     - takel-bit-client
     - takel-bit-server
+    - role: takel-gcsfuse
+      when: takel_gcsfuse_gcs_bucket_key is defined
+      # takel-gcsfuse needs to be called after takel-bit-server
     - takel-cleanup

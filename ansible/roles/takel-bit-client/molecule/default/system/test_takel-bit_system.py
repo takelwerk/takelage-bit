@@ -1,7 +1,7 @@
-import testaid
+import takeltest
 import re
 
-testinfra_hosts = testaid.hosts()
+testinfra_hosts = takeltest.hosts()
 
 
 def test_takel_bit_client_system_bit_version(host, testvars):

@@ -6,3 +6,4 @@
     group: "{{ takel_bit_server_bit_group }}"
     mode: 0755
     state: directory
+  when: takel_gcsfuse_gcs_bucket_key is not defined

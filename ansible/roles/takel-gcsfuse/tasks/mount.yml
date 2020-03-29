@@ -6,14 +6,24 @@
     group: "{{ item.group | default('root') }}"
     state: directory
     mode: "{{ item.mode | default('0755') }}"
-  loop: "{{ vikunja_gcsfuse_mounts }}"
-  when: vikunja_gcsfuse_mounts | length > 0
+  loop: "{{ takel_gcsfuse_mounts }}"
+  when: takel_gcsfuse_mounts | length > 0
 
 - name: (mount) mount buckets
   mount:
     path: "{{ item.path }}"
     src:  "{{ item.bucket }}"
     fstype: gcsfuse
-    opts: "rw,allow_other,uid={{ item.uid | default(1001) }},gid={{ item.gid | default(1001) }},key_file={{ vikunja_gcsfuse_gcs_path }}"
+    opts: "rw,allow_other,uid={{ item.uid | default(1001) }},gid={{ item.gid | default(1001) }},key_file={{ takel_gcsfuse_gcs_path }}"
     state: present
-  loop: "{{ vikunja_gcsfuse_mounts }}"
+  loop: "{{ takel_gcsfuse_mounts }}"
+
+- name: (mount) symlink mount points
+  file:
+    src: "{{ item.path }}"
+    dest: "{{ item.symlink }}"
+    state: link
+  loop: "{{ takel_gcsfuse_mounts }}"
+  when:
+    - takel_gcsfuse_mounts | length > 0
+    - item.symlink is defined

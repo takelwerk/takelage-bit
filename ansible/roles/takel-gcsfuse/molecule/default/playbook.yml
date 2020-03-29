@@ -2,5 +2,5 @@
 - name: default
   hosts: all
   roles:
-    - vikunja-base  # needs gpg
-    - vikunja-gcsfuse
+    - takel-base  # needs gpg
+    - takel-gcsfuse

@@ -8,7 +8,7 @@ lint:
       rules:
         line-length: disable
 platforms:
-  - name: molecule-vikunja-gcsfuse
+  - name: molecule-takel-gcsfuse
     image: packer_local/debian-buster
     command: /lib/systemd/systemd
     privileged: true
@@ -22,7 +22,7 @@ provisioner:
   inventory:
     group_vars:
       all:
-        vikunja_gcsfuse_mounts:
+        takel_gcsfuse_mounts:
           - path: /my_mount_1
             bucket: my_bucket_1
           - path: /my_mount_2

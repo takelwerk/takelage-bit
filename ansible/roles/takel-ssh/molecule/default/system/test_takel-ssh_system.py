@@ -1,6 +1,6 @@
-import testaid
+import takeltest
 
-testinfra_hosts = testaid.hosts()
+testinfra_hosts = takeltest.hosts()
 
 
 def test_takel_ssh_system_port_open(host, testvars):
