@@ -1,0 +1,21 @@
+---
+- name: (main) include install
+  import_tasks: install.yml
+  tags:
+    - vikunja
+    - vikunja_gcsfuse
+    - vikunja_gcsfuse_install
+
+- name: (main) include gcs
+  import_tasks: gcs.yml
+  tags:
+    - vikunja
+    - vikunja_gcsfuse
+    - vikunja_gcsfuse_gcs
+
+- name: (main) include mount
+  import_tasks: mount.yml
+  tags:
+    - vikunja
+    - vikunja_gcsfuse
+    - vikunja_gcsfuse_mount

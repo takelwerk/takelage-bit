@@ -1,0 +1,6 @@
+---
+- name: default
+  hosts: all
+  roles:
+    - vikunja-base  # needs gpg
+    - vikunja-gcsfuse

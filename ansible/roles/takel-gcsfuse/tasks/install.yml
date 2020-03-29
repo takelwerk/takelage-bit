@@ -1,0 +1,16 @@
+---
+- name: (install) add repository key
+  apt_key:
+    url: "{{ vikunja_gcsfuse_repo_key_url }}"
+
+- name: (install) add repository
+  apt_repository:
+    repo: "{{ vikunja_gcsfuse_repo }}"
+    filename: gcsfuse
+    validate_certs: no
+
+- name: (install) install packages
+  package:
+    name: "{{ vikunja_gcsfuse_deb_install_packages }}"
+    state: present
+    update_cache: true

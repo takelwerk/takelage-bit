@@ -1,0 +1,37 @@
+---
+- name: (gcs) create directory for gcs credentials
+  file:
+    path: "{{ vikunja_gcsfuse_gcs_dir }}"
+    owner: root
+    group: root
+    mode: 0700
+    state: directory
+
+- name: (gcs) look up decrypted gcs service account file
+  stat:
+    path: "{{ vikunja_gcsfuse_gcs_path }}"
+  register: gcs_json_file
+
+- name: (gcs) copy gpg encrypted gcs service account file
+  copy:
+    src: "{{ vikunja_gcsfuse_gcs_path_gpg }}/{{ vikunja_gcsfuse_gcs_file_gpg }}"
+    dest: "{{ vikunja_gcsfuse_gcs_dir }}/{{ vikunja_gcsfuse_gcs_file_gpg }}"
+    owner: root
+    group: root
+    mode: 0600
+  when: not gcs_json_file.stat.exists
+
+# encrypt: gpg --output gcs_service_account.json.gpg --symmetric gcs_service_account.json
+# decrypt: gpg --output gcs_service_account.json --decrypt gcs_service_account.json.gpg
+- name: (gcs) decrypt gpg encrypted gcs service account file
+  shell: |
+    set -o pipefail
+    echo {{ gcs_service_account_gpg_password }} | gpg --batch --yes --passphrase-fd 0 --output {{ vikunja_gcsfuse_gcs_path }} --decrypt {{ vikunja_gcsfuse_gcs_dir }}/{{ vikunja_gcsfuse_gcs_file_gpg }}   # noqa 204
+  args:
+    executable: /bin/bash
+  when: not gcs_json_file.stat.exists
+
+- name: (gcs) remove gpg encrypted gcs service account file
+  file:
+    path: "{{ vikunja_gcsfuse_gcs_dir }}/{{ vikunja_gcsfuse_gcs_file_gpg }}"
+    state: absent
