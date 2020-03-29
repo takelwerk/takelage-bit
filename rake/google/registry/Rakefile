@@ -4,7 +4,7 @@ cmd_google_registry_push = "docker push " +
     "#{$project['repo_google']}/#{$project['project_id']}/#{$project['project']}:#{$project['version']}"
 
 cmd_google_registry_tag = "docker tag " +
-    "#{$project['repo_local']}/#{$project['project']}:prod #{$project['repo_google']}/#{$project['project_id']}/#{$project['project']}:#{$project['version']}"
+    "#{$project['local_user']}/#{$project['project']}:prod #{$project['repo_google']}/#{$project['project_id']}/#{$project['project']}:#{$project['version']}"
 
 namespace :google do
   namespace :registry do

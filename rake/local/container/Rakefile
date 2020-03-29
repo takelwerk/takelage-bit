@@ -13,7 +13,7 @@ cmd_local_container_start = 'tau docker container check existing ' +
     "--network #{ENV['HOSTNAME']} " +
     "--privileged " +
     '--rm ' +
-    "#{$project['repo_local']}/#{$project['project']}:prod" +
+    "#{$project['local_user']}/#{$project['project']}:prod" +
     '; true'
 
 cmd_local_container_stop = 'tau docker container check existing ' +

@@ -3,14 +3,14 @@ require 'rake'
 cmd_dockerhub_prod_registry_login = 'docker login'
 
 cmd_dockerhub_prod_registry_push = 'docker push ' +
-    "#{$project['username_dockerhub']}/#{$project['repo_dockerhub_prod']}:#{$project['version']} && " +
+    "#{$project['dockerhub_prod_user']}/#{$project['dockerhub_prod_repo']}:#{$project['version']} && " +
     'docker push ' +
-    "#{$project['username_dockerhub']}/#{$project['repo_dockerhub_prod']}:latest"
+    "#{$project['dockerhub_prod_user']}/#{$project['dockerhub_prod_repo']}:latest"
 
 cmd_dockerhub_prod_registry_tag = 'docker tag ' +
-    "#{$project['repo_local']}/#{$project['project']}:prod #{$project['username_dockerhub']}/#{$project['repo_dockerhub_prod']}:#{$project['version']} && " +
+    "#{$project['local_user']}/#{$project['project']}:prod #{$project['dockerhub_prod_user']}/#{$project['dockerhub_prod_repo']}:#{$project['version']} && " +
     'docker tag ' +
-    "#{$project['repo_local']}/#{$project['project']}:prod #{$project['username_dockerhub']}/#{$project['repo_dockerhub_prod']}:latest"
+    "#{$project['local_user']}/#{$project['project']}:prod #{$project['dockerhub_prod_user']}/#{$project['dockerhub_prod_repo']}:latest"
 
 namespace :dockerhub do
   namespace :prod do
