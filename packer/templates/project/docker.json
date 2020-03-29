@@ -6,6 +6,7 @@
     "ansible_playbook": "{{ ansible_playbook }}",
     "base_repo": "{{ base_repo }}",
     "base_tag": "{{ base_tag }}",
+    "base_user": "{{ base_user }}",
     "image_repo": "{{ image_repo }}",
     "image_tag": "{{ image_tag }}",
     "local_user": "{{ local_user }}"
@@ -13,7 +14,7 @@
   "builders":[
     {
       "type": "docker",
-      "image": "{{ user `base_repo` }}/{{ user `base_repo` }}:{{ user `base_tag` }}",
+      "image": "{{ user `base_user` }}/{{ user `base_repo` }}:{{ user `base_tag` }}",
       "pull": false,
       "export_path": "images/{{ user `image_repo` }}-{{ user `image_tag` }}.tar",
       "run_command": [ "-d", "-i", "-t", "--privileged", "--name", "{{user `image_repo`}}", "{{.Image}}", "/lib/systemd/systemd" ]

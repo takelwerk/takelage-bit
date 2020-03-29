@@ -3,12 +3,13 @@
     "image_version": "{{ image_version }}",
     "image_repo": "{{ image_repo }}",
     "base_repo": "{{ base_repo }}",
-    "target_repo": "{{ target_repo }}"
+    "base_tag": "{{ base_tag }}",
+    "target_user": "{{ target_user }}"
   },
   "builders":[
     {
       "type": "docker",
-      "image": "{{ user `base_repo` }}",
+      "image": "{{ user `base_repo` }}:{{ user `base_tag` }}",
       "export_path": "images/{{ user `image_repo` }}-{{ user `image_version` }}.tar",
       "run_command": [ "-d", "-i", "-t", "--name", "{{user `image_repo`}}", "{{.Image}}", "/bin/bash" ]
     }
@@ -24,7 +25,7 @@
     [
       {
         "type": "docker-import",
-        "repository": "{{ user `target_repo` }}/{{ user `image_repo` }}",
+        "repository": "{{ user `target_user` }}/{{ user `image_repo` }}",
         "tag": "{{ user `image_version` }}",
         "keep_input_artifact": true,
         "changes": [
