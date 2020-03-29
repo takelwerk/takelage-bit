@@ -1,0 +1,32 @@
+require 'rake'
+
+cmd_dockerhub_base_registry_login = 'docker login'
+
+cmd_dockerhub_base_registry_push = 'docker push ' +
+    "#{$project['username_dockerhub']}/#{$project['repo_dockerhub_base']}:latest"
+
+cmd_dockerhub_base_registry_tag = 'docker tag ' +
+    "#{$project['repo_local']}/#{$project['base_image']}:latest #{$project['username_dockerhub']}/#{$project['repo_dockerhub_base']}:latest"
+
+namespace :dockerhub do
+  namespace :base do
+    namespace :registry do
+
+      desc 'Log in to hub.docker.com'
+      task :login do
+        $commands << cmd_dockerhub_base_registry_login
+      end
+
+      desc 'Push production image to hub.docker.com'
+      task :push do
+        $commands << cmd_dockerhub_base_registry_push
+      end
+
+      desc 'Tag production image for hub.docker.com'
+      task :tag do
+        $commands << cmd_dockerhub_base_registry_tag
+      end
+
+    end
+  end
+end

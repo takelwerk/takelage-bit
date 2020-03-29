@@ -1,7 +1,8 @@
 ---
 base_image: debian-buster
 project: takelage-bit
-repo_dockerhub: bitboard
+repo_dockerhub_base: takelbase
+repo_dockerhub_prod: bitboard
 repo_local: packer_local
 ssh_port: 222
 username_dockerhub: takelage
