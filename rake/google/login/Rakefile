@@ -1,6 +1,6 @@
 require 'rake'
 
-cmd_google_login_host = "gcloud beta compute ssh #{$project['project']} " +
+cmd_google_login_host = "gcloud beta compute ssh #{$project['google_repo']} " +
     "--zone=#{$project['zone']} " +
     "--project=#{$project['project_id']} "
 

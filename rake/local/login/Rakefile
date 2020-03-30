@@ -7,9 +7,9 @@ cmd_local_container_login_host = 'docker exec ' +
     'bash'
 
 cmd_local_container_login_ssh = 'ssh ' +
-    '-i ansible/files/id_rsa.myuser ' +
+    '-i ansible/roles/takel-users/files/id_rsa.myuser ' +
     '-l bit ' +
-    '-oStrictHostKeyChecking=no ' +
+    '-o StrictHostKeyChecking=no ' +
     '-p 222 ' +
     "#{$project['project']}"
 

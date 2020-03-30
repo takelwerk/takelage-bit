@@ -1,10 +1,10 @@
 ---
 project: takelage-bit
-base_repo: debian-buster
 dockerhub_base_user: takelage
 dockerhub_base_repo: takelbase
+dockerhub_base_tag: debian-buster
 dockerhub_prod_user: takelage
 dockerhub_prod_repo: bitboard
 local_user: packer_local
 ssh_port: 222
-version: 0.1.1
+version: 0.1.2

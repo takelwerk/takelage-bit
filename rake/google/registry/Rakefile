@@ -1,10 +1,10 @@
 require 'rake'
 
 cmd_google_registry_push = "docker push " +
-    "#{$project['repo_google']}/#{$project['project_id']}/#{$project['project']}:#{$project['version']}"
+    "#{$project['google_user']}/#{$project['project_id']}/#{$project['google_repo']}:#{$project['version']}"
 
 cmd_google_registry_tag = "docker tag " +
-    "#{$project['local_user']}/#{$project['project']}:prod #{$project['repo_google']}/#{$project['project_id']}/#{$project['project']}:#{$project['version']}"
+    "#{$project['local_user']}/#{$project['project']}:prod #{$project['google_user']}/#{$project['project_id']}/#{$project['google_repo']}:#{$project['version']}"
 
 namespace :google do
   namespace :registry do

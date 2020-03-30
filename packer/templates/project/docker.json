@@ -2,13 +2,13 @@
   "variables": {
     "ansible_connection": "docker",
     "ansible_environment": "{{ ansible_environment }}",
-    "ansible_host": "{{ user `image_repo` }}",
+    "ansible_host": "{{ user `target_repo` }}",
     "ansible_playbook": "{{ ansible_playbook }}",
     "base_repo": "{{ base_repo }}",
     "base_tag": "{{ base_tag }}",
     "base_user": "{{ base_user }}",
-    "image_repo": "{{ image_repo }}",
-    "image_tag": "{{ image_tag }}",
+    "target_repo": "{{ target_repo }}",
+    "target_tag": "{{ target_tag }}",
     "local_user": "{{ local_user }}"
   },
   "builders":[
@@ -16,8 +16,8 @@
       "type": "docker",
       "image": "{{ user `base_user` }}/{{ user `base_repo` }}:{{ user `base_tag` }}",
       "pull": false,
-      "export_path": "images/{{ user `image_repo` }}-{{ user `image_tag` }}.tar",
-      "run_command": [ "-d", "-i", "-t", "--privileged", "--name", "{{user `image_repo`}}", "{{.Image}}", "/lib/systemd/systemd" ]
+      "export_path": "images/{{ user `target_repo` }}-{{ user `target_tag` }}.tar",
+      "run_command": [ "-d", "-i", "-t", "--privileged", "--name", "{{user `target_repo`}}", "{{.Image}}", "/lib/systemd/systemd" ]
     }
   ],
   "provisioners":
@@ -34,7 +34,7 @@
       "extra_arguments": [
         "-vvv",
         "--extra-vars",
-        "ansible_host={{ user `image_repo` }} ansible_connection={{ user `ansible_connection` }}"
+        "ansible_host={{ user `target_repo` }} ansible_connection={{ user `ansible_connection` }}"
         ]
     }
   ],
@@ -42,8 +42,8 @@
     [
       {
         "type": "docker-import",
-        "repository": "{{ user `local_user` }}/{{ user `image_repo` }}",
-        "tag": "{{ user `image_tag` }}",
+        "repository": "{{ user `local_user` }}/{{ user `target_repo` }}",
+        "tag": "{{ user `target_tag` }}",
         "changes": [
           "CMD [\"/lib/systemd/systemd\"]",
           "ENV DEBIAN_FRONTEND=noninteractive",
