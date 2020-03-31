@@ -65,7 +65,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-base@0.0.2": {
+    "takelage.ansible/ansible/roles/takel-base@0.0.3": {
         "files": [
             {
                 "relativePath": "ansible/roles/takel-base/README.bit",
@@ -262,7 +262,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.packer/packer/templates/base@0.0.2": {
+    "takelage.packer/packer/templates/base@0.0.3": {
         "files": [
             {
                 "relativePath": "packer/templates/base/README.bit",
