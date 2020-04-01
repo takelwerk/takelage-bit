@@ -2,8 +2,8 @@
 driver:
   name: docker
 platforms:
-  - name: "molecule-takelage-bit-packer"
-    image: "packer_local/takelage-bit:prod"
+  - name: molecule-takelage-bit-packer
+    image: packer_local/takelage-bit:prod
     privileged: false
     pre_build_image: true
 provisioner:
