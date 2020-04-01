@@ -4,24 +4,24 @@
     "bitboard.takelage-bit/ansible/group_vars/private@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/group_vars/private/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "pass.yml",
                 "relativePath": "ansible/group_vars/private/pass.yml",
-                "test": false,
-                "name": "pass.yml"
+                "test": false
             },
             {
+                "name": "takel-gcsfuse.yml",
                 "relativePath": "ansible/group_vars/private/takel-gcsfuse.yml",
-                "test": false,
-                "name": "takel-gcsfuse.yml"
+                "test": false
             },
             {
+                "name": "takel-users.yml",
                 "relativePath": "ansible/group_vars/private/takel-users.yml",
-                "test": false,
-                "name": "takel-users.yml"
+                "test": false
             }
         ],
         "mainFile": "ansible/group_vars/private/README.bit",
@@ -32,14 +32,14 @@
     "bitboard.takelage-bit/private@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "private/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "project.yml",
                 "relativePath": "private/project.yml",
-                "test": false,
-                "name": "project.yml"
+                "test": false
             }
         ],
         "mainFile": "private/README.bit",
@@ -50,14 +50,14 @@
     "bitboard.users/ansible/group_vars/users@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/group_vars/users/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "takel-users.yml",
                 "relativePath": "ansible/group_vars/users/takel-users.yml",
-                "test": false,
-                "name": "takel-users.yml"
+                "test": false
             }
         ],
         "mainFile": "ansible/group_vars/users/README.bit",
@@ -65,77 +65,77 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-base@0.0.3": {
+    "takelage.ansible/ansible/roles/takel-base@0.0.4": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/roles/takel-base/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-base/defaults/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-base/handlers/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "molecule.yml",
                 "relativePath": "ansible/roles/takel-base/molecule/default/molecule.yml",
-                "test": false,
-                "name": "molecule.yml"
+                "test": false
             },
             {
+                "name": "playbook.yml",
                 "relativePath": "ansible/roles/takel-base/molecule/default/playbook.yml",
-                "test": false,
-                "name": "playbook.yml"
+                "test": false
             },
             {
+                "name": "test_takel-base_configure.py",
                 "relativePath": "ansible/roles/takel-base/molecule/default/tests/test_takel-base_configure.py",
-                "test": false,
-                "name": "test_takel-base_configure.py"
+                "test": false
             },
             {
+                "name": "test_takel-base_install.py",
                 "relativePath": "ansible/roles/takel-base/molecule/default/tests/test_takel-base_install.py",
-                "test": false,
-                "name": "test_takel-base_install.py"
+                "test": false
             },
             {
+                "name": "configure.yml",
                 "relativePath": "ansible/roles/takel-base/tasks/configure.yml",
-                "test": false,
-                "name": "configure.yml"
+                "test": false
             },
             {
+                "name": "install.yml",
                 "relativePath": "ansible/roles/takel-base/tasks/install.yml",
-                "test": false,
-                "name": "install.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-base/tasks/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "upgrade.yml",
                 "relativePath": "ansible/roles/takel-base/tasks/upgrade.yml",
-                "test": false,
-                "name": "upgrade.yml"
+                "test": false
             },
             {
+                "name": "20auto-upgrades.j2",
                 "relativePath": "ansible/roles/takel-base/templates/20auto-upgrades.j2",
-                "test": false,
-                "name": "20auto-upgrades.j2"
+                "test": false
             },
             {
+                "name": "50unattended-upgrades.j2",
                 "relativePath": "ansible/roles/takel-base/templates/50unattended-upgrades.j2",
-                "test": false,
-                "name": "50unattended-upgrades.j2"
+                "test": false
             },
             {
+                "name": "locale.j2",
                 "relativePath": "ansible/roles/takel-base/templates/locale.j2",
-                "test": false,
-                "name": "locale.j2"
+                "test": false
             }
         ],
         "mainFile": "ansible/roles/takel-base/README.bit",
@@ -146,44 +146,44 @@
     "takelage.ansible/ansible/roles/takel-bit-client@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/roles/takel-bit-client/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-bit-client/defaults/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "molecule.yml",
                 "relativePath": "ansible/roles/takel-bit-client/molecule/default/molecule.yml",
-                "test": false,
-                "name": "molecule.yml"
+                "test": false
             },
             {
+                "name": "playbook.yml",
                 "relativePath": "ansible/roles/takel-bit-client/molecule/default/playbook.yml",
-                "test": false,
-                "name": "playbook.yml"
+                "test": false
             },
             {
+                "name": "test_takel-bit_system.py",
                 "relativePath": "ansible/roles/takel-bit-client/molecule/default/system/test_takel-bit_system.py",
-                "test": false,
-                "name": "test_takel-bit_system.py"
+                "test": false
             },
             {
+                "name": "test_takel-bit-client_unit.py",
                 "relativePath": "ansible/roles/takel-bit-client/molecule/default/tests/test_takel-bit-client_unit.py",
-                "test": false,
-                "name": "test_takel-bit-client_unit.py"
+                "test": false
             },
             {
+                "name": "install.yml",
                 "relativePath": "ansible/roles/takel-bit-client/tasks/install.yml",
-                "test": false,
-                "name": "install.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-bit-client/tasks/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             }
         ],
         "mainFile": "ansible/roles/takel-bit-client/README.bit",
@@ -194,64 +194,64 @@
     "takelage.ansible/ansible/roles/takel-bit-server@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/roles/takel-bit-server/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-bit-server/defaults/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "id_rsa.myuser",
                 "relativePath": "ansible/roles/takel-bit-server/files/id_rsa.myuser",
-                "test": false,
-                "name": "id_rsa.myuser"
+                "test": false
             },
             {
+                "name": "id_rsa.myuser.pub",
                 "relativePath": "ansible/roles/takel-bit-server/files/id_rsa.myuser.pub",
-                "test": false,
-                "name": "id_rsa.myuser.pub"
+                "test": false
             },
             {
+                "name": "molecule.yml",
                 "relativePath": "ansible/roles/takel-bit-server/molecule/default/molecule.yml",
-                "test": false,
-                "name": "molecule.yml"
+                "test": false
             },
             {
+                "name": "playbook.yml",
                 "relativePath": "ansible/roles/takel-bit-server/molecule/default/playbook.yml",
-                "test": false,
-                "name": "playbook.yml"
+                "test": false
             },
             {
+                "name": "test_takel-bit-server_configure.py",
                 "relativePath": "ansible/roles/takel-bit-server/molecule/default/tests/test_takel-bit-server_configure.py",
-                "test": false,
-                "name": "test_takel-bit-server_configure.py"
+                "test": false
             },
             {
+                "name": "test_takel-bit-server_user.py",
                 "relativePath": "ansible/roles/takel-bit-server/molecule/default/tests/test_takel-bit-server_user.py",
-                "test": false,
-                "name": "test_takel-bit-server_user.py"
+                "test": false
             },
             {
+                "name": "configure.yml",
                 "relativePath": "ansible/roles/takel-bit-server/tasks/configure.yml",
-                "test": false,
-                "name": "configure.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-bit-server/tasks/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "user.yml",
                 "relativePath": "ansible/roles/takel-bit-server/tasks/user.yml",
-                "test": false,
-                "name": "user.yml"
+                "test": false
             },
             {
+                "name": "config.json.j2",
                 "relativePath": "ansible/roles/takel-bit-server/templates/config.json.j2",
-                "test": false,
-                "name": "config.json.j2"
+                "test": false
             }
         ],
         "mainFile": "ansible/roles/takel-bit-server/README.bit",
@@ -262,19 +262,19 @@
     "takelage.ansible/ansible/roles/takel-cleanup@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/roles/takel-cleanup/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "cleanup.yml",
                 "relativePath": "ansible/roles/takel-cleanup/tasks/cleanup.yml",
-                "test": false,
-                "name": "cleanup.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-cleanup/tasks/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             }
         ],
         "mainFile": "ansible/roles/takel-cleanup/README.bit",
@@ -285,49 +285,49 @@
     "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/roles/takel-gcsfuse/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-gcsfuse/defaults/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "molecule.yml",
                 "relativePath": "ansible/roles/takel-gcsfuse/molecule/default/molecule.yml",
-                "test": false,
-                "name": "molecule.yml"
+                "test": false
             },
             {
+                "name": "playbook.yml",
                 "relativePath": "ansible/roles/takel-gcsfuse/molecule/default/playbook.yml",
-                "test": false,
-                "name": "playbook.yml"
+                "test": false
             },
             {
+                "name": "test_takel-gcsfuse_install.py",
                 "relativePath": "ansible/roles/takel-gcsfuse/molecule/default/tests/test_takel-gcsfuse_install.py",
-                "test": false,
-                "name": "test_takel-gcsfuse_install.py"
+                "test": false
             },
             {
+                "name": "gcs.yml",
                 "relativePath": "ansible/roles/takel-gcsfuse/tasks/gcs.yml",
-                "test": false,
-                "name": "gcs.yml"
+                "test": false
             },
             {
+                "name": "install.yml",
                 "relativePath": "ansible/roles/takel-gcsfuse/tasks/install.yml",
-                "test": false,
-                "name": "install.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-gcsfuse/tasks/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "mount.yml",
                 "relativePath": "ansible/roles/takel-gcsfuse/tasks/mount.yml",
-                "test": false,
-                "name": "mount.yml"
+                "test": false
             }
         ],
         "mainFile": "ansible/roles/takel-gcsfuse/README.bit",
@@ -338,59 +338,59 @@
     "takelage.ansible/ansible/roles/takel-ssh@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/roles/takel-ssh/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-ssh/defaults/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-ssh/handlers/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "molecule.yml",
                 "relativePath": "ansible/roles/takel-ssh/molecule/default/molecule.yml",
-                "test": false,
-                "name": "molecule.yml"
+                "test": false
             },
             {
+                "name": "playbook.yml",
                 "relativePath": "ansible/roles/takel-ssh/molecule/default/playbook.yml",
-                "test": false,
-                "name": "playbook.yml"
+                "test": false
             },
             {
+                "name": "test_takel-ssh_system.py",
                 "relativePath": "ansible/roles/takel-ssh/molecule/default/system/test_takel-ssh_system.py",
-                "test": false,
-                "name": "test_takel-ssh_system.py"
+                "test": false
             },
             {
+                "name": "test_takel-ssh_install.py",
                 "relativePath": "ansible/roles/takel-ssh/molecule/default/tests/test_takel-ssh_install.py",
-                "test": false,
-                "name": "test_takel-ssh_install.py"
+                "test": false
             },
             {
+                "name": "configure.yml",
                 "relativePath": "ansible/roles/takel-ssh/tasks/configure.yml",
-                "test": false,
-                "name": "configure.yml"
+                "test": false
             },
             {
+                "name": "install.yml",
                 "relativePath": "ansible/roles/takel-ssh/tasks/install.yml",
-                "test": false,
-                "name": "install.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-ssh/tasks/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "sshd_config.j2",
                 "relativePath": "ansible/roles/takel-ssh/templates/sshd_config.j2",
-                "test": false,
-                "name": "sshd_config.j2"
+                "test": false
             }
         ],
         "mainFile": "ansible/roles/takel-ssh/README.bit",
@@ -401,44 +401,44 @@
     "takelage.ansible/ansible/roles/takel-user@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/roles/takel-user/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-user/defaults/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "configure.yml",
                 "relativePath": "ansible/roles/takel-user/tasks/configure.yml",
-                "test": false,
-                "name": "configure.yml"
+                "test": false
             },
             {
+                "name": "create.yml",
                 "relativePath": "ansible/roles/takel-user/tasks/create.yml",
-                "test": false,
-                "name": "create.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-user/tasks/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "bash_aliases.j2",
                 "relativePath": "ansible/roles/takel-user/templates/bash_aliases.j2",
-                "test": false,
-                "name": "bash_aliases.j2"
+                "test": false
             },
             {
+                "name": "bashrc.j2",
                 "relativePath": "ansible/roles/takel-user/templates/bashrc.j2",
-                "test": false,
-                "name": "bashrc.j2"
+                "test": false
             },
             {
+                "name": "vimrc.j2",
                 "relativePath": "ansible/roles/takel-user/templates/vimrc.j2",
-                "test": false,
-                "name": "vimrc.j2"
+                "test": false
             }
         ],
         "mainFile": "ansible/roles/takel-user/README.bit",
@@ -449,69 +449,69 @@
     "takelage.ansible/ansible/roles/takel-users@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "ansible/roles/takel-users/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-users/defaults/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "id_rsa.myuser",
                 "relativePath": "ansible/roles/takel-users/files/id_rsa.myuser",
-                "test": false,
-                "name": "id_rsa.myuser"
+                "test": false
             },
             {
+                "name": "id_rsa.myuser.pub",
                 "relativePath": "ansible/roles/takel-users/files/id_rsa.myuser.pub",
-                "test": false,
-                "name": "id_rsa.myuser.pub"
+                "test": false
             },
             {
+                "name": "molecule.yml",
                 "relativePath": "ansible/roles/takel-users/molecule/default/molecule.yml",
-                "test": false,
-                "name": "molecule.yml"
+                "test": false
             },
             {
+                "name": "playbook.yml",
                 "relativePath": "ansible/roles/takel-users/molecule/default/playbook.yml",
-                "test": false,
-                "name": "playbook.yml"
+                "test": false
             },
             {
+                "name": "test_takel-users_install.py",
                 "relativePath": "ansible/roles/takel-users/molecule/default/tests/test_takel-users_install.py",
-                "test": false,
-                "name": "test_takel-users_install.py"
+                "test": false
             },
             {
+                "name": "create.yml",
                 "relativePath": "ansible/roles/takel-users/tasks/create.yml",
-                "test": false,
-                "name": "create.yml"
+                "test": false
             },
             {
+                "name": "install.yml",
                 "relativePath": "ansible/roles/takel-users/tasks/install.yml",
-                "test": false,
-                "name": "install.yml"
+                "test": false
             },
             {
+                "name": "main.yml",
                 "relativePath": "ansible/roles/takel-users/tasks/main.yml",
-                "test": false,
-                "name": "main.yml"
+                "test": false
             },
             {
+                "name": "passwords.yml",
                 "relativePath": "ansible/roles/takel-users/tasks/passwords.yml",
-                "test": false,
-                "name": "passwords.yml"
+                "test": false
             },
             {
+                "name": "root.yml",
                 "relativePath": "ansible/roles/takel-users/tasks/root.yml",
-                "test": false,
-                "name": "root.yml"
+                "test": false
             },
             {
+                "name": "ssh.yml",
                 "relativePath": "ansible/roles/takel-users/tasks/ssh.yml",
-                "test": false,
-                "name": "ssh.yml"
+                "test": false
             }
         ],
         "mainFile": "ansible/roles/takel-users/README.bit",
@@ -522,19 +522,19 @@
     "takelage.packer/packer/templates/base@0.0.3": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "packer/templates/base/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "install-debian.bash",
                 "relativePath": "packer/templates/base/debian_10_systemd/bin/install-debian.bash",
-                "test": false,
-                "name": "install-debian.bash"
+                "test": false
             },
             {
+                "name": "docker.json",
                 "relativePath": "packer/templates/base/debian_10_systemd/docker.json",
-                "test": false,
-                "name": "docker.json"
+                "test": false
             }
         ],
         "mainFile": "packer/templates/base/README.bit",
@@ -545,14 +545,14 @@
     "takelage.packer/packer/templates/project@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "packer/templates/project/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "docker.json",
                 "relativePath": "packer/templates/project/docker.json",
-                "test": false,
-                "name": "docker.json"
+                "test": false
             }
         ],
         "mainFile": "packer/templates/project/README.bit",
@@ -563,19 +563,19 @@
     "takelage.rake/rake/dockerhub/base@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "rake/dockerhub/base/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/dockerhub/base/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/dockerhub/base/registry/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             }
         ],
         "mainFile": "rake/dockerhub/base/README.bit",
@@ -586,19 +586,19 @@
     "takelage.rake/rake/dockerhub/prod@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "rake/dockerhub/prod/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/dockerhub/prod/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/dockerhub/prod/registry/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             }
         ],
         "mainFile": "rake/dockerhub/prod/README.bit",
@@ -609,14 +609,14 @@
     "takelage.rake/rake/git@0.0.1": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "rake/git/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/git/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             }
         ],
         "mainFile": "rake/git/README.bit",
@@ -627,14 +627,14 @@
     "takelage.rake/rake/image/base@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "rake/image/base/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/image/base/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             }
         ],
         "mainFile": "rake/image/base/README.bit",
@@ -645,14 +645,14 @@
     "takelage.rake/rake/image/prod@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "rake/image/prod/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/image/prod/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             }
         ],
         "mainFile": "rake/image/prod/README.bit",
