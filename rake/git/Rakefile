@@ -1,6 +1,12 @@
 require 'rake'
 
-cmd_git_tag = "git tag -s -m '#{$project['version']}' #{$project['version']} && git push --tags"
+cmd_git_tag = 'git rev-parse ' +
+    "#{$project['version']} " +
+    '>/dev/null 2>&1 || ' +
+    'git tag -s -m ' +
+    "#{$project['version']}' " +
+    "#{$project['version']} && " +
+    'git push --tags'
 
 namespace :git do
 

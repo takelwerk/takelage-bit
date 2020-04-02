@@ -6,6 +6,7 @@ namespace :google do
                    local:container:stop
                    image:prod:build
                    image:prod:test
+                   git:tag
                    google:registry:tag
                    google:registry:push
                    google:container:update)
