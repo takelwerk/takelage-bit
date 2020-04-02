@@ -3,6 +3,7 @@
   hosts: all
   roles:
     - takel-base
+    - takel-anarchism
     - takel-users
     - takel-ssh
     - takel-bit-client
