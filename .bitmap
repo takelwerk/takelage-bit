@@ -9,9 +9,9 @@
                 "test": false
             },
             {
+                "name": "bitignore",
                 "relativePath": "ansible/group_vars/private/bitignore",
-                "test": false,
-                "name": "bitignore"
+                "test": false
             },
             {
                 "name": "pass.yml",
@@ -19,9 +19,9 @@
                 "test": false
             },
             {
+                "name": "takel-bit-server.yml",
                 "relativePath": "ansible/group_vars/private/takel-bit-server.yml",
-                "test": false,
-                "name": "takel-bit-server.yml"
+                "test": false
             },
             {
                 "name": "takel-gcsfuse.yml",
@@ -39,7 +39,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "bitboard.takelage-bit/private@0.0.2": {
+    "bitboard.takelage-bit/private@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -47,9 +47,9 @@
                 "test": false
             },
             {
+                "name": "bitignore",
                 "relativePath": "private/bitignore",
-                "test": false,
-                "name": "bitignore"
+                "test": false
             },
             {
                 "name": "project.yml",
@@ -70,9 +70,9 @@
                 "test": false
             },
             {
+                "name": "bitignore",
                 "relativePath": "ansible/group_vars/users/bitignore",
-                "test": false,
-                "name": "bitignore"
+                "test": false
             },
             {
                 "name": "takel-users.yml",
@@ -702,17 +702,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/container@0.0.1": {
+    "takelage.rake/rake/google/prod/container@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "rake/google/prod/container/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/google/prod/container/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             }
         ],
         "mainFile": "rake/google/prod/container/README.bit",
@@ -720,17 +720,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/firewall@0.0.1": {
+    "takelage.rake/rake/google/prod/firewall@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "rake/google/prod/firewall/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/google/prod/firewall/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             }
         ],
         "mainFile": "rake/google/prod/firewall/README.bit",
@@ -738,17 +738,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/login@0.0.1": {
+    "takelage.rake/rake/google/prod/login@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "rake/google/prod/login/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/google/prod/login/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             }
         ],
         "mainFile": "rake/google/prod/login/README.bit",
@@ -756,17 +756,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/registry@0.0.1": {
+    "takelage.rake/rake/google/prod/registry@0.0.2": {
         "files": [
             {
+                "name": "README.bit",
                 "relativePath": "rake/google/prod/registry/README.bit",
-                "test": false,
-                "name": "README.bit"
+                "test": false
             },
             {
+                "name": "Rakefile",
                 "relativePath": "rake/google/prod/registry/Rakefile",
-                "test": false,
-                "name": "Rakefile"
+                "test": false
             }
         ],
         "mainFile": "rake/google/prod/registry/README.bit",

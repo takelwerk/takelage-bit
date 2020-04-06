@@ -1,6 +1,9 @@
 require 'rake'
 
-rule_allow_ssh_port = "allow-ssh-#{$project['ssh_port']}-#{$project['google_repo']}"
+environment = 'prod'
+target = "#{$project['google_repo']}-#{environment}"
+
+rule_allow_ssh_port = "allow-ssh-#{$project['ssh_port']}-#{target}"
 
 cmd_google_firewall_delete = 'gcloud compute firewall-rules delete ' +
     "#{rule_allow_ssh_port} " +
@@ -27,7 +30,7 @@ cmd_google_firewall_create = 'gcloud compute firewall-rules create ' +
     "#{rule_allow_ssh_port} " +
     '--action=allow ' +
     "--rules tcp:#{$project['ssh_port']} " +
-    "--target-tags=#{$project['google_repo']} " +
+    "--target-tags=#{target} " +
     "--project=#{$project['project_id']}"
 
 namespace :google do

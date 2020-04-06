@@ -1,23 +1,28 @@
 require 'rake'
 
-image = "#{$project['google_user']}/#{$project['project_id']}/#{$project['google_repo']}:#{$project['version']}"
+environment = 'prod'
+ip = "#{$project['ip_prod']}"
+vm_name = "#{$project['google_repo']}-#{environment}"
+machine_type = "#{$project['machine_type_prod']}"
+
+
+image = "#{$project['google_user']}/#{$project['project_id']}/#{vm_name}:#{$project['version']}"
 
 # https://cloud.google.com/sdk/gcloud/reference/compute/instances/create-with-container
-cmd_google_container_deploy = "gcloud compute instances create-with-container #{$project['google_repo']} " +
-    "--address=#{$project['ip']} " +
+cmd_google_container_deploy = "gcloud compute instances create-with-container #{vm_name} " +
+    "--address=#{ip} " +
     "--container-image=#{image} " +
     "--container-privileged " +
-    "--machine-type=#{$project['machine_type']} " +
+    "--machine-type=#{machine_type} " +
     "--project=#{$project['project_id']} " +
-    "--public-ptr " +
     "--scopes=storage-full " +
-    "--tags=#{$project['google_repo']} " +
+    "--tags=#{$project['google_repo']}-#{environment} " +
     "--zone=#{$project['zone']} "
 
 cmd_google_container_list = "gcloud compute instances list " +
     "--project=#{$project['project_id']} "
 
-cmd_google_container_update = "gcloud compute instances update-container #{$project['google_repo']} " +
+cmd_google_container_update = "gcloud compute instances update-container #{vm_name} " +
     "--container-image=#{image} " +
     "--container-privileged " +
     "--zone=#{$project['zone']} " +

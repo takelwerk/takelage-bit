@@ -1,12 +1,17 @@
 require 'rake'
 
-cmd_google_login_host = "gcloud beta compute ssh #{$project['google_repo']} " +
+environment = 'prod'
+vm_name = "#{$project['google_repo']}-#{environment}"
+url = "#{$project['url_prod']}"
+
+
+cmd_google_login_host = "gcloud beta compute ssh #{vm_name} " +
     "--zone=#{$project['zone']} " +
     "--project=#{$project['project_id']} "
 
 cmd_google_login_container = 'ssh ' +
     "-p #{$project['ssh_port']} " +
-    "#{$project['url']}"
+    "#{url}"
 
 namespace :google do
   namespace :prod do
