@@ -697,6 +697,78 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "takelage.rake/rake/google/prod/container@0.0.1": {
+        "files": [
+            {
+                "relativePath": "rake/google/prod/container/README.bit",
+                "test": false,
+                "name": "README.bit"
+            },
+            {
+                "relativePath": "rake/google/prod/container/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            }
+        ],
+        "mainFile": "rake/google/prod/container/README.bit",
+        "trackDir": "rake/google/prod/container",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "takelage.rake/rake/google/prod/firewall@0.0.1": {
+        "files": [
+            {
+                "relativePath": "rake/google/prod/firewall/README.bit",
+                "test": false,
+                "name": "README.bit"
+            },
+            {
+                "relativePath": "rake/google/prod/firewall/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            }
+        ],
+        "mainFile": "rake/google/prod/firewall/README.bit",
+        "trackDir": "rake/google/prod/firewall",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "takelage.rake/rake/google/prod/login@0.0.1": {
+        "files": [
+            {
+                "relativePath": "rake/google/prod/login/README.bit",
+                "test": false,
+                "name": "README.bit"
+            },
+            {
+                "relativePath": "rake/google/prod/login/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            }
+        ],
+        "mainFile": "rake/google/prod/login/README.bit",
+        "trackDir": "rake/google/prod/login",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "takelage.rake/rake/google/prod/registry@0.0.1": {
+        "files": [
+            {
+                "relativePath": "rake/google/prod/registry/README.bit",
+                "test": false,
+                "name": "README.bit"
+            },
+            {
+                "relativePath": "rake/google/prod/registry/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            }
+        ],
+        "mainFile": "rake/google/prod/registry/README.bit",
+        "trackDir": "rake/google/prod/registry",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "takelage.rake/rake/image/base@0.0.2": {
         "files": [
             {

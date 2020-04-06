@@ -3,7 +3,7 @@ require 'rake'
 cmd_local_container_login_host = 'docker exec ' +
     '--interactive ' +
     '--tty ' +
-    "#{$project['project']} " +
+    "#{$project['project']}_local " +
     'bash'
 
 cmd_local_container_login_ssh = 'ssh ' +

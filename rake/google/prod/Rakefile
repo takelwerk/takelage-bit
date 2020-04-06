@@ -1,10 +1,9 @@
 require 'rake'
 
 namespace :google do
-  desc 'Create and deploy image to dockerhub'
+  desc 'Create and deploy image to google'
   task :prod => %w(git:warn
                    test
-                   local:container:stop
                    image:prod:build
                    image:prod:test
                    git:tag
