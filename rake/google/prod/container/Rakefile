@@ -3,7 +3,7 @@ require 'rake'
 environment = 'prod'
 ip = "#{$project['ip_prod']}"
 vm_name = "#{$project['google_repo']}-#{environment}"
-machine_type = #{$project['machine_type_prod']}"
+machine_type = "#{$project['machine_type_prod']}"
 
 
 image = "#{$project['google_user']}/#{$project['project_id']}/#{$project['google_repo']}:#{$project['version']}"
@@ -15,9 +15,8 @@ cmd_google_container_deploy = "gcloud compute instances create-with-container #{
     "--container-privileged " +
     "--machine-type=#{machine_type} " +
     "--project=#{$project['project_id']} " +
-    "--public-ptr " +
     "--scopes=storage-full " +
-    "--tags=#{$project['google_repo']}_#{environment} " +
+    "--tags=#{$project['google_repo']}-#{environment} " +
     "--zone=#{$project['zone']} "
 
 cmd_google_container_list = "gcloud compute instances list " +
