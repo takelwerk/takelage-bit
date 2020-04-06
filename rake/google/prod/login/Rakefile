@@ -9,17 +9,19 @@ cmd_google_login_container = 'ssh ' +
     "#{$project['url']}"
 
 namespace :google do
-  namespace :login do
-    
-    desc 'Log in to host in GCE'
-    task :host do
-      $commands << cmd_google_login_host
-    end
+  namespace :prod do
+    namespace :login do
 
-    desc 'Log in to guest in GCE'
-    task :container do
-      $commands << cmd_google_login_container
+      desc 'Log in to host in GCE'
+      task :host do
+        $commands << cmd_google_login_host
+      end
+
+      desc 'Log in to guest in GCE'
+      task :container do
+        $commands << cmd_google_login_container
+      end
+
     end
-    
   end
 end

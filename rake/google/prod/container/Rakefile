@@ -24,22 +24,24 @@ cmd_google_container_update = "gcloud compute instances update-container #{$proj
     "--project=#{$project['project_id']} "
 
 namespace :google do
-  namespace :container do
-    
-    desc 'Deploy and start container in GCE'
-    task :create do
-      $commands << cmd_google_container_deploy
-    end
+  namespace :prod do
+    namespace :container do
 
-    desc 'List compute instances in GCE'
-    task :list do
-      $commands << cmd_google_container_list
-    end
+      desc 'Deploy and start container in GCE'
+      task :create do
+        $commands << cmd_google_container_deploy
+      end
 
-    desc 'Update and restart container in GCE'
-    task :update do
-      $commands << cmd_google_container_update
+      desc 'List compute instances in GCE'
+      task :list do
+        $commands << cmd_google_container_list
+      end
+
+      desc 'Update and restart container in GCE'
+      task :update do
+        $commands << cmd_google_container_update
+      end
+
     end
-    
   end
 end

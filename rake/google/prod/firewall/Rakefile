@@ -31,37 +31,39 @@ cmd_google_firewall_create = 'gcloud compute firewall-rules create ' +
     "--project=#{$project['project_id']}"
 
 namespace :google do
-  namespace :firewall do
-    
-    desc 'Create firewall rule'
-    task :create do
-      $commands << cmd_google_firewall_create
-    end
+  namespace :prod do
+    namespace :firewall do
 
-    desc 'Delete firewall rule'
-    task :delete do
-      $commands << cmd_google_firewall_delete
-    end
+      desc 'Create firewall rule'
+      task :create do
+        $commands << cmd_google_firewall_create
+      end
 
-    desc 'Describe firewall rule'
-    task :describe do
-      $commands << cmd_google_firewall_describe
-    end
+      desc 'Delete firewall rule'
+      task :delete do
+        $commands << cmd_google_firewall_delete
+      end
 
-    desc 'Disable firewall rule'
-    task :disable do
-      $commands << cmd_google_firewall_disable
-    end
+      desc 'Describe firewall rule'
+      task :describe do
+        $commands << cmd_google_firewall_describe
+      end
 
-    desc 'Enable firewall rule'
-    task :enable do
-      $commands << cmd_google_firewall_enable
-    end
+      desc 'Disable firewall rule'
+      task :disable do
+        $commands << cmd_google_firewall_disable
+      end
 
-    desc 'List firewall rules'
-    task :list do
-      $commands << cmd_google_firewall_list
+      desc 'Enable firewall rule'
+      task :enable do
+        $commands << cmd_google_firewall_enable
+      end
+
+      desc 'List firewall rules'
+      task :list do
+        $commands << cmd_google_firewall_list
+      end
+
     end
-    
   end
 end
