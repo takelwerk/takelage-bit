@@ -7,4 +7,4 @@ dockerhub_prod_user: takelage
 dockerhub_prod_repo: bitboard
 local_user: packer_local
 ssh_port: 222
-version: 0.1.3
+version: 0.1.4
