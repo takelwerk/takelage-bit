@@ -1,12 +1,14 @@
 require 'rake'
 
 environment = 'prod'
+vm_name = "#{$project['google_repo']}-#{environment}"
+
 
 cmd_google_registry_push = "docker push " +
-    "#{$project['google_user']}/#{$project['project_id']}/#{$project['google_repo']}_#{environment}:#{$project['version']}"
+    "#{$project['google_user']}/#{$project['project_id']}/#{vm_name}:#{$project['version']}"
 
 cmd_google_registry_tag = "docker tag " +
-    "#{$project['local_user']}/#{$project['project']}:#{environment} #{$project['google_user']}/#{$project['project_id']}/#{$project['google_repo']}_#{environment}:#{$project['version']}"
+    "#{$project['local_user']}/#{$project['project']}:#{environment} #{$project['google_user']}/#{$project['project_id']}/#{vm_name}:#{$project['version']}"
 
 namespace :google do
   namespace :prod do

@@ -6,7 +6,7 @@ vm_name = "#{$project['google_repo']}-#{environment}"
 machine_type = "#{$project['machine_type_prod']}"
 
 
-image = "#{$project['google_user']}/#{$project['project_id']}/#{$project['google_repo']}:#{$project['version']}"
+image = "#{$project['google_user']}/#{$project['project_id']}/#{vm_name}:#{$project['version']}"
 
 # https://cloud.google.com/sdk/gcloud/reference/compute/instances/create-with-container
 cmd_google_container_deploy = "gcloud compute instances create-with-container #{vm_name} " +
@@ -22,10 +22,10 @@ cmd_google_container_deploy = "gcloud compute instances create-with-container #{
 cmd_google_container_list = "gcloud compute instances list " +
     "--project=#{$project['project_id']} "
 
-cmd_google_container_update = "gcloud compute instances update-container #{$project['google_repo']} " +
+cmd_google_container_update = "gcloud compute instances update-container #{vm_name} " +
     "--container-image=#{image} " +
     "--container-privileged " +
-    "--zone=v " +
+    "--zone=#{$project['zone']} " +
     "--project=#{$project['project_id']} "
 
 namespace :google do
