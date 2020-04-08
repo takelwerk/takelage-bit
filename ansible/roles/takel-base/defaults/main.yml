@@ -12,3 +12,5 @@ takel_base_deb_install_packages:
   - tree
   - unattended-upgrades
   - vim
+
+takel_base_autoupgrade: true
