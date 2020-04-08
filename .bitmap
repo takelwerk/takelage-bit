@@ -39,7 +39,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "bitboard.takelage-bit/private@0.0.3": {
+    "bitboard.takelage-bit/private@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
@@ -153,7 +153,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-anarchism"
     },
-    "takelage.ansible/ansible/roles/takel-base@0.0.7": {
+    "takelage.ansible/ansible/roles/takel-base@0.0.8": {
         "files": [
             {
                 "name": "README.bit",
@@ -241,7 +241,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-bit-client@0.0.3": {
+    "takelage.ansible/ansible/roles/takel-bit-client@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
@@ -362,7 +362,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-cleanup@0.0.3": {
+    "takelage.ansible/ansible/roles/takel-cleanup@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
@@ -837,7 +837,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/image/prod@0.0.3": {
+    "takelage.rake/rake/image/prod@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
