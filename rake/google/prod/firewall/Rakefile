@@ -3,33 +3,31 @@ require 'rake'
 environment = 'prod'
 target = "#{$project['google_repo']}-#{environment}"
 
-rule_allow_ssh_port = "allow-ssh-#{$project['ssh_port']}-#{target}"
-
 cmd_google_firewall_delete = 'gcloud compute firewall-rules delete ' +
-    "#{rule_allow_ssh_port} " +
+    "%{name} " +
     "--project=#{$project['project_id']}"
 
 cmd_google_firewall_describe = 'gcloud compute firewall-rules describe ' +
-    "#{rule_allow_ssh_port} " +
+    "%{name} " +
     "--project=#{$project['project_id']}"
 
 cmd_google_firewall_disable = 'gcloud compute firewall-rules update ' +
-    "#{rule_allow_ssh_port} " +
+    "%{name} " +
     "--disabled " +
     "--project=#{$project['project_id']}"
 
 cmd_google_firewall_enable = 'gcloud compute firewall-rules update ' +
-    "#{rule_allow_ssh_port} " +
+    "%{name} " +
     '--no-disabled ' +
     "--project=#{$project['project_id']}"
 
 cmd_google_firewall_list = 'gcloud compute firewall-rules list ' +
     "--project=#{$project['project_id']}"
 
-cmd_google_firewall_create = 'gcloud compute firewall-rules create ' +
-    "#{rule_allow_ssh_port} " +
-    '--action=allow ' +
-    "--rules tcp:#{$project['ssh_port']} " +
+cmd_google_firewall_create = "gcloud compute firewall-rules create " +
+    "%{name} " +
+    "--action=allow " +
+    "--rules %{proto}:%{port} " +
     "--target-tags=#{target} " +
     "--project=#{$project['project_id']}"
 
@@ -39,27 +37,44 @@ namespace :google do
 
       desc 'Create firewall rule'
       task :create do
-        $commands << cmd_google_firewall_create
+        $project['google_firewall_prod'].each do |rule|
+          name = "allow-#{rule['desc']}-#{rule['proto']}-#{rule['port']}-#{target}"
+          $commands << cmd_google_firewall_create % {port: rule['port'],
+                                                     proto: rule['proto'],
+                                                     name: name}
+        end
       end
 
       desc 'Delete firewall rule'
       task :delete do
-        $commands << cmd_google_firewall_delete
+        $project['google_firewall_prod'].each do |rule|
+          name = "allow-#{rule['desc']}-#{rule['proto']}-#{rule['port']}-#{target}"
+          $commands << cmd_google_firewall_delete % {name: name}
+        end
       end
 
       desc 'Describe firewall rule'
       task :describe do
-        $commands << cmd_google_firewall_describe
+        $project['google_firewall_prod'].each do |rule|
+          name = "allow-#{rule['desc']}-#{rule['proto']}-#{rule['port']}-#{target}"
+          $commands << cmd_google_firewall_describe % {name: name}
+        end
       end
 
       desc 'Disable firewall rule'
       task :disable do
-        $commands << cmd_google_firewall_disable
+        $project['google_firewall_prod'].each do |rule|
+          name = "allow-#{rule['desc']}-#{rule['proto']}-#{rule['port']}-#{target}"
+          $commands << cmd_google_firewall_disable % {name: name}
+        end
       end
 
       desc 'Enable firewall rule'
       task :enable do
-        $commands << cmd_google_firewall_enable
+        $project['google_firewall_prod'].each do |rule|
+          name = "allow-#{rule['desc']}-#{rule['proto']}-#{rule['port']}-#{target}"
+          $commands << cmd_google_firewall_enable % {name: name}
+        end
       end
 
       desc 'List firewall rules'

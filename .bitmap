@@ -85,7 +85,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-anarchism@0.0.2": {
+    "takelage.ansible/ansible/roles/takel-anarchism@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -95,6 +95,16 @@
             {
                 "name": "main.yml",
                 "relativePath": "defaults/main.yml",
+                "test": false
+            },
+            {
+                "name": "anarchism.sh",
+                "relativePath": "files/anarchism.sh",
+                "test": false
+            },
+            {
+                "name": "bashrc",
+                "relativePath": "files/bashrc",
                 "test": false
             },
             {
@@ -113,8 +123,8 @@
                 "test": false
             },
             {
-                "name": "test_takel-anarchism_configure.py",
-                "relativePath": "molecule/default/tests/test_takel-anarchism_configure.py",
+                "name": "test_takel-anarchism_bashrc.py",
+                "relativePath": "molecule/default/tests/test_takel-anarchism_bashrc.py",
                 "test": false
             },
             {
@@ -123,8 +133,8 @@
                 "test": false
             },
             {
-                "name": "configure.yml",
-                "relativePath": "tasks/configure.yml",
+                "name": "bashrc.yml",
+                "relativePath": "tasks/bashrc.yml",
                 "test": false
             },
             {
@@ -143,7 +153,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-anarchism"
     },
-    "takelage.ansible/ansible/roles/takel-base@0.0.6": {
+    "takelage.ansible/ansible/roles/takel-base@0.0.7": {
         "files": [
             {
                 "name": "README.bit",
@@ -171,6 +181,11 @@
                 "test": false
             },
             {
+                "name": "test_takel-base_autoupgrade.py",
+                "relativePath": "ansible/roles/takel-base/molecule/default/tests/test_takel-base_autoupgrade.py",
+                "test": false
+            },
+            {
                 "name": "test_takel-base_configure.py",
                 "relativePath": "ansible/roles/takel-base/molecule/default/tests/test_takel-base_configure.py",
                 "test": false
@@ -178,6 +193,11 @@
             {
                 "name": "test_takel-base_install.py",
                 "relativePath": "ansible/roles/takel-base/molecule/default/tests/test_takel-base_install.py",
+                "test": false
+            },
+            {
+                "name": "autoupgrade.yml",
+                "relativePath": "ansible/roles/takel-base/tasks/autoupgrade.yml",
                 "test": false
             },
             {
@@ -221,7 +241,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-bit-client@0.0.2": {
+    "takelage.ansible/ansible/roles/takel-bit-client@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -246,6 +266,11 @@
             {
                 "name": "test_takel-bit_system.py",
                 "relativePath": "ansible/roles/takel-bit-client/molecule/default/system/test_takel-bit_system.py",
+                "test": false
+            },
+            {
+                "name": "test_takel-bit-client_install.py",
+                "relativePath": "ansible/roles/takel-bit-client/molecule/default/tests/test_takel-bit-client_install.py",
                 "test": false
             },
             {
@@ -337,11 +362,31 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-cleanup@0.0.2": {
+    "takelage.ansible/ansible/roles/takel-cleanup@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
                 "relativePath": "ansible/roles/takel-cleanup/README.bit",
+                "test": false
+            },
+            {
+                "name": "main.yml",
+                "relativePath": "ansible/roles/takel-cleanup/defaults/main.yml",
+                "test": false
+            },
+            {
+                "name": "molecule.yml",
+                "relativePath": "ansible/roles/takel-cleanup/molecule/default/molecule.yml",
+                "test": false
+            },
+            {
+                "name": "playbook.yml",
+                "relativePath": "ansible/roles/takel-cleanup/molecule/default/playbook.yml",
+                "test": false
+            },
+            {
+                "name": "test_takel-cleanup_cleanup.py",
+                "relativePath": "ansible/roles/takel-cleanup/molecule/default/tests/test_takel-cleanup_cleanup.py",
                 "test": false
             },
             {
@@ -661,7 +706,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/dockerhub/prod@0.0.2": {
+    "takelage.rake/rake/dockerhub/prod@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -684,7 +729,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/git@0.0.4": {
+    "takelage.rake/rake/git@0.0.5": {
         "files": [
             {
                 "name": "README.bit",
@@ -702,7 +747,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/container@0.0.2": {
+    "takelage.rake/rake/google/prod/container@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -720,7 +765,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/firewall@0.0.2": {
+    "takelage.rake/rake/google/prod/firewall@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -792,7 +837,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/image/prod@0.0.2": {
+    "takelage.rake/rake/image/prod@0.0.3": {
         "files": [
             {
                 "name": "README.bit",

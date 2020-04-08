@@ -6,5 +6,8 @@ dockerhub_base_tag: debian-buster
 dockerhub_prod_user: takelage
 dockerhub_prod_repo: bitboard
 local_user: packer_local
-ssh_port: 222
-version: 0.1.4
+google_firewall_prod:
+  - desc: ssh
+    proto: tcp
+    port: 222
+version: 0.2.0

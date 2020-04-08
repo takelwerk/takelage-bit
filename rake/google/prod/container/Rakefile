@@ -4,7 +4,7 @@ environment = 'prod'
 ip = "#{$project['ip_prod']}"
 vm_name = "#{$project['google_repo']}-#{environment}"
 machine_type = "#{$project['machine_type_prod']}"
-
+boot_disk_size = "#{$project['boot_disk_size_prod']}"
 
 image = "#{$project['google_user']}/#{$project['project_id']}/#{vm_name}:#{$project['version']}"
 
@@ -14,6 +14,7 @@ cmd_google_container_deploy = "gcloud compute instances create-with-container #{
     "--container-image=#{image} " +
     "--container-privileged " +
     "--machine-type=#{machine_type} " +
+    "--boot-disk-size=#{boot_disk_size} " +
     "--project=#{$project['project_id']} " +
     "--scopes=storage-full " +
     "--tags=#{$project['google_repo']}-#{environment} " +
