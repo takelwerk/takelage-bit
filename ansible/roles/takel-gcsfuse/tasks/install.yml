@@ -7,7 +7,7 @@
   apt_repository:
     repo: "{{ takel_gcsfuse_repo }}"
     filename: gcsfuse
-    validate_certs: no
+    validate_certs: false
 
 - name: (install) install packages
   package:

@@ -67,4 +67,3 @@
   loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
   loop_control:
     loop_var: user
-

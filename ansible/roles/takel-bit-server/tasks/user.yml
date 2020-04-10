@@ -11,7 +11,7 @@
     group: "{{ takel_bit_server_bit_group }}"
     shell: "{{ takel_bit_server_bit_shell }}"
     home: "{{ takel_bit_server_bit_home }}"
-    password_lock: yes
+    password_lock: true
 
 - name: (user) create bit config dir
   file:
@@ -59,4 +59,3 @@
         key: "{{ item | default(omit) }}"
         user: "{{ takel_bit_server_bit_user }}"
       loop: "{{ takel_bit_server_sshpubkeys_custom }}"
-

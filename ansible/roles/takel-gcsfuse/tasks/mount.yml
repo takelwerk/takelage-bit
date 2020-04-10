@@ -12,7 +12,7 @@
 - name: (mount) mount buckets
   mount:
     path: "{{ item.path }}"
-    src:  "{{ item.bucket }}"
+    src: "{{ item.bucket }}"
     fstype: gcsfuse
     opts: "rw,allow_other,uid={{ item.uid | default(1001) }},gid={{ item.gid | default(1001) }},key_file={{ takel_gcsfuse_gcs_path }}"
     state: present
