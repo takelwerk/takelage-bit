@@ -20,7 +20,6 @@ verifier:
     testvars-no-gather-facts: true
     v: true
 scenario:
-  name: image_prod
   create_sequence:
     - create
   converge_sequence:

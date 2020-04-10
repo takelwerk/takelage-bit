@@ -1,16 +1,23 @@
 ---
 takel_base_deb_install_packages:
-  - apt-listchanges
   - apt-transport-https
   - aptitude
+  - ca-certificates
+  - curl
   - gnupg
   - git
   - jq
+  - locales
   - molly-guard
+  - procps
   - rsyslog
   - tmux
   - tree
-  - unattended-upgrades
   - vim
 
 takel_base_autoupgrade: true
+
+takel_base_locales:
+  - en_US.UTF-8
+
+takel_base_version: none

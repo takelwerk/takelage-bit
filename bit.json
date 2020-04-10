@@ -1,5 +1,12 @@
 {
     "env": {},
     "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "overrides": {
+        "takelage.ansible/ansible/roles/takel-base": {},
+        "takelage.ansible/ansible/roles/takel-bit-client": {},
+        "takelage.ansible/ansible/roles/takel-cleanup": {},
+        "takelage.rake/rake/dockerhub/prod": {},
+        "takelage.rake/rake/image/prod": {}
+    }
 }

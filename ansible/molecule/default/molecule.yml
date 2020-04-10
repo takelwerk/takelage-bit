@@ -1,12 +1,11 @@
 ---
 driver:
   name: docker
-lint:
-  name: yamllint
-  options:
-    config-data:
-      rules:
-        line-length: disable
+lint: |
+  set -e
+  yamllint .
+  ansible-lint playbook*.yml
+  flake8
 platforms:
   - name: molecule-takelage-bit
     image: takelage/takelbase
@@ -26,8 +25,6 @@ provisioner:
       group_vars: ../../group_vars
   playbooks:
     converge: ../../playbook-project-prod.yml
-  lint:
-    name: ansible-lint
 verifier:
   name: testinfra
   options:
@@ -36,15 +33,12 @@ verifier:
     s: true
     testvars-no-gather-facts: true
     v: true
-  lint:
-    name: flake8
   additional_files_or_dirs:
     # integration
     - ../../../roles/*/molecule/default/tests/test_*.py
     # system
     - ../../../roles/*/molecule/default/system/test_*.py
 scenario:
-  name: default
   create_sequence:
     - create
     - prepare
