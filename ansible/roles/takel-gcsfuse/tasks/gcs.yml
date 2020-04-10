@@ -7,9 +7,6 @@
     mode: 0700
     state: directory
 
-- debug:
-    var: takel_gcsfuse_gcs_bucket_key
-
 - name: (gcs) copy gcs service account file
   copy:
     content: "{{ takel_gcsfuse_gcs_bucket_key }}"
