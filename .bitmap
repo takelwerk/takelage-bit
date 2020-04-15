@@ -251,7 +251,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-bit-client@0.0.6": {
+    "takelage.ansible/ansible/roles/takel-bit-client@0.0.7": {
         "files": [
             {
                 "name": "README.bit",
@@ -304,7 +304,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-bit-server@0.0.1": {
+    "takelage.ansible/ansible/roles/takel-bit-server@0.0.2": {
         "files": [
             {
                 "name": "README.bit",
@@ -415,7 +415,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.2": {
+    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -468,7 +468,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-ssh@0.0.1": {
+    "takelage.ansible/ansible/roles/takel-ssh@0.0.2": {
         "files": [
             {
                 "name": "README.bit",
@@ -579,7 +579,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-users@0.0.1": {
+    "takelage.ansible/ansible/roles/takel-users@0.0.2": {
         "files": [
             {
                 "name": "README.bit",
