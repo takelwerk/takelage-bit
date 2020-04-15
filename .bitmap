@@ -85,7 +85,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-anarchism@0.0.5": {
+    "takelage.ansible/ansible/roles/takel-anarchism@0.0.6": {
         "files": [
             {
                 "name": "README.bit",
@@ -153,7 +153,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-anarchism"
     },
-    "takelage.ansible/ansible/roles/takel-base@0.0.10": {
+    "takelage.ansible/ansible/roles/takel-base@0.0.11": {
         "files": [
             {
                 "name": "README.bit",
