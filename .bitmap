@@ -706,6 +706,24 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "takelage.rake/rake/dockerhub/prod/registry@0.0.1": {
+        "files": [
+            {
+                "relativePath": "rake/dockerhub/prod/registry/README.bit",
+                "test": false,
+                "name": "README.bit"
+            },
+            {
+                "relativePath": "rake/dockerhub/prod/registry/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            }
+        ],
+        "mainFile": "rake/dockerhub/prod/registry/README.bit",
+        "trackDir": "rake/dockerhub/prod/registry",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "takelage.rake/rake/git@0.0.5": {
         "files": [
             {
