@@ -670,42 +670,6 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/dockerhub/base/registry@0.0.1": {
-        "files": [
-            {
-                "relativePath": "rake/dockerhub/base/registry/README.bit",
-                "test": false,
-                "name": "README.bit"
-            }
-        ],
-        "mainFile": "rake/dockerhub/base/registry/README.bit",
-        "trackDir": "rake/dockerhub/base/registry",
-        "origin": "AUTHORED",
-        "exported": true
-    },
-    "takelage.rake/rake/dockerhub/base@0.0.1": {
-        "files": [
-            {
-                "name": "README.bit",
-                "relativePath": "rake/dockerhub/base/README.bit",
-                "test": false
-            },
-            {
-                "name": "Rakefile",
-                "relativePath": "rake/dockerhub/base/Rakefile",
-                "test": false
-            },
-            {
-                "name": "Rakefile",
-                "relativePath": "rake/dockerhub/base/registry/Rakefile",
-                "test": false
-            }
-        ],
-        "mainFile": "rake/dockerhub/base/README.bit",
-        "trackDir": "rake/dockerhub/base",
-        "origin": "AUTHORED",
-        "exported": true
-    },
     "takelage.rake/rake/dockerhub/prod/registry@0.0.1": {
         "files": [
             {
