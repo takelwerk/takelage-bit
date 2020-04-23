@@ -724,7 +724,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/container@0.0.3": {
+    "takelage.rake/rake/google/prod/container@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
@@ -742,7 +742,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/firewall@0.0.3": {
+    "takelage.rake/rake/google/prod/firewall@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
@@ -760,7 +760,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/login@0.0.2": {
+    "takelage.rake/rake/google/prod/login@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -778,7 +778,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/google/prod/registry@0.0.2": {
+    "takelage.rake/rake/google/prod/registry@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
