@@ -1,32 +1,31 @@
+# frozen_string_literal: true
+
 require 'rake'
 
 environment = 'prod'
-vm_name = "#{$project['google_repo']}-#{environment}"
-url = "#{$project['url_prod']}"
+vm_name = "#{@project['google_repo']}-#{environment}"
+url = @project['url_prod'].to_s
 
+cmd_google_login_host = "gcloud beta compute ssh #{vm_name} " \
+    "--zone=#{@project['zone']} " \
+    "--project=#{@project['project_id']} "
 
-cmd_google_login_host = "gcloud beta compute ssh #{vm_name} " +
-    "--zone=#{$project['zone']} " +
-    "--project=#{$project['project_id']} "
-
-cmd_google_login_container = 'ssh ' +
-    "-p #{$project['ssh_port']} " +
+cmd_google_login_container = 'ssh ' \
+    "-p #{@project['ssh_port']} " \
     "#{url}"
 
 namespace :google do
   namespace :prod do
     namespace :login do
-
       desc 'Log in to host in GCE'
       task :host do
-        $commands << cmd_google_login_host
+        @commands << cmd_google_login_host
       end
 
       desc 'Log in to guest in GCE'
       task :container do
-        $commands << cmd_google_login_container
+        @commands << cmd_google_login_container
       end
-
     end
   end
 end

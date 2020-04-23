@@ -1,30 +1,30 @@
+# frozen_string_literal: true
+
 require 'rake'
 
-cmd_local_container_login_host = 'docker exec ' +
-    '--interactive ' +
-    '--tty ' +
-    "#{$project['project']}_local " +
+cmd_local_container_login_host = 'docker exec ' \
+    '--interactive ' \
+    '--tty ' \
+    "#{@project['project']}_local " \
     'bash'
 
-cmd_local_container_login_ssh = 'ssh ' +
-    '-i ansible/roles/takel-users/files/id_rsa.myuser ' +
-    '-l bit ' +
-    '-o StrictHostKeyChecking=no ' +
-    '-p 222 ' +
-    "#{$project['project']}"
+cmd_local_container_login_ssh = 'ssh ' \
+    '-i ansible/roles/takel-users/files/id_rsa.myuser ' \
+    '-l bit ' \
+    '-o StrictHostKeyChecking=no ' \
+    '-p 222 ' \
+    "#{@project['project']}"
 
 namespace :local do
   namespace :login do
-
     desc 'Login to local container'
     task :host do
-      $commands << cmd_local_container_login_host
+      @commands << cmd_local_container_login_host
     end
 
     desc 'Login to local container'
     task :ssh do
-      $commands << cmd_local_container_login_ssh
+      @commands << cmd_local_container_login_ssh
     end
-
   end
 end
