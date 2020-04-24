@@ -19,11 +19,6 @@
                 "test": false
             },
             {
-                "name": "takel-bit-server.yml",
-                "relativePath": "ansible/group_vars/private/takel-bit-server.yml",
-                "test": false
-            },
-            {
                 "name": "takel-gcsfuse.yml",
                 "relativePath": "ansible/group_vars/private/takel-gcsfuse.yml",
                 "test": false
