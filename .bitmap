@@ -19,6 +19,11 @@
                 "test": false
             },
             {
+                "relativePath": "ansible/group_vars/private/takel-bit-server.yml",
+                "test": false,
+                "name": "takel-bit-server.yml"
+            },
+            {
                 "name": "takel-gcsfuse.yml",
                 "relativePath": "ansible/group_vars/private/takel-gcsfuse.yml",
                 "test": false
@@ -827,7 +832,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/meta@0.0.2": {
+    "takelage.rake/rake/meta@0.0.5": {
         "files": [
             {
                 "name": "README.bit",
