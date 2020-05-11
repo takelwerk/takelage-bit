@@ -62,7 +62,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "bitboard.users/ansible/group_vars/users@0.0.3": {
+    "bitboard.users/ansible/group_vars/users@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
@@ -153,7 +153,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-anarchism"
     },
-    "takelage.ansible/ansible/roles/takel-base@0.0.12": {
+    "takelage.ansible/ansible/roles/takel-base@0.0.13": {
         "files": [
             {
                 "name": "README.bit",
@@ -166,11 +166,6 @@
                 "test": false
             },
             {
-                "name": "main.yml",
-                "relativePath": "ansible/roles/takel-base/handlers/main.yml",
-                "test": false
-            },
-            {
                 "name": "converge.yml",
                 "relativePath": "ansible/roles/takel-base/molecule/default/converge.yml",
                 "test": false
@@ -178,11 +173,6 @@
             {
                 "name": "molecule.yml",
                 "relativePath": "ansible/roles/takel-base/molecule/default/molecule.yml",
-                "test": false
-            },
-            {
-                "name": "test_takel-base_autoupgrade.py",
-                "relativePath": "ansible/roles/takel-base/molecule/default/tests/test_takel-base_autoupgrade.py",
                 "test": false
             },
             {
@@ -198,11 +188,6 @@
             {
                 "name": "test_takel-base_version.py",
                 "relativePath": "ansible/roles/takel-base/molecule/default/tests/test_takel-base_version.py",
-                "test": false
-            },
-            {
-                "name": "autoupgrade.yml",
-                "relativePath": "ansible/roles/takel-base/tasks/autoupgrade.yml",
                 "test": false
             },
             {
@@ -228,16 +213,6 @@
             {
                 "name": "version.yml",
                 "relativePath": "ansible/roles/takel-base/tasks/version.yml",
-                "test": false
-            },
-            {
-                "name": "20auto-upgrades.j2",
-                "relativePath": "ansible/roles/takel-base/templates/20auto-upgrades.j2",
-                "test": false
-            },
-            {
-                "name": "50unattended-upgrades.j2",
-                "relativePath": "ansible/roles/takel-base/templates/50unattended-upgrades.j2",
                 "test": false
             },
             {
@@ -372,7 +347,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-cleanup@0.0.7": {
+    "takelage.ansible/ansible/roles/takel-cleanup@0.0.8": {
         "files": [
             {
                 "name": "README.bit",
@@ -382,6 +357,11 @@
             {
                 "name": "main.yml",
                 "relativePath": "ansible/roles/takel-cleanup/defaults/main.yml",
+                "test": false
+            },
+            {
+                "name": "main.yml",
+                "relativePath": "ansible/roles/takel-cleanup/handlers/main.yml",
                 "test": false
             },
             {
@@ -415,7 +395,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.3": {
+    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
@@ -428,9 +408,9 @@
                 "test": false
             },
             {
+                "name": "converge.yml",
                 "relativePath": "ansible/roles/takel-gcsfuse/molecule/default/converge.yml",
-                "test": false,
-                "name": "converge.yml"
+                "test": false
             },
             {
                 "name": "molecule.yml",
@@ -468,7 +448,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-ssh@0.0.2": {
+    "takelage.ansible/ansible/roles/takel-ssh@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -486,9 +466,9 @@
                 "test": false
             },
             {
+                "name": "converge.yml",
                 "relativePath": "ansible/roles/takel-ssh/molecule/default/converge.yml",
-                "test": false,
-                "name": "converge.yml"
+                "test": false
             },
             {
                 "name": "molecule.yml",
@@ -531,7 +511,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-user@0.0.2": {
+    "takelage.ansible/ansible/roles/takel-user@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -564,6 +544,11 @@
                 "test": false
             },
             {
+                "name": "bash_takel.j2",
+                "relativePath": "ansible/roles/takel-user/templates/bash_takel.j2",
+                "test": false
+            },
+            {
                 "name": "bashrc.j2",
                 "relativePath": "ansible/roles/takel-user/templates/bashrc.j2",
                 "test": false
@@ -579,7 +564,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-users@0.0.2": {
+    "takelage.ansible/ansible/roles/takel-users@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -602,9 +587,9 @@
                 "test": false
             },
             {
+                "name": "converge.yml",
                 "relativePath": "ansible/roles/takel-users/molecule/default/converge.yml",
-                "test": false,
-                "name": "converge.yml"
+                "test": false
             },
             {
                 "name": "molecule.yml",
@@ -652,7 +637,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.packer/packer/templates/project@0.0.2": {
+    "takelage.packer/packer/templates/project@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
@@ -796,7 +781,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/image/base@0.0.3": {
+    "takelage.rake/rake/image/base@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
@@ -814,7 +799,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/image/prod@0.0.6": {
+    "takelage.rake/rake/image/prod@0.0.7": {
         "files": [
             {
                 "name": "README.bit",
