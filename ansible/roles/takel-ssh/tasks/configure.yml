@@ -1,8 +1,10 @@
 ---
 - name: (configure) add additional valid ssh user
   set_fact:
-    takel_ssh_AllowUsers: "{{ takel_ssh_AllowUsers + ' ' + takel_ssh_AllowUsers_additional }}"
-    takel_ssh_AllowGroups: "{{ takel_ssh_AllowGroups + ' ' + takel_ssh_AllowUsers_additional }}"
+    takel_ssh_AllowUsers: >-
+      {{ takel_ssh_AllowUsers + ' ' +  takel_ssh_AllowUsers_additional }}
+    takel_ssh_AllowGroups: >-
+      {{ takel_ssh_AllowGroups + ' ' + takel_ssh_AllowUsers_additional }}
   when: takel_ssh_AllowUsers_additional is defined
 
 - name: (configure) copy sshd config template

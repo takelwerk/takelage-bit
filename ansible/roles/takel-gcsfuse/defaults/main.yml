@@ -3,9 +3,14 @@ takel_gcsfuse_deb_install_packages:
   - gcsfuse
   - gpg
 
-takel_gcsfuse_repo: deb http://packages.cloud.google.com/apt gcsfuse-buster main
-takel_gcsfuse_repo_key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+takel_gcsfuse_repo: >-
+  deb http://packages.cloud.google.com/apt gcsfuse-buster main
+takel_gcsfuse_repo_key_url: >-
+  https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+takel_gcsfuse_fstab: /etc/fstab
 
 takel_gcsfuse_gcs_dir: /srv/gcs
 takel_gcsfuse_gcs_file: gcs_service_account.json
-takel_gcsfuse_gcs_path: "{{ takel_gcsfuse_gcs_dir }}/{{ takel_gcsfuse_gcs_file }}"
+takel_gcsfuse_gcs_path: >-
+  {{ takel_gcsfuse_gcs_dir }}/{{ takel_gcsfuse_gcs_file }}

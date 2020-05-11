@@ -14,9 +14,16 @@
     path: "{{ item.path }}"
     src: "{{ item.bucket }}"
     fstype: gcsfuse
-    opts: "rw,allow_other,uid={{ item.uid | default(1001) }},gid={{ item.gid | default(1001) }},key_file={{ takel_gcsfuse_gcs_path }}"
+    opts: >-
+      rw,allow_other,uid={{
+      item.uid | default(1001) }},gid={{
+      item.gid | default(1001) }},key_file={{
+      takel_gcsfuse_gcs_path }}
     state: present
+    fstab: "{{ takel_gcsfuse_fstab }}"
   loop: "{{ takel_gcsfuse_mounts }}"
+  tags:
+    - molecule-idempotence-notest
 
 - name: (mount) symlink mount points
   file:

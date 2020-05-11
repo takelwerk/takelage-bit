@@ -8,6 +8,7 @@
     mode: 0644
   with_items:
     - {src: bashrc.j2, dest: .bashrc}
+    - {src: bash_takel.j2, dest: .bash_takel}
     - {src: bash_aliases.j2, dest: .bash_aliases}
     - {src: vimrc.j2, dest: .vimrc}
 
@@ -17,5 +18,5 @@
     key: "{{ takel_user_sshpubkeys | join('\n') }}"
     exclusive: true
   when:
-    - takel_user_sshpubkeys is defined
+    - takel_user_sshpubkeys | length > 0
     - takel_user_sshpubkeys | join('\n') | regex_search("^ssh")

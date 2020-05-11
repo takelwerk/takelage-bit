@@ -166,6 +166,11 @@
                 "test": false
             },
             {
+                "relativePath": "ansible/roles/takel-base/handlers/main.yml",
+                "test": false,
+                "name": "main.yml"
+            },
+            {
                 "name": "converge.yml",
                 "relativePath": "ansible/roles/takel-base/molecule/default/converge.yml",
                 "test": false
@@ -174,6 +179,11 @@
                 "name": "molecule.yml",
                 "relativePath": "ansible/roles/takel-base/molecule/default/molecule.yml",
                 "test": false
+            },
+            {
+                "relativePath": "ansible/roles/takel-base/molecule/default/tests/test_takel-base_autoupgrade.py",
+                "test": false,
+                "name": "test_takel-base_autoupgrade.py"
             },
             {
                 "name": "test_takel-base_configure.py",
@@ -189,6 +199,11 @@
                 "name": "test_takel-base_version.py",
                 "relativePath": "ansible/roles/takel-base/molecule/default/tests/test_takel-base_version.py",
                 "test": false
+            },
+            {
+                "relativePath": "ansible/roles/takel-base/tasks/autoupgrade.yml",
+                "test": false,
+                "name": "autoupgrade.yml"
             },
             {
                 "name": "configure.yml",
@@ -214,6 +229,16 @@
                 "name": "version.yml",
                 "relativePath": "ansible/roles/takel-base/tasks/version.yml",
                 "test": false
+            },
+            {
+                "relativePath": "ansible/roles/takel-base/templates/20auto-upgrades.j2",
+                "test": false,
+                "name": "20auto-upgrades.j2"
+            },
+            {
+                "relativePath": "ansible/roles/takel-base/templates/50unattended-upgrades.j2",
+                "test": false,
+                "name": "50unattended-upgrades.j2"
             },
             {
                 "name": "locale.j2",
