@@ -39,7 +39,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "bitboard.takelage-bit/private@0.0.4": {
+    "bitboard.takelage-bit/private@0.0.5": {
         "files": [
             {
                 "name": "README.bit",
