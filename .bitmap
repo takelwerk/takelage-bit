@@ -470,6 +470,11 @@
                 "test": false
             },
             {
+                "relativePath": "ansible/roles/takel-user/templates/bash_takel.j2",
+                "test": false,
+                "name": "bash_takel.j2"
+            },
+            {
                 "name": "bashrc.j2",
                 "relativePath": "ansible/roles/takel-user/templates/bashrc.j2",
                 "test": false
