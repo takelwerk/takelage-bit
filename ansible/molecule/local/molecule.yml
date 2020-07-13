@@ -13,7 +13,7 @@ platforms:
     privileged: true
     pre_build_image: true
     published_ports:
-      - 127.0.0.1:${TAKELAGE_TAKELBIT_PORT_SSH:-22}:22/tcp
+      - 127.0.0.1:${TAKELAGE_TAKELBIT_PORT_SSH:-222}:222/tcp
     groups:
       - ${TAKELAGE_PROJECT_ENV:-prod}
       - users
