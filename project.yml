@@ -1,6 +1,6 @@
 ---
 # project settings
-project: takelage-bit
+project: takelbit
 version: 0.4.0
 local_user: packer_local
 
@@ -16,3 +16,4 @@ ssh_port: 222
 
 # google production settings
 google_firewall_prod: []
+ e

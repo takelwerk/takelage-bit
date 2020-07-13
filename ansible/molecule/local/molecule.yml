@@ -7,25 +7,22 @@ lint: |
   ansible-lint molecule/*/*.yml
   flake8
 platforms:
-  - name: molecule-takel-takelbit-test-project-${TAKELAGE_PROJECT_ENV:-default}
-    image: ${TAKELAGE_PROJECT_BASE_IMAGE:-takelage/takelbase}
+  - name: molecule-takel-takelbit-local-${TAKELAGE_PROJECT_ENV:-prod}
+    image: packer_local/mapapp:${TAKELAGE_PROJECT_ENV:-prod}
     command: /lib/systemd/systemd
     privileged: true
     pre_build_image: true
+    published_ports:
+      - 127.0.0.1:${TAKELAGE_TAKELBIT_PORT_SSH:-22}:22/tcp
     groups:
       - ${TAKELAGE_PROJECT_ENV:-prod}
       - users
       - molecule
 provisioner:
   name: ansible
-  playbooks:
-    converge: >-
-      ../../${TAKELAGE_MOLECULE_CONVERGE_PLAYBOOK:-playbook-project-base.yml}
   config_options:
     defaults:
       interpreter_python: auto_silent
-      stdout_callback: yaml
-      bin_ansible_callbacks: true
   inventory:
     links:
       group_vars: ../../group_vars/
@@ -35,14 +32,19 @@ verifier:
     # p: cacheprovider  # enable cache
     s: true  # capture output
     v: true
-  additional_files_or_dirs:
-    # integration
-    - ../../../roles/*/molecule/default/tests/test_*.py
-    # system
-    - ../../../roles/*/molecule/default/system/test_*.py
+dependency:
+  name: shell
+  command: rake features:cucumber[@${TAKELAGE_PROJECT_ENV:-prod}]
 scenario:
+  dependency_sequence:
+    - dependency
   create_sequence:
     - create
+  check_sequence:
+    - destroy
+    - create
+    - converge
+    - destroy
   converge_sequence:
     - create
     - converge
@@ -50,11 +52,11 @@ scenario:
     - destroy
   test_sequence:
     - lint
-    - cleanup
     - destroy
     - syntax
     - create
     - converge
     - idempotence
     - verify
+    # - dependency
     - destroy
