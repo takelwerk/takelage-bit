@@ -4,21 +4,7 @@ takel_users_deb_install_packages:
 
 takel_users_gitlab_url: ''
 
+takel_users_root_password_hash: ''
 takel_users_default_shell: /bin/bash
-
-# clear text password: myrootpassword
-takel_users_root_password_hash: $$6$$ocAO8XOfYMwoFla9$$Qesqb9TpV.sEvqI8IZ0cRK.pWWOHR9a2RNaYURBbKVSk8X9NtdFAWllA/2EcXX.YG/vSWgefDlrO99v0ObNn./  # yamllint disable-line rule:line-length
-
-takel_users_users:
-  - myuser
-
-takel_users_userdata:
-  myuser:
-    id: 1500
-    full_name: My Testuser
-    groups:
-      - sudo
-    ssh:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDEE3TDo5mJYPogviD2UmoKDOT6lnpK8xd35OopFo8hLQKdaqB4IXOxy+sINh9iElEOWq2nvpb4YQZTMT3t9y/PImE4JwixtvnASczHkZuj2pkx+mO1Q4XBVkOFFDzF5pwQ3GxJFNG8TSaKWgXL2IkeufJ6tgrfyCJR7lfwA0tTuIr4nIcTqa8LFxf3g98lgHoq3XYce6l87vDL+gz6S8glOysq1Phi0BjvnDx7Kfh8K6EVON5YKvAiw/BS4V/07CnTRlupA5ysVQpj1/bnR3DYwL7a2w2QDHuKyWKXcBZydBJjzvGWcx046nHgHvGYAvzrZyLO/6EyMSWWo4QJS6bFjqQ5E/9re+FVlvYnowCfpqO6/+B9BKC1stoQIXdvu8SWJpLwt71Kt+Bi8jrVLwpb+oZ7Y8TbAQcJ+gW/h4KkO9J3GkrsmudH5B33SuQZXc1dV5U0e3YaTu8NPRXdjEloclVNQGprhsR3KwRrKuWREguYioVOX9soV3I30HLfQn8= myuser@bitboard  # yamllint disable-line rule:line-length
-    # clear text password: myuserpassword
-    password_hash: $$6$$qjgWdktPUZzfNWin$$3RoiFMGR9I2aA50wbLOvWMkt/VpFVMA34UFNPpj5f/zyaYsNRYU7fn31PBHRwKAVfRH/LEqKSAjcJ4j1toIam.  # yamllint disable-line rule:line-length
+takel_users_users: []
+takel_users_userdata: {}

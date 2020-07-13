@@ -20,20 +20,20 @@
     - name: (create) try to create user/sshpubkey dict from gitlab query
       set_fact:
         takel_users_sshpubkeys_default: >-
-          {{ takel_users_sshpubkeys_default |
-          default({}) |
-          combine( {item.user: item.content.split('\n') |
-          default([]) } ) }}
+          {{ takel_users_sshpubkeys_default | default({}) |
+          combine({default_user.gitlab_user: default_user.content.split('\n') |
+          default([])}) }}
       loop: "{{ takel_users_gitlab_query.results }}"
+      loop_control:
+        loop_var: default_user
 
   rescue:
     - name: (create) rescue by creating custom user/sshpubkey dict
       set_fact:
         takel_users_sshpubkeys_custom: >-
-          {{ takel_users_sshpubkeys_custom |
-          default({}) |
-          combine( {custom_user: takel_users_userdata[custom_user].ssh |
-          default('') } ) }}
+          {{ takel_users_sshpubkeys_custom | default({}) |
+          combine({custom_user: takel_users_userdata[custom_user].ssh |
+          default('')}) }}
       loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
       loop_control:
         loop_var: custom_user
@@ -69,8 +69,6 @@
     takel_user_uid: "{{ takel_users_userdata[user].id | default(omit) }}"
     takel_user_comment: >-
       {{ takel_users_userdata[user].comment | default(omit) }}
-    takel_user_full_name: >-
-      {{ takel_users_userdata[user].full_name | default(omit) }}
     takel_user_gid: "{{ takel_users_userdata[user].id | default(omit) }}"
     takel_user_group: "{{ user }}"
     takel_user_groups: "{{ takel_users_userdata[user].groups | default([]) }}"

@@ -1,0 +1,84 @@
+---
+- name: (hostkeys) copy private ecdsa sshd hostkey
+  copy:
+    content: "{{ takel_ssh_host_ecdsa_key }}\n"
+    dest: /etc/ssh/ssh_host_ecdsa_key
+  notify: restart sshd
+  when: takel_ssh_host_ecdsa_key is defined
+
+- name: (hostkeys) show private ecdsa sshd hostkey
+  command: 'true'
+  notify: show takel_ssh_host_ecdsa_key
+  when: takel_ssh_host_ecdsa_key is not defined
+
+- name: (hostkeys) copy public ecdsa sshd hostkey
+  copy:
+    content: "{{ takel_ssh_host_ecdsa_key_pub }}\n"
+    dest: /etc/ssh/ssh_host_ecdsa_key.pub
+  notify: restart sshd
+  when: takel_ssh_host_ecdsa_key_pub is defined
+
+- name: (hostkeys) show public ecdsa sshd hostkey
+  command: 'true'
+  notify: show takel_ssh_host_ecdsa_key_pub
+  when: takel_ssh_host_ecdsa_key_pub is not defined
+
+- name: (hostkeys) copy private ed25519 sshd hostkey
+  copy:
+    content: "{{ takel_ssh_host_ed25519_key }}\n"
+    dest: /etc/ssh/ssh_host_ed25519_key
+  notify: restart sshd
+  when: takel_ssh_host_ed25519_key is defined
+
+- name: (hostkeys) show private ed25519 sshd hostkey
+  command: 'true'
+  notify: show takel_ssh_host_ed25519_key
+  when: takel_ssh_host_ed25519_key is not defined
+
+- name: (hostkeys) copy public ed25519 sshd hostkey
+  copy:
+    content: "{{ takel_ssh_host_ed25519_key_pub }}\n"
+    dest: /etc/ssh/ssh_host_ed25519_key.pub
+  notify: restart sshd
+  when: takel_ssh_host_ed25519_key_pub is defined
+
+- name: (hostkeys) show public ed25519 sshd hostkey
+  command: 'true'
+  notify: show takel_ssh_host_ed25519_key_pub
+  when: takel_ssh_host_ed25519_key_pub is not defined
+
+- name: (hostkeys) copy private rsa sshd hostkey
+  copy:
+    content: "{{ takel_ssh_host_rsa_key }}\n"
+    dest: /etc/ssh/ssh_host_rsa_key
+  notify: restart sshd
+  when: takel_ssh_host_rsa_key is defined
+
+- name: (hostkeys) show private rsa sshd hostkey
+  command: 'true'
+  notify: show takel_ssh_host_rsa_key
+  when: takel_ssh_host_rsa_key is not defined
+
+- name: (hostkeys) copy public rsa sshd hostkey
+  copy:
+    content: "{{ takel_ssh_host_rsa_key_pub }}\n"
+    dest: /etc/ssh/ssh_host_rsa_key.pub
+  notify: restart sshd
+  when: takel_ssh_host_rsa_key_pub is defined
+
+- name: (hostkeys) show public rsa sshd hostkey
+  command: 'true'
+  notify: show takel_ssh_host_rsa_key_pub
+  when: takel_ssh_host_rsa_key_pub is not defined
+
+- name: (hostkeys) remove private dsa sshd hostkey
+  file:
+    path: /etc/ssh/ssh_host_dsa_key
+    state: absent
+  notify: restart sshd
+
+- name: (hostkeys) remove public dsa sshd hostkey
+  file:
+    path: /etc/ssh/ssh_host_dsa_key.pub
+    state: absent
+  notify: restart sshd

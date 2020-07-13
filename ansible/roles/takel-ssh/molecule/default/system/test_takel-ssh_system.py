@@ -15,7 +15,8 @@ def test_takel_ssh_system_port_open(host, testvars):
 
 def test_takel_ssh_system_key_scan(host, testvars):
     port = testvars['takel_ssh_Port']
-    ip = host.check_output('hostname -I').strip()
+    ip = testvars['ansible_hostname']
     keys = host.check_output(f'ssh-keyscan -p {port} {ip}')
 
     assert 'ssh-ed25519' in keys
+    assert 'ssh-rsa' in keys

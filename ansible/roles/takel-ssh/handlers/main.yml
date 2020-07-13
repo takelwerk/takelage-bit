@@ -3,3 +3,69 @@
   service:
     state: restarted
     name: sshd
+
+- name: read /etc/ssh/ssh_host_ecdsa_key
+  slurp:
+    src: /etc/ssh/ssh_host_ecdsa_key
+  register: ssh_host_ecdsa_key
+  listen: show takel_ssh_host_ecdsa_key
+
+- name: takel_ssh_host_ecdsa_key
+  debug:
+    msg: "{{ ssh_host_ecdsa_key.content | b64decode }}"
+  listen: show takel_ssh_host_ecdsa_key
+
+- name: read /etc/ssh/ssh_host_ecdsa_key.pub
+  slurp:
+    src: /etc/ssh/ssh_host_ecdsa_key.pub
+  register: ssh_host_ecdsa_key_pub
+  listen: show takel_ssh_host_ecdsa_key_pub
+
+- name: takel_ssh_host_ecdsa_key_pub
+  debug:
+    msg: "{{ ssh_host_ecdsa_key_pub.content | b64decode }}"
+  listen: show takel_ssh_host_ecdsa_key_pub
+
+- name: read /etc/ssh/ssh_host_ed25519_key
+  slurp:
+    src: /etc/ssh/ssh_host_ed25519_key
+  register: ssh_host_ed25519_key
+  listen: show takel_ssh_host_ed25519_key
+
+- name: takel_ssh_host_ed25519_key
+  debug:
+    msg: "{{ ssh_host_ed25519_key.content | b64decode }}"
+  listen: show takel_ssh_host_ed25519_key
+
+- name: read /etc/ssh/ssh_host_ed25519_key.pub
+  slurp:
+    src: /etc/ssh/ssh_host_ed25519_key.pub
+  register: ssh_host_ed25519_key_pub
+  listen: show takel_ssh_host_ed25519_key_pub
+
+- name: takel_ssh_host_ed25519_key_pub
+  debug:
+    msg: "{{ ssh_host_ed25519_key_pub.content | b64decode }}"
+  listen: show takel_ssh_host_ed25519_key_pub
+
+- name: read /etc/ssh/ssh_host_rsa_key
+  slurp:
+    src: /etc/ssh/ssh_host_rsa_key
+  register: ssh_host_rsa_key
+  listen: show takel_ssh_host_rsa_key
+
+- name: takel_ssh_host_rsa_key
+  debug:
+    msg: "{{ ssh_host_rsa_key.content | b64decode }}"
+  listen: show takel_ssh_host_rsa_key
+
+- name: read /etc/ssh/ssh_host_rsa_key.pub
+  slurp:
+    src: /etc/ssh/ssh_host_rsa_key.pub
+  register: ssh_host_rsa_key_pub
+  listen: show takel_ssh_host_rsa_key_pub
+
+- name: takel_ssh_host_rsa_key_pub
+  debug:
+    msg: "{{ ssh_host_rsa_key_pub.content | b64decode }}"
+  listen: show takel_ssh_host_rsa_key_pub

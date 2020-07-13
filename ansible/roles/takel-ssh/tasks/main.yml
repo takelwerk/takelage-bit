@@ -12,3 +12,10 @@
     - takel
     - takel_ssh
     - takel_ssh_configure
+
+- name: (main) include hostkeys
+  import_tasks: hostkeys.yml
+  tags:
+    - takel
+    - takel_ssh
+    - takel_ssh_hostkeys

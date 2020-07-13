@@ -13,7 +13,7 @@
   user:
     name: "{{ takel_user_name }}"
     uid: "{{ takel_user_uid | default(omit) }}"
-    comment: "{{ takel_user_gecos | default(omit) }}"
+    comment: "{{ takel_user_comment | default(omit) }}"
     group: "{{ takel_user_group | default(omit) }}"
     groups: "{{ takel_user_groups | default(omit) }}"
     home: "{{ takel_user_home | default(omit) }}"
