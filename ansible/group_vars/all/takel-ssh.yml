@@ -1,3 +1,6 @@
 ---
 takel_ssh_Port: "{{ takelage_project['ssh_port'] }}"
-takel_ssh_AllowUsers: "{{ (takel_users_users + [takel_bit_server_bit_user]) | join(' ') }}"
+takel_ssh_AllowUsers: >-
+  {{ (takel_users_users | default([]) +
+  [takel_bit_server_bit_user | default('')]) |
+  join(' ') }}
