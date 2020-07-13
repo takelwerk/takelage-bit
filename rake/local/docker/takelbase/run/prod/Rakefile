@@ -1,0 +1,24 @@
+# frozen_string_literal: true
+
+require 'rake'
+
+namespace :local do
+  namespace :docker do
+    namespace :takelbase do
+      namespace :run do
+        namespace :prod do |env|
+          @cmd_local_docker_takelbase_list.each do |task, command|
+            desc "#{task} #{env.scope.head} image locally"
+            task task do
+              @commands << format(
+                command,
+                project_environment: env.scope.head,
+                molecule_command: task
+              )
+            end
+          end
+        end
+      end
+    end
+  end
+end
