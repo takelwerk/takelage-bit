@@ -437,59 +437,6 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-user@0.0.5": {
-        "files": [
-            {
-                "name": "README.bit",
-                "relativePath": "ansible/roles/takel-user/README.bit",
-                "test": false
-            },
-            {
-                "name": "main.yml",
-                "relativePath": "ansible/roles/takel-user/defaults/main.yml",
-                "test": false
-            },
-            {
-                "name": "configure.yml",
-                "relativePath": "ansible/roles/takel-user/tasks/configure.yml",
-                "test": false
-            },
-            {
-                "name": "create.yml",
-                "relativePath": "ansible/roles/takel-user/tasks/create.yml",
-                "test": false
-            },
-            {
-                "name": "main.yml",
-                "relativePath": "ansible/roles/takel-user/tasks/main.yml",
-                "test": false
-            },
-            {
-                "name": "bash_aliases.j2",
-                "relativePath": "ansible/roles/takel-user/templates/bash_aliases.j2",
-                "test": false
-            },
-            {
-                "relativePath": "ansible/roles/takel-user/templates/bash_takel.j2",
-                "test": false,
-                "name": "bash_takel.j2"
-            },
-            {
-                "name": "bashrc.j2",
-                "relativePath": "ansible/roles/takel-user/templates/bashrc.j2",
-                "test": false
-            },
-            {
-                "name": "vimrc.j2",
-                "relativePath": "ansible/roles/takel-user/templates/vimrc.j2",
-                "test": false
-            }
-        ],
-        "mainFile": "ansible/roles/takel-user/README.bit",
-        "trackDir": "ansible/roles/takel-user",
-        "origin": "AUTHORED",
-        "exported": true
-    },
     "takelage.ansible/ansible/roles/takel-users@0.0.4": {
         "files": [
             {
