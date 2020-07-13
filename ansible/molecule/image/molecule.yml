@@ -7,8 +7,8 @@ lint: |
   ansible-lint molecule/*/*.yml
   flake8
 platforms:
-  - name: molecule-takel-takelbit-test-image-${TAKELAGE_PROJECT_ENV:-prod}
-    image: packer_local/takelbit:${TAKELAGE_PROJECT_ENV:-prod}
+  - name: molecule-takel-takelage-bit-test-image-${TAKELAGE_PROJECT_ENV:-prod}
+    image: packer_local/takelage-bit:${TAKELAGE_PROJECT_ENV:-prod}
     command: /lib/systemd/systemd
     privileged: true
     pre_build_image: true
