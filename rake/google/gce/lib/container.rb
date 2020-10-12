@@ -17,7 +17,7 @@ require 'rake'
           "--project=#{@project['project_id']} " \
           '--scopes=storage-full ' \
           "--tags=#{@project['google_repo']}-%<project_environment>s " \
-          "--zone=#{@project['zone']} ",
+          "--zone=#{@project['google_zone']} ",
   list: 'gcloud compute instances list ' \
         "--project=#{@project['project_id']} ",
   update: 'gcloud compute instances ' \
@@ -28,6 +28,6 @@ require 'rake'
           "#{@project['google_repo']}-%<project_environment>s:" \
           "#{@project['version']} " \
           '--container-privileged ' \
-          "--zone=#{@project['zone']} " \
+          "--zone=#{@project['google_zone']} " \
           "--project=#{@project['project_id']} "
 }
