@@ -8,6 +8,7 @@
 
 - name: (hostkeys) show private ecdsa sshd hostkey
   command: 'true'
+  changed_when: false
   notify: show takel_ssh_host_ecdsa_key
   when: takel_ssh_host_ecdsa_key is not defined
 
@@ -20,6 +21,7 @@
 
 - name: (hostkeys) show public ecdsa sshd hostkey
   command: 'true'
+  changed_when: false
   notify: show takel_ssh_host_ecdsa_key_pub
   when: takel_ssh_host_ecdsa_key_pub is not defined
 
@@ -32,6 +34,7 @@
 
 - name: (hostkeys) show private ed25519 sshd hostkey
   command: 'true'
+  changed_when: false
   notify: show takel_ssh_host_ed25519_key
   when: takel_ssh_host_ed25519_key is not defined
 
@@ -44,6 +47,7 @@
 
 - name: (hostkeys) show public ed25519 sshd hostkey
   command: 'true'
+  changed_when: false
   notify: show takel_ssh_host_ed25519_key_pub
   when: takel_ssh_host_ed25519_key_pub is not defined
 
@@ -56,6 +60,7 @@
 
 - name: (hostkeys) show private rsa sshd hostkey
   command: 'true'
+  changed_when: false
   notify: show takel_ssh_host_rsa_key
   when: takel_ssh_host_rsa_key is not defined
 
@@ -68,6 +73,7 @@
 
 - name: (hostkeys) show public rsa sshd hostkey
   command: 'true'
+  changed_when: false
   notify: show takel_ssh_host_rsa_key_pub
   when: takel_ssh_host_rsa_key_pub is not defined
 
