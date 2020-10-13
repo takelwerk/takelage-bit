@@ -2,9 +2,8 @@
 
 require 'rake'
 
-
 def read_docker_config(environments)
-  @docker_command, @docker_command_override = {}, {}
+  @docker_command = @docker_command_override = {}
   environments.each do |environment|
     if @project[environment] && @project[environment]['docker_command_custom']
       @docker_command[environment] = "\"#{@project[environment]['docker_command_custom']}\""
@@ -16,7 +15,7 @@ def read_docker_config(environments)
   end
 end
 
-read_docker_config(['dev', 'stage', 'prod'])
+read_docker_config(%w[dev stage prod])
 
 @cmd_local_docker_takelbase_molecule_command = "cd ansible && bash -c '" \
   'TAKELAGE_DOCKER_CMD_OVERRIDE=%<docker_command_override>s ' \
