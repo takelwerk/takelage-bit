@@ -1,0 +1,6 @@
+# frozen_string_literal: true
+
+namespace :project do
+  desc 'Build takelage cli ruby gem'
+  task prod: %w[dockerhub:takelbase:project:prod]
+end
