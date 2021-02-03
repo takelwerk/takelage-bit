@@ -9,7 +9,6 @@ namespace :dockerhub do
       task prod: %w[git:warn
                     dockerhub:takelbase:project:prod:registry:login
                     rubylint
-                    ansible:docker:takelbase:project:prod:from_base:converge
                     image:docker:takelbase:project:prod:from_base
                     image:docker:takelbase:project:prod:test
                     git:tag
