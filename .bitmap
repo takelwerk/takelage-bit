@@ -490,6 +490,39 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "takelage.rake/rake/google/gce/lib@0.0.6": {
+        "files": [
+            {
+                "name": "README.bit",
+                "relativePath": "README.bit",
+                "test": false
+            },
+            {
+                "name": "container.rb",
+                "relativePath": "container.rb",
+                "test": false
+            },
+            {
+                "name": "firewall.rb",
+                "relativePath": "firewall.rb",
+                "test": false
+            },
+            {
+                "name": "login.rb",
+                "relativePath": "login.rb",
+                "test": false
+            },
+            {
+                "name": "registry.rb",
+                "relativePath": "registry.rb",
+                "test": false
+            }
+        ],
+        "mainFile": "README.bit",
+        "rootDir": "rake/google/gce/lib",
+        "origin": "IMPORTED",
+        "originallySharedDir": "rake/google/gce/lib"
+    },
     "takelage.rake/rake/google/gce/prod@0.0.2": {
         "files": [
             {
