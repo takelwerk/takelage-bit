@@ -460,16 +460,6 @@
                 "test": false
             },
             {
-                "name": "test_takel-users_role_create.py",
-                "relativePath": "ansible/roles/takel-users/molecule/default/role/test_takel-users_role_create.py",
-                "test": false
-            },
-            {
-                "name": "test_takel-users_role_root.py",
-                "relativePath": "ansible/roles/takel-users/molecule/default/role/test_takel-users_role_root.py",
-                "test": false
-            },
-            {
                 "name": "test_takel-users_create.py",
                 "relativePath": "ansible/roles/takel-users/molecule/default/tests/test_takel-users_create.py",
                 "test": false
@@ -478,6 +468,26 @@
                 "name": "test_takel-users_install.py",
                 "relativePath": "ansible/roles/takel-users/molecule/default/tests/test_takel-users_install.py",
                 "test": false
+            },
+            {
+                "relativePath": "ansible/roles/takel-users/molecule/role/converge.yml",
+                "test": false,
+                "name": "converge.yml"
+            },
+            {
+                "relativePath": "ansible/roles/takel-users/molecule/role/molecule.yml",
+                "test": false,
+                "name": "molecule.yml"
+            },
+            {
+                "relativePath": "ansible/roles/takel-users/molecule/role/tests/test_takel-users_create.py",
+                "test": false,
+                "name": "test_takel-users_create.py"
+            },
+            {
+                "relativePath": "ansible/roles/takel-users/molecule/role/tests/test_takel-users_root.py",
+                "test": false,
+                "name": "test_takel-users_root.py"
             },
             {
                 "name": "myrootpassword_hash",
