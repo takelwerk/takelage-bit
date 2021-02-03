@@ -20,6 +20,25 @@ provisioner:
   config_options:
     defaults:
       interpreter_python: auto_silent
+  inventory:
+    group_vars:
+      all:
+        # clear text password: myrootpassword
+        takel_users_root_password_hash: >-
+          {{ lookup('file', '../support/myrootpassword_hash') }}
+        takel_users_users:
+          - myuser
+        takel_users_userdata:
+          myuser:
+            id: 1500
+            comment: My Testuser
+            groups:
+              - sudo
+            ssh: >-
+              {{ lookup('file', '../support/myuserssh_key') }}
+            # clear text password: myuserpassword
+            password_hash: >-
+              {{ lookup('file', '../support/myuserpassword_hash') }}
 verifier:
   name: testinfra
   additional_files_or_dirs:
@@ -28,7 +47,7 @@ verifier:
     s: true
     v: true
 scenario:
-  name: default
+  name: role
   create_sequence:
     - create
   check_sequence:
