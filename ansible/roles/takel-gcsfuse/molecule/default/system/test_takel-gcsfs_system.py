@@ -23,4 +23,5 @@ def test_takel_gcsfs_system_called_by_mount(host, testvars):
     if 'takel_gcsfuse_gcs_bucket_key' in testvars:
         result = host.run('mount -a')
 
-        assert "findGcsfuse: Can't find a usable executable." not in result.stderr
+        assert "findGcsfuse: Can't find a usable executable." \
+               not in result.stderr
