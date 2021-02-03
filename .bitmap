@@ -528,7 +528,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "rake/google/gce/lib"
     },
-    "takelage.rake/rake/google/gce/prod@0.0.6": {
+    "takelage.rake/rake/google/gce/prod@0.0.7": {
         "files": [
             {
                 "name": "README.bit",
