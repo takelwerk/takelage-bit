@@ -20,6 +20,33 @@ provisioner:
   config_options:
     defaults:
       interpreter_python: auto_silent
+  inventory:
+    group_vars:
+      all:
+        # clear text password: myrootpassword
+        takel_users_root_password_hash: >-
+          {{ lookup('file', '../support/myrootpassword_hash') }}
+
+        takel_users_users:
+          - myuser
+          - systemuser
+
+        takel_users_userdata:
+          systemuser:
+            id: 2000
+            comment: User without home and valid shell
+            password_hash: !
+            shell: /usr/sbin/nologin
+            home: /nonexistent
+          myuser:
+            id: 1500
+            comment: My Testuser
+            groups:
+              - sudo
+            ssh: "{{ lookup('file', '../support/myuserssh_key') }}"
+            # clear text password: myuserpassword
+            password_hash: >-
+              {{ lookup('file', '../support/myuserpassword_hash') }}
 verifier:
   name: testinfra
   additional_files_or_dirs:
