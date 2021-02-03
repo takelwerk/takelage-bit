@@ -49,8 +49,6 @@ provisioner:
               {{ lookup('file', '../support/myuserpassword_hash') }}
 verifier:
   name: testinfra
-  additional_files_or_dirs:
-    - ../role/test_*.py
   options:
     s: true
     v: true
