@@ -1,0 +1,21 @@
+# frozen_string_literal: true
+
+require 'rake'
+
+namespace :google do
+  namespace :gce do
+    namespace :prod do |env|
+      namespace :container do
+        @gce_container.each do |task, command|
+          desc "#{task} container in GCE"
+          task task do
+            @commands << format(
+              command,
+              project_environment: env.scope.head
+            )
+          end
+        end
+      end
+    end
+  end
+end
