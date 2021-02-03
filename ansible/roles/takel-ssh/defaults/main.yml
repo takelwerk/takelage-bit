@@ -47,3 +47,5 @@ takel_ssh_KexAlgorithms:
   - diffie-hellman-group-exchange-sha256
   - diffie-hellman-group14-sha1
   - diffie-hellman-group-exchange-sha1
+
+takel_ssh_run_handler: true

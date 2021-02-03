@@ -3,6 +3,7 @@
   service:
     state: restarted
     name: sshd
+  when: takel_ssh_run_handler
 
 - name: read /etc/ssh/ssh_host_ecdsa_key
   slurp:

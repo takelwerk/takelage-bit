@@ -10,7 +10,7 @@
     validate_certs: false
 
 - name: (install) install packages
-  package:
+  apt:
     name: "{{ takel_gcsfuse_deb_install_packages }}"
     state: present
     update_cache: true

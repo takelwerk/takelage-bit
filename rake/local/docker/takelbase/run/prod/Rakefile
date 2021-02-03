@@ -13,7 +13,11 @@ namespace :local do
               @commands << format(
                 command,
                 project_environment: env.scope.head,
-                molecule_command: task
+                molecule_command: task,
+                docker_command_override: 'false',
+                docker_command: 'ignored',
+                docker_tty: 'false',
+                docker_mount_path: '/tmp/takel/'
               )
             end
           end
