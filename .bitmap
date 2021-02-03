@@ -198,11 +198,6 @@
                 "test": false
             },
             {
-                "relativePath": "ansible/roles/takel-bit-server/files/id_rsa",
-                "test": false,
-                "name": "id_rsa"
-            },
-            {
                 "name": "id_rsa.myuser",
                 "relativePath": "ansible/roles/takel-bit-server/files/id_rsa.myuser",
                 "test": false
@@ -211,11 +206,6 @@
                 "name": "id_rsa.myuser.pub",
                 "relativePath": "ansible/roles/takel-bit-server/files/id_rsa.myuser.pub",
                 "test": false
-            },
-            {
-                "relativePath": "ansible/roles/takel-bit-server/files/id_rsa.pub",
-                "test": false,
-                "name": "id_rsa.pub"
             },
             {
                 "relativePath": "ansible/roles/takel-bit-server/molecule/default/converge.yml",
@@ -450,11 +440,6 @@
                 "test": false
             },
             {
-                "relativePath": "ansible/roles/takel-users/files/id_rsa",
-                "test": false,
-                "name": "id_rsa"
-            },
-            {
                 "name": "id_rsa.myuser",
                 "relativePath": "ansible/roles/takel-users/files/id_rsa.myuser",
                 "test": false
@@ -463,11 +448,6 @@
                 "name": "id_rsa.myuser.pub",
                 "relativePath": "ansible/roles/takel-users/files/id_rsa.myuser.pub",
                 "test": false
-            },
-            {
-                "relativePath": "ansible/roles/takel-users/files/id_rsa.pub",
-                "test": false,
-                "name": "id_rsa.pub"
             },
             {
                 "name": "converge.yml",
