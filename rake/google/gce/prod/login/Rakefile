@@ -12,7 +12,7 @@ namespace :google do
             @commands << format(
               command,
               project_environment: env.scope.head,
-              url_env: @project['url_' + env.scope.head]
+              url_env: @project["url_#{env.scope.head}"]
             )
           end
         end
