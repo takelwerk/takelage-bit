@@ -233,7 +233,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.9": {
+    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.10": {
         "files": [
             {
                 "name": "README.bit",
@@ -528,7 +528,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "rake/google/gce/lib"
     },
-    "takelage.rake/rake/google/gce/prod@0.0.7": {
+    "takelage.rake/rake/google/gce/prod@0.0.8": {
         "files": [
             {
                 "name": "README.bit",
