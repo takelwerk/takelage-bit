@@ -7,7 +7,7 @@ namespace :google do
   namespace :gce do
     namespace :prod do
       namespace :db do
-        if @gce_postgresql_database
+        if defined? @gce_postgresql_database
           @gce_postgresql_database.each do |rake_task, value|
             desc value[:description].to_s
             if %i[export].include? rake_task
