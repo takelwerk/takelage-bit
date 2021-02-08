@@ -1,42 +1,43 @@
 ---
-- name: (create) try to get public ssh keys from gitlab
-  block:
-    - name: (create) get public ssh keys from gitlab
-      uri:
-        url: "{{ takel_users_gitlab_url }}{{ gitlab_user }}.keys"
-        status_code:
-          - 200
-          - 401  # in case a key is not found 401 instead of 404 is returned.
-        return_content: true
-      register: takel_users_gitlab_query
-      vars:
-        ansible_become: false
-      connection: local
-      check_mode: false
-      loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
-      loop_control:
-        loop_var: gitlab_user
-
-    - name: (create) try to create user/sshpubkey dict from gitlab query
-      set_fact:
-        takel_users_sshpubkeys_default: >-
-          {{ takel_users_sshpubkeys_default | default({}) |
-          combine({default_user.gitlab_user: default_user.content.split('\n') |
-          default([])}) }}
-      loop: "{{ takel_users_gitlab_query.results }}"
-      loop_control:
-        loop_var: default_user
-
-  rescue:
-    - name: (create) rescue by creating custom user/sshpubkey dict
-      set_fact:
-        takel_users_sshpubkeys_custom: >-
-          {{ takel_users_sshpubkeys_custom | default({}) |
-          combine({custom_user: takel_users_userdata[custom_user].ssh |
-          default('')}) }}
-      loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
-      loop_control:
-        loop_var: custom_user
+# - name: (create) try to get public ssh keys from gitlab
+#  block:
+#    - name: (create) get public ssh keys from gitlab
+#      uri:
+#        url: "{{ takel_users_gitlab_url }}{{ gitlab_user }}.keys"
+#        status_code:
+#          - 200
+#          - 401  # in case a key is not found 401 instead of 404 is returned.
+#        return_content: true
+#      register: takel_users_gitlab_query
+#      vars:
+#        ansible_become: false
+#      connection: local
+#      check_mode: false
+#      loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
+#      loop_control:
+#        loop_var: gitlab_user
+#
+#    - name: (create) try to create user/sshpubkey dict from gitlab query
+#      set_fact:
+#        takel_users_sshpubkeys_default: >-
+#          {{ takel_users_sshpubkeys_default | default({}) |
+#          combine({default_user.gitlab_user: default_user.content.split('\n') |
+#          default([])}) }}
+#      loop: "{{ takel_users_gitlab_query.results }}"
+#      loop_control:
+#        loop_var: default_user
+#
+#  rescue:
+#    - name: (create) rescue by creating custom user/sshpubkey dict
+- name: (create) rescue by creating custom user/sshpubkey dict
+  set_fact:
+    takel_users_sshpubkeys_custom: >-
+      {{ takel_users_sshpubkeys_custom | default({}) |
+      combine({custom_user: takel_users_userdata[custom_user].ssh |
+      default('')}) }}
+  loop: "{{ takel_users_users | intersect(takel_users_userdata) }}"
+  loop_control:
+    loop_var: custom_user
 
 - name: (create) create user/sshpubkey dict (default wins over custom)
   include: ssh.yml

@@ -12,6 +12,3 @@
     - takel
     - takel_user
     - takel_user_configure
-  when:
-    - takel_user_home != '/nonexistent'
-    - takel_user_shell == '/bin/bash' or takel_user_shell == '/bin/sh'

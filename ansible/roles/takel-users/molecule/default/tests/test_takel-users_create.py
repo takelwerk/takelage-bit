@@ -14,6 +14,7 @@ def test_takel_users_create_user(host, testvars):
         assert takel_users_user == user.group
         if 'id' in userdata.keys():
             assert userdata['id'] == user.uid
+            assert userdata['id'] == user.uid
         if 'password' in userdata.keys():
             assert userdata['password'] == user.password
         if 'comment' in userdata.keys():
