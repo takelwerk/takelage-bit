@@ -1,0 +1,17 @@
+---
+- name: (main) include create
+  import_tasks: create.yml
+  tags:
+    - takel
+    - takel_user
+    - takel_user_create
+
+- name: (main) include configure
+  import_tasks: configure.yml
+  tags:
+    - takel
+    - takel_user
+    - takel_user_configure
+  when:
+    - takel_user_home != '/nonexistent'
+    - takel_user_shell == '/bin/bash' or takel_user_shell == '/bin/sh'
