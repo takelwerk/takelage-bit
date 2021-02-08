@@ -412,6 +412,114 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-user"
     },
+    "takelage.ansible/ansible/roles/takel-users@0.0.6": {
+        "files": [
+            {
+                "name": "README.bit",
+                "relativePath": "README.bit",
+                "test": false
+            },
+            {
+                "name": "main.yml",
+                "relativePath": "defaults/main.yml",
+                "test": false
+            },
+            {
+                "name": "id_rsa.myuser",
+                "relativePath": "files/id_rsa.myuser",
+                "test": false
+            },
+            {
+                "name": "id_rsa.myuser.pub",
+                "relativePath": "files/id_rsa.myuser.pub",
+                "test": false
+            },
+            {
+                "name": "converge.yml",
+                "relativePath": "molecule/default/converge.yml",
+                "test": false
+            },
+            {
+                "name": "molecule.yml",
+                "relativePath": "molecule/default/molecule.yml",
+                "test": false
+            },
+            {
+                "name": "test_takel-users_role_create.py",
+                "relativePath": "molecule/default/role/test_takel-users_role_create.py",
+                "test": false
+            },
+            {
+                "name": "test_takel-users_role_root.py",
+                "relativePath": "molecule/default/role/test_takel-users_role_root.py",
+                "test": false
+            },
+            {
+                "name": "conftest.py",
+                "relativePath": "molecule/default/tests/conftest.py",
+                "test": false
+            },
+            {
+                "name": "test_takel-users_create.py",
+                "relativePath": "molecule/default/tests/test_takel-users_create.py",
+                "test": false
+            },
+            {
+                "name": "test_takel-users_install.py",
+                "relativePath": "molecule/default/tests/test_takel-users_install.py",
+                "test": false
+            },
+            {
+                "name": "myrootpassword_hash",
+                "relativePath": "molecule/support/myrootpassword_hash",
+                "test": false
+            },
+            {
+                "name": "myuserpassword_hash",
+                "relativePath": "molecule/support/myuserpassword_hash",
+                "test": false
+            },
+            {
+                "name": "myuserssh_key",
+                "relativePath": "molecule/support/myuserssh_key",
+                "test": false
+            },
+            {
+                "name": "create.yml",
+                "relativePath": "tasks/create.yml",
+                "test": false
+            },
+            {
+                "name": "install.yml",
+                "relativePath": "tasks/install.yml",
+                "test": false
+            },
+            {
+                "name": "main.yml",
+                "relativePath": "tasks/main.yml",
+                "test": false
+            },
+            {
+                "name": "passwords.yml",
+                "relativePath": "tasks/passwords.yml",
+                "test": false
+            },
+            {
+                "name": "root.yml",
+                "relativePath": "tasks/root.yml",
+                "test": false
+            },
+            {
+                "name": "ssh.yml",
+                "relativePath": "tasks/ssh.yml",
+                "test": false
+            }
+        ],
+        "mainFile": "README.bit",
+        "rootDir": "ansible/roles/takel-users",
+        "origin": "IMPORTED",
+        "originallySharedDir": "ansible/roles/takel-users"
+    },
     "takelage.packer/packer/templates/docker/takelbase/project@0.0.2": {
         "files": [
             {
