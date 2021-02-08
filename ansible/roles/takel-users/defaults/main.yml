@@ -1,0 +1,10 @@
+---
+takel_users_deb_install_packages:
+  - sudo
+
+takel_users_gitlab_url: ''
+
+takel_users_root_password_hash: ''
+takel_users_default_shell: /bin/bash
+takel_users_users: []
+takel_users_userdata: {}

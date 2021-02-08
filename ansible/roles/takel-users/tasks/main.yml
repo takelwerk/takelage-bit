@@ -1,0 +1,24 @@
+---
+- name: (main) include install
+  import_tasks: install.yml
+  tags:
+    - takel
+    - takel_users
+    - takel_users_install
+
+- name: (main) include root
+  import_tasks: root.yml
+  tags:
+    - takel
+    - takel_users
+    - takel_users_root
+
+- name: (main) include create
+  import_tasks: create.yml
+  tags:
+    - takel
+    - takel_users
+    - takel_users_create
+    - takel_user
+    - takel_user_create
+    - takel_user_configure

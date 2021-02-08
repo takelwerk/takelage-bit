@@ -1,0 +1,35 @@
+---
+- name: >-
+    (ssh) add user {{ user }} to custom user/sshpubkeys dict
+    with custom ssh keys
+  set_fact:
+    takel_users_sshpubkeys: >-
+      {{ takel_users_sshpubkeys |
+      default({}) |
+      combine( {user: ssh_custom} ) }}
+  when: ssh_custom | length
+
+- name: >-
+    (ssh) add user {{ user }} to default user/sshpubkeys dict
+    with default ssh keys
+  set_fact:
+    takel_users_sshpubkeys: >-
+      {{ takel_users_sshpubkeys |
+      default({}) |
+      combine( {user: ssh_default} ) }}
+  when:
+    - not ssh_custom | length
+    - ssh_default | length
+    - ssh_default[0].startswith('ssh')
+
+- name: >-
+    (ssh) add user {{ user }} to default user/sshpubkeys dict
+    with empty ssh keys
+  set_fact:
+    takel_users_sshpubkeys: >-
+      {{ takel_users_sshpubkeys |
+      default({}) |
+      combine( {user: []} ) }}
+  when:
+    - not ssh_custom | length
+    - (not ssh_default | length) or (not ssh_default[0].startswith('ssh'))
