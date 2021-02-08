@@ -21,6 +21,7 @@ provisioner:
   inventory:
     group_vars:
       all:
+        takel_gcsfuse_gcs_bucket_key: dummy_key
         takel_gcsfuse_mounts:
           - path: /my_mount_1
             bucket: my_bucket_1
