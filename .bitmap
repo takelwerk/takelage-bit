@@ -233,7 +233,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.10": {
+    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.11": {
         "files": [
             {
                 "name": "README.bit",
