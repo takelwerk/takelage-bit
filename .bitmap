@@ -132,7 +132,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-base"
     },
-    "takelage.ansible/ansible/roles/takel-bit-client@0.0.9": {
+    "takelage.ansible/ansible/roles/takel-bit-client@0.0.10": {
         "files": [
             {
                 "name": "README.bit",
@@ -185,7 +185,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-cleanup@0.0.8": {
+    "takelage.ansible/ansible/roles/takel-cleanup@0.0.9": {
         "files": [
             {
                 "name": "README.bit",
@@ -364,7 +364,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-user@0.0.7": {
+    "takelage.ansible/ansible/roles/takel-user@0.0.8": {
         "files": [
             {
                 "name": "README.bit",
@@ -397,9 +397,9 @@
                 "test": false
             },
             {
+                "name": "bash_takel.j2",
                 "relativePath": "templates/bash_takel.j2",
-                "test": false,
-                "name": "bash_takel.j2"
+                "test": false
             },
             {
                 "name": "bashrc.j2",
@@ -594,7 +594,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "rake/ansible/docker/takelbase/project/prod"
     },
-    "takelage.rake/rake/ansible/docker/takelbase/roles/lib@0.0.1": {
+    "takelage.rake/rake/ansible/docker/takelbase/roles/lib@0.0.2": {
         "files": [
             {
                 "name": "README.bit",
@@ -612,7 +612,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "rake/ansible/docker/takelbase/roles/lib"
     },
-    "takelage.rake/rake/ansible/docker/takelbase/roles/role@0.0.1": {
+    "takelage.rake/rake/ansible/docker/takelbase/roles/role@0.0.2": {
         "files": [
             {
                 "name": "README.bit",
