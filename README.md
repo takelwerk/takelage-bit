@@ -1,3 +1,6 @@
+![takelage image](https://github.com/geospin-takelage/takelage-bit/actions/workflows/build_test_project_nightly.yml/badge.svg)
+![ansible roles](https://github.com/geospin-takelage/takelage-bit/actions/workflows/build_test_roles_nightly.yml/badge.svg)
+
 # takelage-bit
 
 *takelage-bit* is bit server to facilitate collaboration
