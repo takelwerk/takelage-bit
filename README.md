@@ -1,5 +1,6 @@
-![takelage image](https://github.com/geospin-takelage/takelage-bit/actions/workflows/build_test_project_nightly.yml/badge.svg)
-![ansible roles](https://github.com/geospin-takelage/takelage-bit/actions/workflows/build_test_roles_nightly.yml/badge.svg)
+[![docker image](https://img.shields.io/docker/v/takelage/bitboard?label=hub.docker.com&sort=semver)](https://hub.docker.com/repository/docker/takelage/bitboard)
+[![takelage image](https://github.com/geospin-takelage/takelage-bit/actions/workflows/build_test_project_nightly.yml/badge.svg)](https://github.com/geospin-takelage/takelage-bit/actions/workflows/build_test_project_nightly.yml)
+[![ansible roles](https://github.com/geospin-takelage/takelage-bit/actions/workflows/build_test_roles_nightly.yml/badge.svg)](https://github.com/geospin-takelage/takelage-bit/actions/workflows/build_test_roles_nightly.yml)
 
 # takelage-bit
 

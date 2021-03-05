@@ -5,6 +5,7 @@ namespace :project do
   task prod: %w[git:warn
                 dockerhub:registry:login
                 rubylint
+                image:docker:takelbase:update
                 image:docker:takelbase:project:prod:from_base
                 image:docker:takelbase:project:prod:test
                 git:tag

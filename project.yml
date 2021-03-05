@@ -1,7 +1,7 @@
 ---
 # project settings
 name: takelage-bit
-version: 0.6.4
+version: 0.6.5
 local_user: packer_local
 
 # dockerhub settings for the base image
