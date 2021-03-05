@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 namespace :project do
-  desc 'Build takelage cli ruby gem'
-  task prod: %w[dockerhub:takelbase:project:prod]
+  desc 'Create and deploy prod image to dockerhub'
+  task prod: %w[git:warn
+                dockerhub:registry:login
+                rubylint
+                image:docker:takelbase:project:prod:from_base
+                image:docker:takelbase:project:prod:test
+                git:tag
+                dockerhub:registry:tag
+                dockerhub:registry:push]
 end

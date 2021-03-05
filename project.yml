@@ -10,8 +10,8 @@ dockerhub_base_repo: takelbase
 dockerhub_base_tag: debian-buster
 
 # dockerhub settings
-dockerhub_prod_user: takelage
-dockerhub_prod_repo: bitboard
+dockerhub_user: takelage
+dockerhub_repo: bitboard
 ssh_port: 222
 
 # google production settings
