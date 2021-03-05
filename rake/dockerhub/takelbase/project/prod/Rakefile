@@ -7,13 +7,14 @@ namespace :dockerhub do
     namespace :project do
       desc 'Create and deploy prod image to dockerhub'
       task prod: %w[git:warn
-                    dockerhub:takelbase:project:prod:registry:login
+                    dockerhub:registry:login
                     rubylint
+                    image:docker:takelbase:update
                     image:docker:takelbase:project:prod:from_base
                     image:docker:takelbase:project:prod:test
                     git:tag
-                    dockerhub:takelbase:project:prod:registry:tag
-                    dockerhub:takelbase:project:prod:registry:push]
+                    dockerhub:registry:tag
+                    dockerhub:registry:push]
     end
   end
 end
