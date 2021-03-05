@@ -29,33 +29,8 @@
     group: "{{ takel_bit_server_bit_group }}"
     mode: 0644
 
-- name: (create) try to get public ssh keys from gitlab
-  block:
-    - name: (create) get public ssh keys from gitlab
-      uri:
-        url: "{{ takel_admin_gitlab_url }}{{ takel_bit_user }}.keys"
-        status_code:
-          - 200
-          - 401  # in case a key is not found 401 instead of 404 is returned.
-        return_content: true
-      register: takel_bit_server_gitlab_query
-      vars:
-        ansible_become: false
-      connection: local
-      check_mode: false
-      loop: "{{ takel_bit_server_users }}"
-      loop_control:
-        loop_var: takel_bit_user
-
-    - name: (user) add gitlab ssh keys to the authorized_keys file of the bit user
-      authorized_key:
-        key: "{{ item.content | default(omit) }}"
-        user: "{{ takel_bit_server_bit_user }}"
-      loop: "{{ takel_bit_server_gitlab_query.results }}"
-
-  rescue:
-    - name: (user) add custom ssh keys to the authorized_keys file of the bit user
-      authorized_key:
-        key: "{{ item | default(omit) }}"
-        user: "{{ takel_bit_server_bit_user }}"
-      loop: "{{ takel_bit_server_sshpubkeys_custom }}"
+- name: (user) add custom ssh keys to the authorized_keys file of the bit user
+  authorized_key:
+    key: "{{ item | default(omit) }}"
+    user: "{{ takel_bit_server_bit_user }}"
+  loop: "{{ takel_bit_server_sshpubkeys_custom }}"
