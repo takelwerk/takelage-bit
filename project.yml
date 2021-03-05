@@ -1,17 +1,17 @@
 ---
 # project settings
 name: takelage-bit
-version: 0.6.1
+version: 0.6.2
 local_user: packer_local
 
 # dockerhub settings for the base image
 dockerhub_base_user: takelage
 dockerhub_base_repo: takelbase
-dockerhub_base_tag: debian-buster
 
 # dockerhub settings
 dockerhub_user: takelage
 dockerhub_repo: bitboard
+dockerhub_tag: prod
 ssh_port: 222
 
 # google production settings
