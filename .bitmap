@@ -291,7 +291,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-ssh@0.0.8": {
+    "takelage.ansible/ansible/roles/takel-ssh@0.0.10": {
         "files": [
             {
                 "name": "README.bit",
