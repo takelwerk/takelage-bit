@@ -132,7 +132,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-base"
     },
-    "takelage.ansible/ansible/roles/takel-bit-client@0.0.10": {
+    "takelage.ansible/ansible/roles/takel-bit-client@0.0.12": {
         "files": [
             {
                 "name": "README.bit",
