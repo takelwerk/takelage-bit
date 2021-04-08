@@ -3,6 +3,7 @@
   copy:
     content: "{{ takel_ssh_host_ecdsa_key }}\n"
     dest: /etc/ssh/ssh_host_ecdsa_key
+    mode: 0600
   notify: restart sshd
   when: takel_ssh_host_ecdsa_key is defined
 
@@ -16,6 +17,7 @@
   copy:
     content: "{{ takel_ssh_host_ecdsa_key_pub }}\n"
     dest: /etc/ssh/ssh_host_ecdsa_key.pub
+    mode: 0644
   notify: restart sshd
   when: takel_ssh_host_ecdsa_key_pub is defined
 
@@ -29,6 +31,7 @@
   copy:
     content: "{{ takel_ssh_host_ed25519_key }}\n"
     dest: /etc/ssh/ssh_host_ed25519_key
+    mode: 0600
   notify: restart sshd
   when: takel_ssh_host_ed25519_key is defined
 
@@ -42,6 +45,7 @@
   copy:
     content: "{{ takel_ssh_host_ed25519_key_pub }}\n"
     dest: /etc/ssh/ssh_host_ed25519_key.pub
+    mode: 0644
   notify: restart sshd
   when: takel_ssh_host_ed25519_key_pub is defined
 
@@ -55,6 +59,7 @@
   copy:
     content: "{{ takel_ssh_host_rsa_key }}\n"
     dest: /etc/ssh/ssh_host_rsa_key
+    mode: 0600
   notify: restart sshd
   when: takel_ssh_host_rsa_key is defined
 
@@ -68,6 +73,7 @@
   copy:
     content: "{{ takel_ssh_host_rsa_key_pub }}\n"
     dest: /etc/ssh/ssh_host_rsa_key.pub
+    mode: 0644
   notify: restart sshd
   when: takel_ssh_host_rsa_key_pub is defined
 

@@ -4,10 +4,11 @@ driver:
 lint: |
   set -e
   yamllint .
-  ansible-lint molecule/*/*.yml
+  ansible-lint
   flake8
 platforms:
-  - name: molecule-takel-takelage-bit-test-project-${TAKELAGE_PROJECT_ENV:-default}
+  - name: >-
+      molecule-takel-takelage-bit-test-project-${TAKELAGE_PROJECT_ENV:-default}
     image: ${TAKELAGE_PROJECT_BASE_IMAGE:-takelage/takelbase}
     command: /lib/systemd/systemd
     privileged: true
