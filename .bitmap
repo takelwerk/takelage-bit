@@ -417,7 +417,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-user"
     },
-    "takelage.ansible/ansible/roles/takel-users@0.0.7": {
+    "takelage.ansible/ansible/roles/takel-users@0.0.8": {
         "files": [
             {
                 "name": "README.bit",
@@ -465,24 +465,24 @@
                 "test": false
             },
             {
+                "name": "converge.yml",
                 "relativePath": "molecule/role/converge.yml",
-                "test": false,
-                "name": "converge.yml"
+                "test": false
             },
             {
+                "name": "molecule.yml",
                 "relativePath": "molecule/role/molecule.yml",
-                "test": false,
-                "name": "molecule.yml"
+                "test": false
             },
             {
+                "name": "test_takel-users_role_create.py",
                 "relativePath": "molecule/role/tests/test_takel-users_role_create.py",
-                "test": false,
-                "name": "test_takel-users_role_create.py"
+                "test": false
             },
             {
+                "name": "test_takel-users_role_root.py",
                 "relativePath": "molecule/role/tests/test_takel-users_role_root.py",
-                "test": false,
-                "name": "test_takel-users_role_root.py"
+                "test": false
             },
             {
                 "name": "myrootpassword_hash",
