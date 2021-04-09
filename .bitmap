@@ -233,7 +233,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.11": {
+    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.12": {
         "files": [
             {
                 "name": "README.bit",
@@ -291,7 +291,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-ssh@0.0.10": {
+    "takelage.ansible/ansible/roles/takel-ssh@0.0.11": {
         "files": [
             {
                 "name": "README.bit",
@@ -417,7 +417,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-user"
     },
-    "takelage.ansible/ansible/roles/takel-users@0.0.8": {
+    "takelage.ansible/ansible/roles/takel-users@0.0.9": {
         "files": [
             {
                 "name": "README.bit",
