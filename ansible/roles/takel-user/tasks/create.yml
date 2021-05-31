@@ -19,3 +19,4 @@
     home: "{{ takel_user_home | default(omit) }}"
     shell: "{{ takel_user_shell | default(omit) }}"
     password: "{{ takel_user_password | ternary(takel_user_password, '*') }}"
+  no_log: true

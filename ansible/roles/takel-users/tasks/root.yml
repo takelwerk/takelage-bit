@@ -4,3 +4,4 @@
     name: root
     password: "{{ takel_users_root_password_hash }}"
   when: takel_users_root_password_hash is defined
+  no_log: true
