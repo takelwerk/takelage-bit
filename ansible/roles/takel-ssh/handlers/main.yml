@@ -2,7 +2,7 @@
 - name: restart sshd
   service:
     state: restarted
-    name: sshd
+    name: ssh
   when: takel_ssh_run_handler
 
 - name: read /etc/ssh/ssh_host_ecdsa_key
