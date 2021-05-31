@@ -655,7 +655,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/images@0.0.2": {
+    "takelage.rake/rake/images@0.0.3": {
         "files": [
             {
                 "name": "README.bit",
