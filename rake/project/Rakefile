@@ -3,12 +3,13 @@
 namespace :project do
   desc 'Create and deploy prod image to dockerhub'
   task prod: %w[git:warn
-                dockerhub:registry:login
+                dockerhub:login
                 rubylint
-                image:docker:takelbase:update
-                image:docker:takelbase:project:prod:from_base
-                image:docker:takelbase:project:prod:test
+                ansible:prod:lint
+                images:update
+                images:takelage:prod:build
+                images:takelage:prod:molecule:test
                 git:tag
-                dockerhub:registry:tag
-                dockerhub:registry:push]
+                dockerhub:tag
+                dockerhub:push]
 end

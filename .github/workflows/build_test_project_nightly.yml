@@ -39,8 +39,11 @@ jobs:
       - name: Lint ruby
         run: tau docker container command "rake rubylint"
 
+      - name: Lint project
+        run: tau docker container command "rake images:takelage:prod:molecule:lint"
+
       - name: Build takelage project image with packer
-        run: tau docker container command "rake image:docker:takelbase:project:prod:from_base"
+        run: tau docker container command "rake images:takelage:prod:build"
 
       - name: Test takelage project image
-        run: tau docker container command "rake image:docker:takelbase:project:prod:test"
+        run: tau docker container command "rake images:takelage:prod:molecule:test"

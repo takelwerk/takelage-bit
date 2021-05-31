@@ -7,7 +7,7 @@ pipelines:
   - prod
 
 images:
-  takelage:
+  bitboard:
     layers:
       - site
 

@@ -8,7 +8,7 @@ lint: |
   flake8
 platforms:
   - name: molecule-takel-takelage-bit-test-image-${TAKELAGE_PROJECT_ENV:-prod}
-    image: packer_local/takelage-bit:${TAKELAGE_PROJECT_ENV:-prod}
+    image: packer_local/takelage-bit-${TAKELAGE_PROJECT_IMG:-non}-${TAKELAGE_PROJECT_ENV:-prod}
     command: /lib/systemd/systemd
     privileged: true
     pre_build_image: true
@@ -18,6 +18,9 @@ platforms:
       - molecule
 provisioner:
   name: ansible
+  playbooks:
+    converge: >-
+      ../../${TAKELAGE_MOLECULE_CONVERGE_PLAYBOOK:-playbook-site.yml}
   config_options:
     defaults:
       interpreter_python: auto_silent
@@ -32,11 +35,10 @@ verifier:
     # p: cacheprovider  # enable cache
     s: true  # capture output
     v: true
-  additional_files_or_dirs:
-    # integration
-    - ../../../roles/*/molecule/default/tests/test_*.py
-    # system
-    - ../../../roles/*/molecule/default/system/test_*.py
+  env:
+    TESTVARS_ROLES_PLAYBOOKS: >-
+      ${TAKELAGE_MOLECULE_VERIFIER_PLAYS:-../../playbook-site.yml}
+  additional_files_or_dirs: ${TAKELAGE_MOLECULE_VERIFIER_FILES:-[]}
 dependency:
   name: shell
   command: rake features:cucumber[@${TAKELAGE_PROJECT_ENV:-prod}]

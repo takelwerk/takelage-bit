@@ -39,11 +39,14 @@ jobs:
       - name: Lint ruby
         run: tau docker container command "rake rubylint"
 
+      - name: Lint project
+        run: tau docker container command "rake images:takelage:prod:molecule:lint"
+
       - name: Build takelage project image with packer
-        run: tau docker container command "rake image:docker:takelbase:project:prod:from_base"
+        run: tau docker container command "rake images:takelage:prod:build"
 
       - name: Test takelage project image
-        run: tau docker container command "rake image:docker:takelbase:project:prod:test"
+        run: tau docker container command "rake images:takelage:prod:molecule:test"
 
       - name: Login to docker hub
         uses: docker/login-action@v1
@@ -53,5 +56,5 @@ jobs:
 
       - name: Tag and push image
         run: |
-          tau docker container command "rake dockerhub:registry:tag"
-          tau docker container command "rake dockerhub:registry:push"
+          tau docker container command "rake dockerhub:bitboard:prod:tag"
+          tau docker container command "rake dockerhub:bitboard:prod:push"

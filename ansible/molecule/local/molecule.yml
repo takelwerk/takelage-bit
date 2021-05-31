@@ -8,7 +8,7 @@ lint: |
   flake8
 platforms:
   - name: molecule-takel-takelage-bit-local-${TAKELAGE_PROJECT_ENV:-prod}
-    image: packer_local/takelage-bit:${TAKELAGE_PROJECT_ENV:-prod}
+    image: packer_local/takelage-dev-bitboard-${TAKELAGE_PROJECT_ENV:-prod}
     command: /lib/systemd/systemd
     privileged: true
     pre_build_image: true
@@ -20,6 +20,9 @@ platforms:
       - molecule
 provisioner:
   name: ansible
+  playbooks:
+    converge: >-
+      ../../${TAKELAGE_MOLECULE_CONVERGE_PLAYBOOK:-playbook-site.yml}
   config_options:
     defaults:
       interpreter_python: auto_silent
@@ -43,11 +46,9 @@ scenario:
   check_sequence:
     - destroy
     - create
-    - converge
     - destroy
   converge_sequence:
     - create
-    - converge
   destroy_sequence:
     - destroy
   test_sequence:
@@ -55,7 +56,6 @@ scenario:
     - destroy
     - syntax
     - create
-    - converge
     - idempotence
     - verify
     # - dependency
