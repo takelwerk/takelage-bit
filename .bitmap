@@ -619,7 +619,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/dockerhub@0.0.1": {
+    "takelage.rake/rake/dockerhub@0.0.2": {
         "files": [
             {
                 "name": "README.bit",
@@ -655,7 +655,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/images@0.0.6": {
+    "takelage.rake/rake/images@0.0.7": {
         "files": [
             {
                 "name": "README.bit",
