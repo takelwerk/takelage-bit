@@ -576,6 +576,49 @@
         "origin": "IMPORTED",
         "originallySharedDir": "rake/ansible"
     },
+    "takelage.rake/rake/cloud/gce@0.0.1": {
+        "files": [
+            {
+                "relativePath": "rake/cloud/gce/README.bit",
+                "test": false,
+                "name": "README.bit"
+            },
+            {
+                "relativePath": "rake/cloud/gce/bucket/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            },
+            {
+                "relativePath": "rake/cloud/gce/container/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            },
+            {
+                "relativePath": "rake/cloud/gce/db/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            },
+            {
+                "relativePath": "rake/cloud/gce/firewall/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            },
+            {
+                "relativePath": "rake/cloud/gce/login/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            },
+            {
+                "relativePath": "rake/cloud/gce/registry/Rakefile",
+                "test": false,
+                "name": "Rakefile"
+            }
+        ],
+        "mainFile": "rake/cloud/gce/README.bit",
+        "trackDir": "rake/cloud/gce",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "takelage.rake/rake/dockerhub@0.0.1": {
         "files": [
             {
