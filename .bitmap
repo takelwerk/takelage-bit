@@ -629,6 +629,24 @@
         "origin": "IMPORTED",
         "originallySharedDir": "rake/google/gce/prod"
     },
+    "takelage.rake/rake/images@0.0.1": {
+        "files": [
+            {
+                "name": "README.bit",
+                "relativePath": "README.bit",
+                "test": false
+            },
+            {
+                "name": "Rakefile",
+                "relativePath": "Rakefile",
+                "test": false
+            }
+        ],
+        "mainFile": "README.bit",
+        "rootDir": "rake/images",
+        "origin": "IMPORTED",
+        "originallySharedDir": "rake/images"
+    },
     "takelage.rake/rake/meta@0.0.9": {
         "files": [
             {
