@@ -10,7 +10,7 @@ images:
   bitboard:
     layers:
       - site
-    run_command: /lib/systemd/systemd
+    command: /lib/systemd/systemd
     privileged: --privileged
 
 # results in packer_local/myproject-mypipeline:latest
