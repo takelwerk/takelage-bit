@@ -46,4 +46,4 @@ jobs:
         run: tau docker container command "rake images:bitboard:prod:build"
 
       - name: Test takelage project image
-        run: tau docker container command "rake images:takelage:prod:molecule:test"
+        run: tau docker container command "rake images:bitboard:prod:molecule:test"
