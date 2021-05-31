@@ -558,7 +558,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "packer/templates/takelage/docker"
     },
-    "takelage.rake/rake/ansible@0.0.1": {
+    "takelage.rake/rake/ansible@0.0.2": {
         "files": [
             {
                 "name": "README.bit",
@@ -655,7 +655,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/images@0.0.5": {
+    "takelage.rake/rake/images@0.0.6": {
         "files": [
             {
                 "name": "README.bit",
