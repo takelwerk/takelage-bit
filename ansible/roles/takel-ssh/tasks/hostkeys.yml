@@ -4,9 +4,7 @@
     content: "{{ takel_ssh_host_ecdsa_key }}\n"
     dest: /etc/ssh/ssh_host_ecdsa_key
     mode: 0600
-  notify:
-    - stop sshd
-    - start sshd
+  notify: restart sshd
   when: takel_ssh_host_ecdsa_key is defined
 
 - name: (hostkeys) show private ecdsa sshd hostkey
@@ -20,9 +18,7 @@
     content: "{{ takel_ssh_host_ecdsa_key_pub }}\n"
     dest: /etc/ssh/ssh_host_ecdsa_key.pub
     mode: 0644
-  notify:
-    - stop sshd
-    - start sshd
+  notify: restart sshd
   when: takel_ssh_host_ecdsa_key_pub is defined
 
 - name: (hostkeys) show public ecdsa sshd hostkey
@@ -36,9 +32,7 @@
     content: "{{ takel_ssh_host_ed25519_key }}\n"
     dest: /etc/ssh/ssh_host_ed25519_key
     mode: 0600
-  notify:
-    - stop sshd
-    - start sshd
+  notify: restart sshd
   when: takel_ssh_host_ed25519_key is defined
 
 - name: (hostkeys) show private ed25519 sshd hostkey
@@ -52,9 +46,7 @@
     content: "{{ takel_ssh_host_ed25519_key_pub }}\n"
     dest: /etc/ssh/ssh_host_ed25519_key.pub
     mode: 0644
-  notify:
-    - stop sshd
-    - start sshd
+  notify: restart sshd
   when: takel_ssh_host_ed25519_key_pub is defined
 
 - name: (hostkeys) show public ed25519 sshd hostkey
@@ -68,9 +60,7 @@
     content: "{{ takel_ssh_host_rsa_key }}\n"
     dest: /etc/ssh/ssh_host_rsa_key
     mode: 0600
-  notify:
-    - stop sshd
-    - start sshd
+  notify: restart sshd
   when: takel_ssh_host_rsa_key is defined
 
 - name: (hostkeys) show private rsa sshd hostkey
@@ -84,9 +74,7 @@
     content: "{{ takel_ssh_host_rsa_key_pub }}\n"
     dest: /etc/ssh/ssh_host_rsa_key.pub
     mode: 0644
-  notify:
-    - stop sshd
-    - start sshd
+  notify: restart sshd
   when: takel_ssh_host_rsa_key_pub is defined
 
 - name: (hostkeys) show public rsa sshd hostkey
@@ -99,14 +87,10 @@
   file:
     path: /etc/ssh/ssh_host_dsa_key
     state: absent
-  notify:
-    - stop sshd
-    - start sshd
+  notify: restart sshd
 
 - name: (hostkeys) remove public dsa sshd hostkey
   file:
     path: /etc/ssh/ssh_host_dsa_key.pub
     state: absent
-  notify:
-    - stop sshd
-    - start sshd
+  notify: restart sshd

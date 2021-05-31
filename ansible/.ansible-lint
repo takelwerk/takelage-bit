@@ -1,5 +1,6 @@
 skip_list:
-  - role-name
+  - command-instead-of-module
   - git-latest
   - no-changed-when
+  - role-name
   - var-naming
