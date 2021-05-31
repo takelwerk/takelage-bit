@@ -5,11 +5,12 @@ source "docker" "takelage" {
   run_command = [
     "--detach",
     "--interactive",
+    "${var.privileged}",
     "--tty",
     "--name",
     "${var.target_repo}",
     "{{ .Image }}",
-    "${var.run_command}",
+    "${var.run_command}"
   ]
 }
 

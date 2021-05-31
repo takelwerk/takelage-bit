@@ -11,6 +11,7 @@ images:
     layers:
       - site
     run_command: /lib/systemd/systemd
+    privileged: --privileged
 
 # results in packer_local/myproject-mypipeline:latest
 local_user: packer_local

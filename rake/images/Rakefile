@@ -28,7 +28,8 @@ cmd_images_packer =
   "-var='base_user=%<base_user>s' " \
   "-var='local_user=%<local_user>s' " \
   "-var='target_repo=%<target_repo>s' " \
-  '%<var_run_command>s ' \
+  '%<var_privileged>s' \
+  '%<var_run_command>s' \
   '%<packer_template_dir>s'
 
 jobs = \
@@ -117,11 +118,19 @@ namespace :images do
                   target_repo = "#{@project['name']}-#{image}-#{pipeline}" if index.next == layers.count
 
                   packer_template_dir = @project['images'][image][packer_template_dir] || default_packer_template_dir
+
+                  var_privileged = ''
+                  if @project['images'][image].key?('privileged')
+                    var_privileged = "-var='privileged=#{@project['images'][image]['privileged']}' "
+                  end
+
                   var_run_command = ''
                   if @project['images'][image].key?('run_command')
                     var_run_command = "-var='run_command=#{@project['images'][image]['run_command']}' "
                   end
+
                   parent_layer = layer
+
                   # desc "Build layer #{layer} from base layer #{parent_layer} of image #{image}"
                   task "#{number}-#{layer}".to_sym do
                     @commands << format(
@@ -132,6 +141,7 @@ namespace :images do
                       base_user: base_user,
                       local_user: @project['local_user'],
                       packer_template_dir: packer_template_dir,
+                      var_privileged: var_privileged,
                       var_run_command: var_run_command,
                       target_repo: target_repo
                     )
