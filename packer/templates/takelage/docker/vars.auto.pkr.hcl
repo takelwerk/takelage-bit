@@ -38,15 +38,7 @@ variable "target_tag" {
   default = "latest"
 }
 
-variable "run_command_1" {
-  type = string
-}
-
-variable "run_command_2" {
-  type = string
-}
-
-variable "run_command_3" {
+variable "run_command" {
   type = string
 }
 

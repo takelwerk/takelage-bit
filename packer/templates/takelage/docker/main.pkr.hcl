@@ -9,9 +9,7 @@ source "docker" "takelage" {
     "--name",
     "${var.target_repo}",
     "{{ .Image }}",
-    "${var.run_command_1}",
-    "${var.run_command_2}",
-    "${var.run_command_3}"
+    "${var.run_command}",
   ]
 }
 

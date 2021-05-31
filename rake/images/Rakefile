@@ -2,6 +2,9 @@
 
 require 'rake'
 
+default_docker_run_command = '/bin/cat'
+default_packer_template_dir = 'templates/takelage/docker'
+
 cmd_images_docker_pull = 'docker pull ' \
   "#{@project['dockerhub_base_user']}/" \
   "#{@project['dockerhub_base_repo']}:" \
@@ -25,9 +28,7 @@ cmd_images_packer =
   "-var='base_repo=%<base_repo>s' " \
   "-var='base_user=%<base_user>s' " \
   "-var='local_user=%<local_user>s' " \
-  "-var='run_command_1=%<run_command_1>s' " \
-  "-var='run_command_2=%<run_command_2>s' " \
-  "-var='run_command_3=%<run_command_3>s' " \
+  "-var='run_command=%<run_command>s' " \
   "-var='target_repo=%<target_repo>s' " \
   '%<packer_template_dir>s'
 
@@ -116,13 +117,9 @@ namespace :images do
                   # last
                   target_repo = "#{@project['name']}-#{image}-#{pipeline}" if index.next == layers.count
 
-                  packer_template_dir = @project['images'][image][packer_template_dir] || 'templates/takelage/docker'
-                  run_command_1 = '/usr/bin/tail'
-                  run_command_2 = '--follow'
-                  run_command_3 = '/dev/null'
-                  run_command_1 = @project['images'][image]['run_command_1'] if @project['images'][image].key?('run_command_1')
-                  run_command_2 = @project['images'][image]['run_command_2'] if @project['images'][image].key?('run_command_2')
-                  run_command_3 = @project['images'][image]['run_command_3'] if @project['images'][image].key?('run_command_3')
+                  packer_template_dir = @project['images'][image][packer_template_dir] || default_packer_template_dir
+                  run_command = default_docker_run_command
+                  run_command = @project['images'][image]['run_command'] if @project['images'][image].key?('run_command')
                   parent_layer = layer
                   # desc "Build layer #{layer} from base layer #{parent_layer} of image #{image}"
                   task "#{number}-#{layer}".to_sym do
@@ -134,9 +131,7 @@ namespace :images do
                       base_user: base_user,
                       local_user: @project['local_user'],
                       packer_template_dir: packer_template_dir,
-                      run_command_1: run_command_1,
-                      run_command_2: run_command_2,
-                      run_command_3: run_command_3,
+                      run_command: run_command,
                       target_repo: target_repo
                     )
                   end
