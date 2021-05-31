@@ -40,6 +40,7 @@ variable "target_tag" {
 
 variable "run_command" {
   type = string
+  default = "/bin/cat"
 }
 
 locals {
