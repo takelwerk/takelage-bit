@@ -7,7 +7,10 @@ pipelines:
   - prod
 
 images:
-  bitboard:
+  project:
+    base_user: takelage
+    base_repo: takelbase
+    base_tag: latest
     layers:
       - site
     command: /lib/systemd/systemd
@@ -15,10 +18,6 @@ images:
 
 # results in packer_local/myproject-mypipeline:latest
 local_user: packer_local
-
-# pull
-dockerhub_base_user: takelage
-dockerhub_base_repo: takelbase
 
 # push
 dockerhub_user: takelage

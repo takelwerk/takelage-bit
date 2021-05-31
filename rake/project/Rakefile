@@ -7,8 +7,8 @@ namespace :project do
                 rubylint
                 ansible:prod:lint
                 images:update
-                images:bitboard:prod:build
-                images:bitboard:prod:molecule:test
+                images:project:prod:build
+                images:project:prod:molecule:test
                 git:tag
                 dockerhub:tag
                 dockerhub:push]
