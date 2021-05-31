@@ -1,0 +1,59 @@
+# frozen_string_literal: true
+
+require 'rake'
+
+# rubocop:disable Metrics/BlockLength
+namespace :cloud do
+  namespace :gce do |env|
+    subtasks(env.scope.path) do |env|
+      @project['pipelines'].each do |pipeline|
+        namespace pipeline.to_sym do |env|
+          namespace :bucket do
+            bucket_env = "google_postgresql_backup_path_#{env.scope.head}"
+            if @project.include? bucket_env
+              bucket = @project[bucket_env].split('/')[0]
+              @google_storage_bucket.each do |rake_task, value|
+                desc value[:description].to_s
+                if %i[info iam_list].include? rake_task
+                  task rake_task do
+                    @commands << format(
+                      value[:command],
+                      bucket: bucket
+                    )
+                  end
+                elsif %i[iam_add iam_remove].include? rake_task
+                  task rake_task, [:account, :role] do |_task, args|
+                    @commands << format(
+                      value[:command],
+                      bucket: bucket,
+                      service_account: args[:account],
+                      iam_role: args[:role]
+                    )
+                  end
+                elsif %i[download upload].include? rake_task
+                  task rake_task, [:bucket_path, :local_path] do |_task, args|
+                    @commands << format(
+                      value[:command],
+                      bucket: bucket,
+                      path: args[:bucket_path],
+                      local_path: args[:local_path]
+                    )
+                  end
+                else
+                  task rake_task, [:path] do |_task, args|
+                    @commands << format(
+                      value[:command],
+                      bucket: bucket,
+                      path: args[:path]
+                    )
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+# rubocop:enable Metrics/BlockLength

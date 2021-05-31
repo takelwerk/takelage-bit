@@ -1,0 +1,39 @@
+# frozen_string_literal: true
+
+require 'rake'
+
+@gce_registry = {
+  push: 'docker push ' \
+        "#{@project['google_user']}/" \
+        "#{@project['google_id']}/" \
+        "#{@project['google_repo']}-%<project_environment>s:" \
+        "#{@project['version']}",
+  tag: 'docker tag ' \
+        "#{@project['local_user']}/" \
+        "#{@project['name']}:%<project_environment>s " \
+        "#{@project['google_user']}/#{@project['google_id']}/" \
+        "#{@project['google_repo']}-%<project_environment>s:" \
+        "#{@project['version']}"
+}
+
+namespace :cloud do
+  namespace :gce do |env|
+    subtasks(env.scope.path) do
+      @project['pipelines'].each do |pipeline|
+        namespace pipeline.to_sym do |env|
+          namespace :registry do
+            @gce_registry.each do |task, command|
+              desc "#{task} production image to google.com"
+              task task do
+                @commands << format(
+                  command,
+                  project_environment: env.scope.head
+                )
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

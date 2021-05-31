@@ -2,6 +2,10 @@
 
 require 'rake'
 
+# frozen_string_literal: true
+
+require 'rake'
+
 @gce_container = {
   create: 'gcloud compute instances ' \
           'create-with-container ' \
@@ -31,3 +35,25 @@ require 'rake'
           "--zone=#{@project['google_zone']} " \
           "--project=#{@project['google_id']} "
 }
+
+namespace :cloud do
+  namespace :gce do |env|
+    subtasks(env.scope.path) do
+      @project['pipelines'].each do |pipeline|
+        namespace pipeline.to_sym do |env|
+          namespace :container do
+            @gce_container.each do |task, command|
+              desc "#{task} container in GCE"
+              task task do
+                @commands << format(
+                  command,
+                  project_environment: env.scope.head
+                )
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

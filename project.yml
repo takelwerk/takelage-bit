@@ -2,16 +2,28 @@
 # project settings
 name: takelage-bit
 version: 0.7.0
+
+# results in packer_local/myproject-mypipeline:latest
 local_user: packer_local
 
-# dockerhub settings for the base image
+# pull
 dockerhub_base_user: takelage
 dockerhub_base_repo: takelbase
 
-# dockerhub settings
+# push
 dockerhub_user: takelage
 dockerhub_repo: bitboard
-dockerhub_tag: prod
+dockerhub_tag: latest
+
+pipelines:
+  - prod
+
+images:
+  takelage:
+    layers:
+      - site
+
+# system settings
 ssh_port: 222
 
 # google production settings

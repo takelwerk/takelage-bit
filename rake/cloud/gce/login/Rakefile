@@ -1,0 +1,36 @@
+# frozen_string_literal: true
+
+require 'rake'
+
+@gce_login = {
+  host: 'gcloud beta compute ' \
+        "ssh #{@project['google_repo']}-%<project_environment>s " \
+        "--zone=#{@project['google_zone']} " \
+        "--project=#{@project['google_id']} ",
+  container: 'ssh ' \
+             "-p #{@project['ssh_port']} " \
+             '%<url>s'
+}
+
+namespace :cloud do
+  namespace :gce do |env|
+    subtasks(env.scope.path) do
+      @project['pipelines'].each do |pipeline|
+        namespace pipeline.to_sym do |env|
+          namespace :login do
+            @gce_login.each do |task, command|
+              desc "Log in to #{task} in GCE"
+              task task do
+                @commands << format(
+                  command,
+                  project_environment: env.scope.head,
+                  url: @project["url_#{env.scope.head}"]
+                )
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

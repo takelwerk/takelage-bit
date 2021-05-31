@@ -19,3 +19,33 @@ require 'rake'
           "--target-tags=#{@project['google_repo']}-%<rule_name>s " \
           "--project=#{@project['google_id']}"
 }
+
+namespace :cloud do
+  namespace :gce do |env|
+    subtasks(env.scope.path) do
+
+      @project['pipelines'].each do |pipeline|
+        namespace pipeline.to_sym do |env|
+          namespace :firewall do
+            @gce_firewall.each do |task, command|
+              desc "#{task} firewall rule in GCE"
+              task task do
+                @project['google_firewall_prod'].each do |rule|
+                  rule_name = "allow-#{rule['desc']}-#{rule['proto']}-" \
+                          "#{rule['port']}-#{@project['google_repo']}" \
+                          "-#{env.scope.head}"
+                  @commands << format(
+                    command,
+                    proto: rule['proto'],
+                    port: rule['port'],
+                    rule_name: rule_name
+                  )
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
