@@ -535,7 +535,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-users"
     },
-    "takelage.packer/packer/templates/takelage/docker@0.0.1": {
+    "takelage.packer/packer/templates/takelage/docker@0.0.2": {
         "files": [
             {
                 "name": "README.bit",
@@ -655,7 +655,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.rake/rake/images@0.0.3": {
+    "takelage.rake/rake/images@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
