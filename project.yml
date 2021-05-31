@@ -3,6 +3,14 @@
 name: takelage-bit
 version: 0.7.0
 
+pipelines:
+  - prod
+
+images:
+  takelage:
+    layers:
+      - site
+
 # results in packer_local/myproject-mypipeline:latest
 local_user: packer_local
 
@@ -14,14 +22,6 @@ dockerhub_base_repo: takelbase
 dockerhub_user: takelage
 dockerhub_repo: bitboard
 dockerhub_tag: latest
-
-pipelines:
-  - prod
-
-images:
-  takelage:
-    layers:
-      - site
 
 # system settings
 ssh_port: 222
