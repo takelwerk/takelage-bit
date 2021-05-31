@@ -535,6 +535,24 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-users"
     },
+    "takelage.rake/rake/ansible@0.0.1": {
+        "files": [
+            {
+                "name": "README.bit",
+                "relativePath": "README.bit",
+                "test": false
+            },
+            {
+                "name": "Rakefile",
+                "relativePath": "Rakefile",
+                "test": false
+            }
+        ],
+        "mainFile": "README.bit",
+        "rootDir": "rake/ansible",
+        "origin": "IMPORTED",
+        "originallySharedDir": "rake/ansible"
+    },
     "takelage.rake/rake/dockerhub@0.0.1": {
         "files": [
             {
