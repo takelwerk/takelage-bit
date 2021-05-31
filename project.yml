@@ -10,6 +10,9 @@ images:
   bitboard:
     layers:
       - site
+    run_command_1: /lib/systemd/systemd
+    run_command_2: ''
+    run_command_3: ''
 
 # results in packer_local/myproject-mypipeline:latest
 local_user: packer_local

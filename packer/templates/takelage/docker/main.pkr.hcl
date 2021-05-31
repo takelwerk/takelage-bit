@@ -9,9 +9,9 @@ source "docker" "takelage" {
     "--name",
     "${var.target_repo}",
     "{{ .Image }}",
-    "/usr/bin/tail",
-    "--follow",
-    "/dev/null"
+    "${var.run_command_1}",
+    "${var.run_command_2}",
+    "${var.run_command_3}"
   ]
 }
 
