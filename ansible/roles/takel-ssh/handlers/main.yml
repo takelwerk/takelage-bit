@@ -1,7 +1,13 @@
 ---
-- name: restart sshd
+- name: stop sshd
   service:
-    state: restarted
+    state: stopped
+    name: sshd
+  when: takel_ssh_run_handler
+
+- name: start sshd
+  service:
+    state: started
     name: sshd
   when: takel_ssh_run_handler
 

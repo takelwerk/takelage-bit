@@ -14,4 +14,6 @@
     owner: root
     group: root
     mode: 0644
-  notify: restart sshd
+  notify:
+    - stop sshd
+    - start sshd
