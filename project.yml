@@ -19,6 +19,7 @@ images:
     layers:
       - site
     command: /lib/systemd/systemd
+    packer_command: /lib/systemd/systemd
     privileged: --privileged
 
 # system settings
