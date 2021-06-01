@@ -59,6 +59,7 @@ variable "command" {
 
 locals {
   ansible_host = "${var.target_repo}"
+  command_split = split(" ", "${var.command}")
   privileged_list = "${var.privileged}" == "" ? [] : ["${var.privileged}"]
   run_command_arguments = [
     "--detach",
