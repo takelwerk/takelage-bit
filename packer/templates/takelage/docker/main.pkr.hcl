@@ -24,7 +24,8 @@ build {
       "private",
       "users",
       "image",
-      "${var.ansible_environment}"
+      "${var.ansible_environment}",
+      "${var.image_name}"
     ]
     playbook_file = "../ansible/${var.ansible_playbook}"
     user = "root"

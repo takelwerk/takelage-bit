@@ -8,6 +8,10 @@ variable "ansible_environment" {
   default = "{{ ansible_environment }}"
 }
 
+variable "image_name" {
+  type = string
+}
+
 variable "ansible_playbook" {
   type = string
 }
