@@ -5,7 +5,7 @@ require 'rake'
 cmd_local_container_login_host = 'docker exec ' \
     '--interactive ' \
     '--tty ' \
-    "#{@project['project']}_local " \
+    "#{@project['name']}_local " \
     'bash'
 
 cmd_local_container_login_ssh = 'ssh ' \
@@ -13,7 +13,7 @@ cmd_local_container_login_ssh = 'ssh ' \
     '-l bit ' \
     '-o StrictHostKeyChecking=no ' \
     '-p 222 ' \
-    "#{@project['project']}"
+    "#{@project['name']}"
 
 namespace :local do
   namespace :login do
