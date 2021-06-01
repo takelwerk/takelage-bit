@@ -1,3 +1,4 @@
+import os
 import pytest
 import takeltest
 
@@ -21,9 +22,13 @@ def test_image_meta_env_values(image_meta_data, env, value):
     assert value == image_meta_data['Config']['Env'][env]
 
 
-def test_image_meta_cmd(image_meta_data):
-    cmd = ["/lib/systemd/systemd"]
-    assert cmd == image_meta_data['Config']['Cmd']
+def test_image_meta_cmd(testvars, image_meta_data):
+    image = os.environ.get('TAKELAGE_PROJECT_IMG')
+    if 'command' in testvars['project'][image]:
+        expected = testvars['project'][image]['command']
+    else:
+        expected = '/usr/bin/tail -f /dev/null'
+    assert expected.split(' ') == image_meta_data['Config']['Cmd']
 
 
 def test_image_meta_work_dir(image_meta_data):
