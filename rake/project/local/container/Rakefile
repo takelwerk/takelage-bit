@@ -3,12 +3,12 @@
 require 'rake'
 
 cmd_local_container_id = 'tau docker container check existing ' \
-    "#{@project['name']} && " \
+    "#{@project['name']}_local && " \
     "docker exec #{@project['name']}_local hostname" \
     '; true'
 
 cmd_local_container_start = 'tau docker container check existing ' \
-    "#{@project['name']} || " \
+    "#{@project['name']}_local || " \
     'docker run ' \
     '--detach ' \
     "--name #{@project['name']}_local " \
@@ -19,7 +19,7 @@ cmd_local_container_start = 'tau docker container check existing ' \
     '; true'
 
 cmd_local_container_stop = 'tau docker container check existing ' \
-    "#{@project['name']} && " \
+    "#{@project['name']}_local && " \
     'docker stop ' \
     "#{@project['name']}_local" \
     '; true'

@@ -13,7 +13,7 @@ cmd_local_container_login_ssh = 'ssh ' \
     '-l bit ' \
     '-o StrictHostKeyChecking=no ' \
     '-p 222 ' \
-    "#{@project['name']}"
+    "#{@project['name']}_local"
 
 namespace :local do
   namespace :login do
