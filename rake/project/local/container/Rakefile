@@ -24,7 +24,7 @@ cmd_local_container_stop = 'tau docker container check existing ' \
     "#{@project['name']}_local" \
     '; true'
 
-# rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/BlockLength
 namespace :local do
   namespace :container do
     images = @project['images']
@@ -58,4 +58,4 @@ namespace :local do
     end
   end
 end
-# rubocop:enable Metrics/MethodLength
+# rubocop:enable Metrics/BlockLength
