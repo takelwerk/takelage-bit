@@ -24,12 +24,13 @@ cmd_local_container_stop = 'tau docker container check existing ' \
     "#{@project['name']}_local" \
     '; true'
 
+# rubocop:disable Metrics/MethodLength
 namespace :local do
   namespace :container do
     images = @project['images']
     images.each do |project_image|
       image = project_image.first
-      namespace image.to_sym do |env|
+      namespace image.to_sym do
         desc 'Get the local container id'
         task :id do
           @commands << format(
@@ -57,3 +58,4 @@ namespace :local do
     end
   end
 end
+# rubocop:enable Metrics/MethodLength
