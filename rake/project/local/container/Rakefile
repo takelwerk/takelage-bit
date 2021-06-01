@@ -15,7 +15,7 @@ cmd_local_container_start = 'tau docker container check existing ' \
     "--network #{ENV['HOSTNAME']} " \
     '--privileged ' \
     '--rm ' \
-    "#{@project['local_user']}/#{@project['name']}-project-prod" \
+    "#{@project['local_user']}/#{@project['name']}-%<image>s-prod" \
     '; true'
 
 cmd_local_container_stop = 'tau docker container check existing ' \
@@ -26,19 +26,34 @@ cmd_local_container_stop = 'tau docker container check existing ' \
 
 namespace :local do
   namespace :container do
-    desc 'Get the local container id'
-    task :id do
-      @commands << cmd_local_container_id
-    end
+    images = @project['images']
+    images.each do |project_image|
+      image = project_image.first
+      namespace image.to_sym do |env|
+        desc 'Get the local container id'
+        task :id do
+          @commands << format(
+            cmd_local_container_id,
+            image: image
+          )
+        end
 
-    desc 'Start local container'
-    task :start do
-      @commands << cmd_local_container_start
-    end
+        desc 'Start local container'
+        task :start do
+          @commands << format(
+            cmd_local_container_start,
+            image: image
+          )
+        end
 
-    desc 'Stop local container'
-    task :stop do
-      @commands << cmd_local_container_stop
+        desc 'Stop local container'
+        task :stop do
+          @commands << format(
+            cmd_local_container_stop,
+            image: image
+          )
+        end
+      end
     end
   end
 end
