@@ -69,7 +69,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-anarchism"
     },
-    "takelage.ansible/ansible/roles/takel-base@0.0.20": {
+    "takelage.ansible/ansible/roles/takel-base@0.0.21": {
         "files": [
             {
                 "name": "README.bit",
@@ -185,7 +185,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-cleanup@0.0.11": {
+    "takelage.ansible/ansible/roles/takel-cleanup@0.0.12": {
         "files": [
             {
                 "name": "README.bit",
@@ -233,7 +233,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.12": {
+    "takelage.ansible/ansible/roles/takel-gcsfuse@0.0.13": {
         "files": [
             {
                 "name": "README.bit",
@@ -291,7 +291,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-ssh@0.0.12": {
+    "takelage.ansible/ansible/roles/takel-ssh@0.0.13": {
         "files": [
             {
                 "name": "README.bit",
@@ -364,7 +364,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-user@0.0.9": {
+    "takelage.ansible/ansible/roles/takel-user@0.0.10": {
         "files": [
             {
                 "name": "README.bit",
@@ -417,7 +417,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-user"
     },
-    "takelage.ansible/ansible/roles/takel-users@0.0.10": {
+    "takelage.ansible/ansible/roles/takel-users@0.0.11": {
         "files": [
             {
                 "name": "README.bit",
