@@ -40,12 +40,7 @@ verifier:
     TESTVARS_ROLES_PLAYBOOKS: >-
       ${TAKELAGE_MOLECULE_VERIFIER_PLAYS:-../../playbook-site.yml}
   additional_files_or_dirs: ${TAKELAGE_MOLECULE_VERIFIER_FILES:-[]}
-dependency:
-  name: shell
-  command: rake features:cucumber[@${TAKELAGE_PROJECT_ENV:-prod}]
 scenario:
-  dependency_sequence:
-    - dependency
   create_sequence:
     - create
   converge_sequence:
@@ -58,5 +53,4 @@ scenario:
     - create
     - verify
     - syntax
-    # - dependency
     - destroy
