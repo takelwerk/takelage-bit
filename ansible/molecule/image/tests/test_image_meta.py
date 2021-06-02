@@ -11,7 +11,7 @@ def test_image_meta_env_exists(image_meta_data):
 
 @pytest.mark.parametrize('env, value', [(0, 'DEBIAN_FRONTEND=noninteractive'),
                                         (1, 'LANG=en_US.UTF-8'),
-                                        (2, 'SUPATH=')
+                                        (2, 'SUPATH='),
                                         (3, 'PATH='
                                             '/usr/local/sbin:'
                                             '/usr/local/bin:'
