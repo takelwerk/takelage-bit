@@ -25,3 +25,16 @@ def test_takel_users_create_user(host, testvars):
             userdata_groups = [takel_users_user] + userdata['groups']
             userdata_groups.sort()
             assert userdata_groups == user_groups
+<<<<<<< 0.0.7
+        if 'ssh' in userdata.keys():
+            authorized_keys_path = host.file(
+                f"{user.home}/.ssh/authorized_keys"
+            )
+            assert authorized_keys_path.exists
+            assert takel_users_user == authorized_keys_path.user
+            assert userdata['id'] == authorized_keys_path.uid
+            assert userdata['id'] == authorized_keys_path.gid
+            for pubkey in userdata['ssh']:
+                assert authorized_keys_path.contains(pubkey)
+=======
+>>>>>>> 0.0.10
