@@ -10,7 +10,7 @@ platforms:
   - name: molecule-takel-takelage-bit-test-image-${TAKELAGE_PROJECT_ENV:-prod}
     # yamllint disable-line rule:line-length
     image: packer_local/takelage-bit-${TAKELAGE_PROJECT_IMG:-non}-${TAKELAGE_PROJECT_ENV:-prod}
-    command: /lib/systemd/systemd
+    command: ${TAKELAGE_PROJECT_COMMAND:-/usr/bin/tail -f /dev/null}
     privileged: true
     pre_build_image: true
     groups:

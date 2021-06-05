@@ -9,7 +9,7 @@ lint: |
 platforms:
   - name: molecule-takel-takelage-bit-local-${TAKELAGE_PROJECT_ENV:-prod}
     image: packer_local/takelage-dev-bitboard-${TAKELAGE_PROJECT_ENV:-prod}
-    command: /lib/systemd/systemd
+    command: ${TAKELAGE_PROJECT_COMMAND:-/usr/bin/tail -f /dev/null}
     privileged: true
     pre_build_image: true
     published_ports:
