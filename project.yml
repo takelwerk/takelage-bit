@@ -1,7 +1,7 @@
 ---
 # project settings
 name: takelage-bit
-version: 0.8.1
+version: 0.8.2
 
 pipelines:
   - prod
@@ -10,7 +10,7 @@ local_user: packer_local
 
 images:
   project:
-    base_user: takelage
+    base_user: takelwerk
     base_repo: takelbase
     base_tag: latest
     target_user: takelwerk
@@ -22,7 +22,7 @@ images:
     packer_command: /lib/systemd/systemd
     privileged: --privileged
   bitslim:
-    base_user: takelage
+    base_user: takelwerk
     base_repo: takelslim
     base_tag: latest
     target_user: takelwerk
