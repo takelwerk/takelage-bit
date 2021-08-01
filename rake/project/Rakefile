@@ -6,7 +6,7 @@ namespace :project do
                 dockerhub:login
                 rubylint
                 ansible:prod:lint
-                images:update
+                images:project:update
                 images:project:prod:build
                 images:project:prod:molecule:test
                 git:tag
