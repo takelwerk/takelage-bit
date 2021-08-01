@@ -10,6 +10,6 @@ namespace :project do
                 images:project:prod:build
                 images:project:prod:molecule:test
                 git:tag
-                dockerhub:tag
-                dockerhub:push]
+                dockerhub:project:prod:tag
+                dockerhub:project:prod:push]
 end
