@@ -1,7 +1,7 @@
 ---
 # project settings
 name: takelage-bit
-version: 0.7.7
+version: 0.8.0
 
 pipelines:
   - prod
@@ -13,7 +13,7 @@ images:
     base_user: takelage
     base_repo: takelbase
     base_tag: latest
-    target_user: takelage
+    target_user: takelwerk
     target_repo: bitboard
     omit_pipeline_name: prod
     layers:
@@ -25,7 +25,7 @@ images:
     base_user: takelage
     base_repo: takelslim
     base_tag: latest
-    target_user: takelage
+    target_user: takelwerk
     target_repo: bitslim
     omit_pipeline_name: prod
     layers:
