@@ -185,7 +185,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "takelage.ansible/ansible/roles/takel-cleanup@0.0.15": {
+    "takelage.ansible/ansible/roles/takel-cleanup@0.0.16": {
         "files": [
             {
                 "name": "README.bit",
@@ -417,7 +417,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "ansible/roles/takel-user"
     },
-    "takelage.ansible/ansible/roles/takel-users@0.0.15": {
+    "takelage.ansible/ansible/roles/takel-users@0.0.16": {
         "files": [
             {
                 "name": "README.bit",
@@ -558,7 +558,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "packer/templates/takelage/docker"
     },
-    "takelage.rake/rake/ansible@0.0.3": {
+    "takelage.rake/rake/ansible@0.0.4": {
         "files": [
             {
                 "name": "README.bit",
