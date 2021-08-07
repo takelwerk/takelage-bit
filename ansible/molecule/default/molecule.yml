@@ -10,7 +10,7 @@ platforms:
   - name: >-
       molecule-takel-takelage-bit-test-project-${TAKELAGE_PROJECT_ENV:-default}
     image: ${TAKELAGE_PROJECT_BASE_IMAGE:-takelwerk/takelbase}
-    command: ${TAKELAGE_PROJECT_COMMAND:-/usr/bin/tail -f /dev/null}
+    command: ${TAKELAGE_PROJECT_COMMAND:-/lib/systemd/systemd}
     privileged: true
     pre_build_image: true
     groups:
