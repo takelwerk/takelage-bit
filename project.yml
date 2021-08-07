@@ -1,7 +1,7 @@
 ---
 # project settings
 name: takelage-bit
-version: 0.8.7
+version: 0.8.8
 
 pipelines:
   - prod
@@ -19,7 +19,7 @@ images:
     layers:
       - site
     command: /lib/systemd/systemd
-    packer_command: /usr/bin/tail -f /dev/null
+    packer_command: /lib/systemd/systemd
     privileged: --privileged
   bitslim:
     base_user: takelwerk
