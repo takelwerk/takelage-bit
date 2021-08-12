@@ -1,7 +1,7 @@
 ---
 # project settings
 name: takelage-bit
-version: 0.8.9
+version: 0.9.0
 
 pipelines:
   - prod
@@ -11,26 +11,26 @@ local_user: packer_local
 images:
   project:
     base_user: takelwerk
-    base_repo: takelbase
+    base_repo: takelslim
     base_tag: latest
     target_user: takelwerk
     target_repo: bitboard
     omit_pipeline_name: prod
     layers:
       - site
-    command: /lib/systemd/systemd
-    packer_command: /lib/systemd/systemd
-    privileged: --privileged
-  bitslim:
+    command: /usr/sbin/sshd -D -e
+  bitserver:
     base_user: takelwerk
-    base_repo: takelslim
+    base_repo: takelbase
     base_tag: latest
     target_user: takelwerk
-    target_repo: bitslim
+    target_repo: bitserver
     omit_pipeline_name: prod
     layers:
       - site
-    command: /usr/sbin/sshd -D -e
+    command: /lib/systemd/systemd
+    packer_command: /lib/systemd/systemd
+    privileged: --privileged
 
 # system settings
 ssh_port: 222
