@@ -1,4 +1,5 @@
 ---
+takel_ssh_run_handler: false
 takel_ssh_Port: "{{ project['ssh_port'] }}"
 takel_ssh_AllowUsers: >-
   {{ (takel_users_users | default([]) +
