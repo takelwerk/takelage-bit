@@ -8,13 +8,12 @@ lint: |
   flake8
 platforms:
   - name: >-
-      molecule-takel-takelage-bit-test-project-${TAKELAGE_PROJECT_ENV:-default}
+      molecule-takel-takelage-bit-test-project
     image: ${TAKELAGE_PROJECT_BASE_IMAGE:-takelwerk/takelbase}
     command: ${TAKELAGE_PROJECT_COMMAND:-/lib/systemd/systemd}
     privileged: true
     pre_build_image: true
     groups:
-      - ${TAKELAGE_PROJECT_ENV:-prod}
       - users
       - molecule
 provisioner:

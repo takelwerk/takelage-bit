@@ -3,9 +3,6 @@
 name: takelage-bit
 version: 0.9.4
 
-pipelines:
-  - prod
-
 local_user: packer_local
 
 images:
@@ -15,7 +12,6 @@ images:
     base_tag: latest
     target_user: takelwerk
     target_repo: bitboard
-    omit_pipeline_name: prod
     layers:
       - site
     command: /usr/sbin/sshd -D -e
@@ -25,7 +21,6 @@ images:
     base_tag: latest
     target_user: takelwerk
     target_repo: bitserver
-    omit_pipeline_name: prod
     layers:
       - site
     command: /lib/systemd/systemd
