@@ -23,21 +23,19 @@ require 'rake'
 namespace :cloud do
   namespace :gce do |gce_env|
     subtasks(gce_env.scope.path) do
-          namespace :firewall do
-            @gce_firewall.each do |task, command|
-              desc "#{task} firewall rule in GCE"
-              task task do
-                @project['google_firewall_prod'].each do |rule|
-                  rule_name = "allow-#{rule['desc']}-#{rule['proto']}-" \
+      namespace :firewall do
+        @gce_firewall.each do |task, command|
+          desc "#{task} firewall rule in GCE"
+          task task do
+            @project['google_firewall_prod'].each do |rule|
+              rule_name = "allow-#{rule['desc']}-#{rule['proto']}-" \
                           "#{rule['port']}-#{@project['google_repo']}"
-                  @commands << format(
-                    command,
-                    proto: rule['proto'],
-                    port: rule['port'],
-                    rule_name: rule_name
-                  )
-                end
-              end
+              @commands << format(
+                command,
+                proto: rule['proto'],
+                port: rule['port'],
+                rule_name: rule_name
+              )
             end
           end
         end
