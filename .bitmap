@@ -576,7 +576,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "rake/ansible"
     },
-    "takelage.rake/rake/cloud/gce@0.0.2": {
+    "takelage.rake/rake/cloud/gce@0.0.3": {
         "files": [
             {
                 "relativePath": "rake/cloud/gce/README.bit",
