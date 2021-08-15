@@ -1,7 +1,7 @@
 ---
 # project settings
 name: takelage-bit
-version: 0.10.3
+version: 0.10.4
 
 local_user: packer_local
 
