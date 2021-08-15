@@ -7,7 +7,7 @@ namespace :cloud do
   namespace :gce do |gce_env|
     subtasks(gce_env.scope.path) do
       namespace :bucket do
-        bucket_env = "google_postgresql_backup_path"
+        bucket_env = 'google_postgresql_backup_path'
         if @project.include? bucket_env
           bucket = @project[bucket_env].split('/')[0]
           @google_storage_bucket.each do |rake_task, value|

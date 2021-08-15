@@ -19,7 +19,6 @@ require 'rake'
           "--target-tags=#{@project['google_repo']}-%<rule_name>s " \
           "--project=#{@project['google_id']}"
 }
-# rubocop:disable Metrics/BlockLength
 namespace :cloud do
   namespace :gce do |gce_env|
     subtasks(gce_env.scope.path) do
@@ -43,4 +42,3 @@ namespace :cloud do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength

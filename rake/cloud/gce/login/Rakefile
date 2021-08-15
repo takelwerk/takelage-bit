@@ -21,7 +21,7 @@ namespace :cloud do
           task task do
             @commands << format(
               command,
-              url: @project["url"]
+              url: @project['url']
             )
           end
         end
